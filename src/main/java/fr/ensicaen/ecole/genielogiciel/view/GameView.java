@@ -2,11 +2,16 @@ package fr.ensicaen.ecole.genielogiciel.view;
 
 import fr.ensicaen.ecole.genielogiciel.presenter.GamePresenter;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.TilePane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,6 +19,9 @@ import java.io.IOException;
 public final class GameView {
     private GamePresenter _gamePresenter;
     private Stage _stage;
+
+    @FXML
+    private TilePane container ;
 
     public static GameView createView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -41,5 +49,19 @@ public final class GameView {
         if (code == KeyCode.SPACE) {
             _gamePresenter.runGameLoop();
         }
+    }
+    public void initialize() {
+        // Code pour une grille 8*8
+        /*for (int x = 0; x < 64; x++) {
+                Rectangle rectangle = new Rectangle(80,80);
+                rectangle.setStyle("-fx-fill: white;-fx-stroke : black");
+                container.getChildren().add(rectangle);
+        }*/
+        Rectangle rect1 = new Rectangle(80,80);
+        rect1.setStyle("-fx-fill: white;-fx-stroke : black");
+        container.getChildren().add(rect1);
+        Rectangle rect2 = new Rectangle(80,80);
+        rect2.setStyle("-fx-fill: white;-fx-stroke : black");
+        container.getChildren().add(rect2);
     }
 }
