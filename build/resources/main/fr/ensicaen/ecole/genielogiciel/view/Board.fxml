@@ -5,12 +5,8 @@
 
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.Button?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
-            minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" styleClass="board" stylesheets="@Board.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ensicaen.ecole.genielogiciel.view.GameView">
-    <children>
-        <TilePane fx:id="container" prefColumns="8" prefRows="8" minWidth="-Infinity" minHeight="-Infinity">
+<TilePane fx:id="container" prefColumns="8" prefRows="8" maxHeight="80" maxWidth="80" styleClass="board" stylesheets="@Board.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ensicaen.ecole.genielogiciel.view.GameView">
 
-        </TilePane>
-    </children>
-</AnchorPane>
+</TilePane>
+
 

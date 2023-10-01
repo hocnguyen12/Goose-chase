@@ -10,8 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -57,11 +59,18 @@ public final class GameView {
                 rectangle.setStyle("-fx-fill: white;-fx-stroke : black");
                 container.getChildren().add(rectangle);
         }*/
+        StackPane stack1 = new StackPane();
+        container.setAlignment(Pos.CENTER);
         Rectangle rect1 = new Rectangle(80,80);
         rect1.setStyle("-fx-fill: white;-fx-stroke : black");
-        container.getChildren().add(rect1);
+        Text text1 = new Text("1");
+        stack1.getChildren().addAll(rect1,text1);
+        container.getChildren().add(stack1);
+        StackPane stack2 = new StackPane();
         Rectangle rect2 = new Rectangle(80,80);
         rect2.setStyle("-fx-fill: white;-fx-stroke : black");
-        container.getChildren().add(rect2);
+        Text text2 = new Text("2");
+        stack2.getChildren().addAll(rect2,text2);
+        container.getChildren().add(stack2);
     }
 }
