@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,8 +17,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -30,7 +33,11 @@ public final class GameView {
     private Stage _stage;
 
     @FXML
-    private TilePane container ;
+    private GridPane container ;
+
+    private final int MAX_LENGTH = 8;
+
+    private final int MAX_HEIGHT = 8;
 
     public static GameView createView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -59,14 +66,76 @@ public final class GameView {
             _gamePresenter.runGameLoop();
         }
     }
+
+    private static int x = 0;
+    private static int y = 0;
     public void initialize() {
         // Code pour une grille 8*8
-        /*for (int x = 0; x < 64; x++) {
-                Rectangle rectangle = new Rectangle(80,80);
-                rectangle.setStyle("-fx-fill: white;-fx-stroke : black");
-                container.getChildren().add(rectangle);
-        }*/
-        StackPane stack1 = new StackPane();
+        container.setAlignment(Pos.CENTER);
+
+        int direction = 0; // 0 : right, 1 : down, 2 : left, 3 : up
+        int max_length = MAX_LENGTH; // will vary during numbering
+        int max_height = MAX_HEIGHT; // will vary during numbering
+        int min_length = 0; // will vary during numbering
+        int min_height = 0; // will vary during numbering
+        for (int i = 0;i < MAX_LENGTH*MAX_HEIGHT;i++){
+            Rectangle tile = new Rectangle(80,80);
+            tile.setStroke(Color.BLACK);
+            tile.setFill(Color.WHITE);
+            Text text = new Text(Integer.toString(y*MAX_LENGTH+x));
+            GridPane.setColumnIndex(tile,x);
+            GridPane.setRowIndex(tile,y);
+            GridPane.setColumnIndex(text,x);
+            GridPane.setRowIndex(text,y);
+            GridPane.setHalignment(text,HPos.CENTER);
+            container.getChildren().addAll(tile,text);
+            switch(direction){
+                case 0 :
+                    System.out.println("max_length" + max_length);
+                    if (x < max_length - 1){
+                        x++;
+                        System.out.println("x : "+ x +" y " + y);
+                    }
+                    else {
+                        direction = (direction+1)%4;
+                        max_length--;
+                        y++;
+                        System.out.println("x : "+ x +" y " + y);
+                    }
+                    break;
+                case 1 :
+                    if (y < max_height - 1){
+                        y++;
+                    }
+                    else {
+                        direction = (direction+1)%4;
+                        max_height--;
+                        x--;
+                    }
+                    break;
+                case 2 :
+                    if (x > min_length){
+                        x--;
+                    }
+                    else {
+                        direction = (direction+1)%4;
+                        min_length++;
+                        y--;
+                    }
+                    break;
+                case 3 :
+                    if (y > min_height){
+                        y--;
+                    }
+                    else {
+                        direction = (direction+1)%4;
+                        min_height++;
+                        x++;
+                    }
+                    break;
+            }
+        }
+        /*StackPane stack1 = new StackPane();
         container.setAlignment(Pos.CENTER);
         Circle pawn1 = new Circle(25);
         pawn1.setStyle("-fx-fill:green");
@@ -86,17 +155,12 @@ public final class GameView {
             @Override
             public void handle(ActionEvent event) {
 
-                Path path = new Path();
-                path.getElements().add(new MoveTo(0,0));
-                path.getElements().add(new LineTo(80,0));
-                PathTransition pathTransition = new PathTransition();
-                pathTransition.setDuration(Duration.millis(1000));
-                pathTransition.setNode(pawn1);
-                pathTransition.setPath(path);
-                pathTransition.play();
+                stack2.getChildren().add(pawn1);
+                stack1.getChildren().remove(pawn1);
+
             }
         });
-        container.getChildren().add(btn);
+        container.getChildren().add(btn);*/
 
     }
 

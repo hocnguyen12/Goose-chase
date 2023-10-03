@@ -14,33 +14,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/LoginMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/LoginMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/LoginPresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/LoginPresenter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/LoginView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/LoginView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/fr.ensicaen.ecole.genielogiciel.model.ModelTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/fr.ensicaen.ecole.genielogiciel.presenter.LoginPresenterTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/fr.ensicaen.ecole.genielogiciel.model.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/fr.ensicaen.ecole.genielogiciel.model.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/fr.ensicaen.ecole.genielogiciel.presenter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-fr.ensicaen.ecole.genielogiciel.model.ModelTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-fr.ensicaen.ecole.genielogiciel.presenter.LoginPresenterTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GamePresenter.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GameView.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoginPresenter.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GamePresenter.class.uniqueId1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GameView$1.class.uniqueId0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/GameView.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoginPresenter.class.uniqueId3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/fr/ensicaen/ecole/genielogiciel/model/ModelTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/fr/ensicaen/ecole/genielogiciel/presenter/LoginPresenterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/view/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/view/Board.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,20 +95,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Gradle.jeu-oie-ensicaen [run]">
     <configuration name="AdditionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -218,12 +201,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="756caebe-1c90-48b1-9373-47c261861b2b" name="Changes" comment="" />
+      <changelist id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="" />
       <created>1696167008745</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696167008745</updated>
       <workItem from="1696167009997" duration="1337000" />
+      <workItem from="1696343011523" duration="6681000" />
     </task>
     <servers />
   </component>
