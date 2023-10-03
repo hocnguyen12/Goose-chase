@@ -10,4 +10,7 @@ public class Model {
     public void setNickname( String nickname ) {
         _nickname = nickname;
     }
+
+
 }
+

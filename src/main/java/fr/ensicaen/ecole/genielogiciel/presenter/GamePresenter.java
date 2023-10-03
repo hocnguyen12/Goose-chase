@@ -1,5 +1,6 @@
 package fr.ensicaen.ecole.genielogiciel.presenter;
 
+import fr.ensicaen.ecole.genielogiciel.model.Game;
 import fr.ensicaen.ecole.genielogiciel.model.Model;
 import fr.ensicaen.ecole.genielogiciel.view.GameView;
 
@@ -19,6 +20,10 @@ public final class GamePresenter {
 
     public void runGameLoop() {
         System.out.println("Et c'est parti...");
+        Game g = new Game();
+        g.start();
+
+
     }
 
     private void update() {
