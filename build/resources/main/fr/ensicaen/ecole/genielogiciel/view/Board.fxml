@@ -5,8 +5,12 @@
 
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.Button?>
-<TilePane fx:id="container" maxHeight="80" maxWidth="80" styleClass="board" stylesheets="@Board.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ensicaen.ecole.genielogiciel.view.GameView">
+<TilePane fx:id="container" prefRows="8" prefColumns="8"  maxHeight="80" maxWidth="80" styleClass="board" stylesheets="@Board.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ensicaen.ecole.genielogiciel.view.GameView" >
+    <AnchorPane fx:id="button_container" stylesheets="@Board.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" >
 
+    </AnchorPane>
 </TilePane>
+
+
 
 
