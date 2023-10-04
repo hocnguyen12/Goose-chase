@@ -24,6 +24,7 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.scene.text.Text;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -169,6 +170,9 @@ public final class GameView {
         stack2.getChildren().addAll(rect2,text2);
         container.getChildren().add(stack2);*/
         Button btn = new Button("Lancer");
+        Popup popup = new Popup();
+        Text text = new Text("Victoire !");
+        popup.getContent().add(text);
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -182,6 +186,15 @@ public final class GameView {
                     short_delay.setOnFinished(event2->{count++;stack_list.get(count).getChildren().add(pawn);});
                     short_delay.playFromStart();
 
+                }
+                if (count == 7){
+
+                    if (!popup.isShowing()){
+                        popup.show(_stage);
+                    }
+                    else {
+                        popup.hide();
+                    }
                 }
             }
         });
