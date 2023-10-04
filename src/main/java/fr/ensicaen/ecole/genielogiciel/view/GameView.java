@@ -33,7 +33,7 @@ public final class GameView {
     private Stage _stage;
 
     @FXML
-    private GridPane container ;
+    private TilePane container ;
 
     private final int MAX_LENGTH = 8;
 
@@ -72,7 +72,7 @@ public final class GameView {
     public void initialize() {
         // Code pour une grille 8*8
         container.setAlignment(Pos.CENTER);
-
+        /*
         int direction = 0; // 0 : right, 1 : down, 2 : left, 3 : up
         int max_length = MAX_LENGTH; // will vary during numbering
         int max_height = MAX_HEIGHT; // will vary during numbering
@@ -134,8 +134,8 @@ public final class GameView {
                     }
                     break;
             }
-        }
-        /*StackPane stack1 = new StackPane();
+        }*/
+        StackPane stack1 = new StackPane();
         container.setAlignment(Pos.CENTER);
         Circle pawn1 = new Circle(25);
         pawn1.setStyle("-fx-fill:green");
@@ -160,7 +160,7 @@ public final class GameView {
 
             }
         });
-        container.getChildren().add(btn);*/
+        container.getChildren().add(btn);
 
     }
 
