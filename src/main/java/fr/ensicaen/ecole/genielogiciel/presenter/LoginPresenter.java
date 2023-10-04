@@ -32,5 +32,6 @@ public final class LoginPresenter {
         view.setPresenter(gamePresenter);
         gamePresenter.setView(view);
         view.show();
+        gamePresenter.runGameLoop();
     }
 }

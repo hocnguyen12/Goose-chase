@@ -4,50 +4,52 @@ import java.util.Scanner;
 
 public class Game {
     private Character _character;
-    private Square[] _board;
-    private int _length;
+    private final Square[] _board;
+    private final int _length;
     private int _diceValue;
 
     private int _round;
 
     public Game() {
-        _length = 2;
+        _length = 8;
         _diceValue = 0;
-        _round = 0;
+        _round = 1;
         _board = new Square[_length];
     }
 
     public void start() {
         _character = new Character();
         _board[0] = new StartSquare(0);
-        _board[1] = new EndSquare(1);
-
-        while (checkEnd(_board[1]) != 1) {
-            System.out.println("round n° :" + _round);
-            // for each player in player list
-            executeRound(_character);
-            _round++;
-        }
-        System.out.println("Partie terminée !");
-
+        _board[1] = new BasicSquare(1);
+        _board[2] = new BasicSquare(2);
+        _board[3] = new BasicSquare(3);
+        _board[4] = new BasicSquare(4);
+        _board[5] = new BasicSquare(5);
+        _board[6] = new BasicSquare(6);
+        _board[7] = new EndSquare(7);
     }
 
-    void executeRound(Character c) {
-        System.out.println("Faites un choix : ");
-        System.out.println("(1) Lancer le dés");
-        /*Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
-                _diceValue = dice();
+    public int executeRound() {
+        if (isLastSquareEmpty()) {
+            System.out.println("ROUND : " + _round);
+            _round++;
 
-        }*/
-        _diceValue = dice();
-
-        move(c);
-        System.out.println("_board.execute n°" + _round);
-        _board[c.getSquareNumber()].execute(c);
-
+            _diceValue = dice();
+            System.out.println("DE = " + _diceValue);
+            move(_character);
+            // ARRIVEE DEPASSEE
+            if (_character.getSquareNumber() >= 7) {
+                System.out.println("Arrivée dépassée");
+                return -1;
+            }
+            System.out.println("Je suis sur la case " + _character.getSquareNumber());
+            _board[_character.getSquareNumber()].execute(_character);
+            return 0;
+        } else {
+            //ARRIVEE ATTEINTE
+            System.out.println("Arrivée atteinte");
+            return -1;
+        }
     }
 
 
@@ -56,14 +58,30 @@ public class Game {
     }
 
     int dice() {
-        return 1;
+        return 1 + (int)(Math.random() * ((6 - 1) + 1));
     }
 
-    public int checkEnd(Square s){
-        if (s.get_character() == null) {
-            return 0;
+    public boolean isLastSquareEmpty(){
+        if (_board[_length - 1].get_character() == null) {
+            return true;
         }
-        return 1;
+        return false;
+    }
 
+    public int get_diceValue() {
+        return _diceValue;
+    }
+
+    public int get_length() {
+        return _length;
+    }
+
+    public int get_playerPosition(){
+        return _character.getSquareNumber();
+    }
+
+    //tmp
+    public void caseBonus(){
+        _character.setSquareNumber(_character.getSquareNumber() + 1);
     }
 }
