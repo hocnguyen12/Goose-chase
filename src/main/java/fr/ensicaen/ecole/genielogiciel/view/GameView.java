@@ -4,6 +4,7 @@ import fr.ensicaen.ecole.genielogiciel.model.Model;
 import fr.ensicaen.ecole.genielogiciel.presenter.GamePresenter;
 
 import javafx.animation.PathTransition;
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -93,6 +94,9 @@ public final class GameView {
             if (i == 0){
                 stack.getChildren().add(pawn);
             }
+            if (i == 4){
+                tile.setStroke(Color.RED);
+            }
             stack.setAlignment(Pos.CENTER);
             //TilePane.setColumnIndex(tile,x);
             //GridPane.setRowIndex(tile,y);
@@ -169,9 +173,15 @@ public final class GameView {
             @Override
             public void handle(ActionEvent event) {
                 if (count < stack_list.size()-1){
-                    stack_list.get(count).getChildren().remove(pawn);
                     count++;
                     stack_list.get(count).getChildren().add(pawn);
+                }
+
+                if (count == 4){
+                    PauseTransition short_delay = new PauseTransition(Duration.seconds(1));
+                    short_delay.setOnFinished(event2->{count++;stack_list.get(count).getChildren().add(pawn);});
+                    short_delay.playFromStart();
+
                 }
             }
         });
