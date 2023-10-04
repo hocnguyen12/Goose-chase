@@ -168,7 +168,7 @@ public final class GameView {
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (count < stack_list.size()){
+                if (count < stack_list.size()-1){
                     stack_list.get(count).getChildren().remove(pawn);
                     count++;
                     stack_list.get(count).getChildren().add(pawn);
