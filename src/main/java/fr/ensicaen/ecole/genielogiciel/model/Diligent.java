@@ -1,3 +1,3 @@
 package fr.ensicaen.ecole.genielogiciel.model;
-public class Diletante extends Etudiant{
+public class Diligent extends Student {
 }

@@ -1,40 +1,35 @@
 package fr.ensicaen.ecole.genielogiciel.model;
-public class ConcreteFactoryLicence extends AbstractFactoryEtudiant{
-    public static int _attribut = 0;
-    private Etudiant _etudiant;
-    public ConcreteFactoryLicence(){
-        if(_attribut%3 == 0){
-            _etudiant= createDiletante();
-            _attribut++;
-        }
-        else if (_attribut % 3 == 1 ){
-            _etudiant= createAssidu();
-            _attribut++;
-        }else{
-            _etudiant= createBrillant();
-            _attribut++;
+public class ConcreteFactoryLicence extends AbstractFactoryStudent {
+    private Student _student;
+
+    public ConcreteFactoryLicence() {
+        int randomInt = 1 + (int) (Math.random() * 6);
+        if (randomInt == 1) {
+            _student = createDilettante();
+        } else if (randomInt == 2) {
+            _student = createDiligent();
+        } else {
+            _student = createBrilliant();
         }
     }
-    @Override
-    public Diletante createDiletante() {
-        return new Diletante();
-    }
 
     @Override
-    public Assidu createAssidu() {
-        return new Assidu();
+    public Dilettante createDilettante() {
+        return new Dilettante();
     }
 
     @Override
-    public Brillant createBrillant() {
-        return new Brillant();
+    public Diligent createDiligent() {
+        return new Diligent();
     }
 
-    public Etudiant get_etudiant() {
-        return _etudiant;
+    @Override
+    public Brilliant createBrilliant() {
+        return new Brilliant();
     }
 
-    public static int get_attribut() {
-        return _attribut;
+    public Student get_student() {
+        return _student;
     }
+
 }

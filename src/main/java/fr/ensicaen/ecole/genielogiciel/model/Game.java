@@ -37,7 +37,7 @@ public class Game {
             _round++;
 
             _diceValue1 = rollDice();
-            _diceValue2 = rollDice();
+            //_diceValue2 = rollDice();
 
             System.out.println("DE = " + _diceValue1 + "" + _diceValue2);
             move(_character);
@@ -58,11 +58,11 @@ public class Game {
 
 
     void move(Character c) {
-        c.setSquareNumber(c.getSquareNumber() + _diceValue1 + _diceValue1);
+        c.setSquareNumber(c.getSquareNumber() + _diceValue1 /*+ _diceValue2*/);
     }
 
     int rollDice() {
-        return 1 + (int)(Math.random() * ((6 - 1) + 1));
+        return 1 + (int)(Math.random() * 6);
     }
 
     public boolean isLastSquareEmpty(){
@@ -73,7 +73,7 @@ public class Game {
     }
 
     public int get_diceValue() {
-        return _diceValue1 + _diceValue2;
+        return _diceValue1 /* + _diceValue2*/;
     }
 
     public int get_length() {
