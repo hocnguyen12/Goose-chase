@@ -6,13 +6,15 @@ public class Game {
     private Character _character;
     private final Square[] _board;
     private final int _length;
-    private int _diceValue;
+    private int _diceValue1;
+    private int _diceValue2;
 
     private int _round;
 
     public Game() {
         _length = 8;
-        _diceValue = 0;
+        _diceValue1 = 0;
+        _diceValue2 = 0;
         _round = 1;
         _board = new Square[_length];
     }
@@ -34,8 +36,10 @@ public class Game {
             System.out.println("ROUND : " + _round);
             _round++;
 
-            _diceValue = dice();
-            System.out.println("DE = " + _diceValue);
+            _diceValue1 = rollDice();
+            _diceValue2 = rollDice();
+
+            System.out.println("DE = " + _diceValue1 + "" + _diceValue2);
             move(_character);
             // ARRIVEE DEPASSEE
             if (_character.getSquareNumber() >= 7) {
@@ -54,10 +58,10 @@ public class Game {
 
 
     void move(Character c) {
-        c.setSquareNumber(c.getSquareNumber() + _diceValue);
+        c.setSquareNumber(c.getSquareNumber() + _diceValue1 + _diceValue1);
     }
 
-    int dice() {
+    int rollDice() {
         return 1 + (int)(Math.random() * ((6 - 1) + 1));
     }
 
@@ -69,7 +73,7 @@ public class Game {
     }
 
     public int get_diceValue() {
-        return _diceValue;
+        return _diceValue1 + _diceValue2;
     }
 
     public int get_length() {
