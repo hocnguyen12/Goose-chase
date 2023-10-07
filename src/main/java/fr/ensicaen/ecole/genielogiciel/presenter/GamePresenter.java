@@ -9,6 +9,7 @@ import java.util.List;
 public final class GamePresenter {
     private final Model _model;
     private Game _game;
+    private String _lang = "en";
     private GameView _view;
     private boolean _end = false;
 
@@ -22,7 +23,9 @@ public final class GamePresenter {
     }
 
     public void initializeGame() {
-        //GAME SETUP
+        //initialize language
+        _lang = "en";
+        //MODEL
         System.out.println("Et c'est parti...");
         _game = new Game();
 
@@ -42,6 +45,9 @@ public final class GamePresenter {
         } catch (InvalidPlayersCount e) {
             throw new RuntimeException(e);
         }
+
+        //VIEW
+        //Create n pawns
     }
 
     private void update() {
@@ -57,6 +63,16 @@ public final class GamePresenter {
     // QUE pour le MVP 1 pour montrer au client une première gestion des bonus
     // Sinon nextroundregarde la valeur du dé calculée dans le modèle et fait avancer la vue autant de fois que necessaire
     public void nextRound() {
+        List<Integer> positionsList = new ArrayList<>();
+        positionsList = _game.executeRound();
+
+        for (int i : positionsList){
+            //display pawns at their new square
+
+            if (_lang.equals("en")) {
+                _game.getSquareNameEN(i);
+            }
+        }
         /*
         int previous_position = _game.get_playerPosition();
         System.out.println("PREVIOUS " + previous_position);

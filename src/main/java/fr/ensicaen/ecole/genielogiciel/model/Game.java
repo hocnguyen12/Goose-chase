@@ -66,9 +66,9 @@ public class Game {
 
     }
 
-    public void executeRound() {
+    public List<Integer> executeRound() {
         if (gameIsFinished()) {
-            return;
+            return null;
         } else {
             List<Integer> positionsList= new ArrayList<>();
 
@@ -93,7 +93,10 @@ public class Game {
 
                 student.move(diceTotal);
                 _board[student.get_squareNumber()].execute(student);
+
+                positionsList.add(student.get_squareNumber());
             }
+            return positionsList;
         }
     }
 
@@ -108,5 +111,12 @@ public class Game {
             }
         }
         return false;
+    }
+
+    public String getSquareNameEN(int n) {
+        return _board[n].get_squareNameEN();
+    }
+    public String getSquareNameFR(int n) {
+        return _board[n].get_squareNameFR();
     }
 }
