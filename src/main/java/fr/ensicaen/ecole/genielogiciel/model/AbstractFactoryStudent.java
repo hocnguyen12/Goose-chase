@@ -8,4 +8,6 @@ public abstract class AbstractFactoryStudent {
     public  abstract Dilettante createDilettante();
     public abstract Diligent createDiligent();
     public abstract Brilliant createBrilliant();
+
+    public abstract Student get_student();
 }

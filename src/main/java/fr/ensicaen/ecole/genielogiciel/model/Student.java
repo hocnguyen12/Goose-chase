@@ -1,6 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 abstract class Student {
-    private int level;
+    private int _level;
+    private int _position;
 }
 
 

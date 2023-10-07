@@ -13,16 +13,20 @@ public class ConcreteFactoryDUT extends AbstractFactoryStudent{
     }
     @Override
     public Dilettante createDilettante() {
-        return null;
+        return new Dilettante();
     }
 
     @Override
     public Diligent createDiligent() {
-        return null;
+        return new Diligent();
     }
 
     @Override
     public Brilliant createBrilliant() {
-        return null;
+        return new Brilliant();
+    }
+
+    public Student get_student() {
+        return _student;
     }
 }

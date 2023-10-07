@@ -31,5 +31,4 @@ public class ConcreteFactoryLicence extends AbstractFactoryStudent {
     public Student get_student() {
         return _student;
     }
-
 }

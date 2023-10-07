@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel;
 
+import fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudent;
+import fr.ensicaen.ecole.genielogiciel.model.ConcreteFactoryPrepa;
 import fr.ensicaen.ecole.genielogiciel.model.Game;
 import fr.ensicaen.ecole.genielogiciel.presenter.LoginPresenter;
 import fr.ensicaen.ecole.genielogiciel.view.LoginView;
@@ -26,5 +28,7 @@ public final class LoginMain extends Application {
         view.setPresenter(presenter);
         presenter.setView(view);
         view.show();
+
+        AbstractFactoryStudent eleve= new ConcreteFactoryPrepa();
     }
 }
