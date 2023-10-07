@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1" date="1696705799456" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 07/10/2023 21:09 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Model.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Model.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/Model.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView$1.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/GameView$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/GamePresenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/LoginView.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/LoginView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/LoginView.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/tmp/compileTestJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="build/tmp/compileTestJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/LoginPresenter.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/LoginPresenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/LoginPresenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/SpiralPath.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/SpiralPath.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/SpiralPath.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/test/fr/ensicaen/ecole/genielogiciel/model/AdditionTest.class" />
+    <option name="AFTER_PATH" value="build/classes/java/test/fr/ensicaen/ecole/genielogiciel/model/AdditionTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/AdditionTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/LoginMain.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/LoginMain.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/LoginMain.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09_[Changes]1/GameView.class" />
+  </binary>
+</changelist>

@@ -1,0 +1,214 @@
+Index: src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package fr.ensicaen.ecole.genielogiciel;\r\n\r\nimport fr.ensicaen.ecole.genielogiciel.model.Game;\r\nimport fr.ensicaen.ecole.genielogiciel.presenter.LoginPresenter;\r\nimport fr.ensicaen.ecole.genielogiciel.view.LoginView;\r\nimport javafx.application.Application;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.util.ResourceBundle;\r\n\r\npublic final class LoginMain extends Application {\r\n    public static void main( String[] args ) {\r\n        launch(args);\r\n    }\r\n\r\n\r\n    public static ResourceBundle getMessageBundle() {\r\n        return ResourceBundle.getBundle(\"fr.ensicaen.ecole.genielogiciel.MessageBundle\");\r\n    }\r\n\r\n    @Override\r\n    public void start( final Stage primaryStage ) throws Exception {\r\n\r\n        LoginView view = LoginView.createView(primaryStage, \"LoginDialog.fxml\");\r\n        LoginPresenter presenter = new LoginPresenter();\r\n        view.setPresenter(presenter);\r\n        presenter.setView(view);\r\n        view.show();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java b/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java
+--- a/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java	(revision 9f66cdf98c27ccb784356783a2cc803514e005f5)
++++ b/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java	(date 1696705232409)
+@@ -1,5 +1,7 @@
+ package fr.ensicaen.ecole.genielogiciel;
+ 
++import fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudent;
++import fr.ensicaen.ecole.genielogiciel.model.ConcreteFactoryPrepa;
+ import fr.ensicaen.ecole.genielogiciel.model.Game;
+ import fr.ensicaen.ecole.genielogiciel.presenter.LoginPresenter;
+ import fr.ensicaen.ecole.genielogiciel.view.LoginView;
+@@ -20,11 +22,15 @@
+ 
+     @Override
+     public void start( final Stage primaryStage ) throws Exception {
+-
++        /*
+         LoginView view = LoginView.createView(primaryStage, "LoginDialog.fxml");
+         LoginPresenter presenter = new LoginPresenter();
+         view.setPresenter(presenter);
+         presenter.setView(view);
+         view.show();
++        */
++        // @TESTS
++        AbstractFactoryStudent student = new ConcreteFactoryPrepa();
++
+     }
+ }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"FrameworkDetectionExcludesConfiguration\">\r\n    <file type=\"web\" url=\"file://$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 9f66cdf98c27ccb784356783a2cc803514e005f5)
++++ b/.idea/misc.xml	(date 1696705232420)
+@@ -4,7 +4,7 @@
+   <component name="FrameworkDetectionExcludesConfiguration">
+     <file type="web" url="file://$PROJECT_DIR$" />
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6\" name=\"Changes\" comment=\"Nouveau Model\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/README.md\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/README.md\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryEtudiant.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Assidu.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Diligent.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Brillant.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Brilliant.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryPrepa.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryPrepa.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Diletante.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Dilettante.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Etudiant.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Student.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie/Case.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie/ConcreteFactoryLicenceTest.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie/Main.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie/Plateau.java\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"ExternalProjectsManager\">\r\n    <system id=\"GRADLE\">\r\n      <state>\r\n        <task path=\"$PROJECT_DIR$\">\r\n          <activation />\r\n        </task>\r\n        <projects_view>\r\n          <tree_state>\r\n            <expand>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"jeu_oie_template\" type=\"f1a62948:ProjectNode\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"jeu_oie_template\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"jeu_oie_template\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\r\n                <item name=\"application\" type=\"c8890929:TasksNode$1\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"jeu_oie_template\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"Tasks\" type=\"e4a08cd1:TasksNode\" />\r\n                <item name=\"build\" type=\"c8890929:TasksNode$1\" />\r\n              </path>\r\n              <path>\r\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\r\n                <item name=\"jeu_oie_template\" type=\"f1a62948:ProjectNode\" />\r\n                <item name=\"Dependencies\" type=\"6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode\" />\r\n              </path>\r\n            </expand>\r\n            <select />\r\n          </tree_state>\r\n        </projects_view>\r\n      </state>\r\n    </system>\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"architecture\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2WAEV54BCNQPnOxY1bJGYLvf3tf\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Project\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.0\",\r\n    \"settings.editor.selected.configurable\": \"reference.settingsdialog.project.gradle\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Gradle.jeu-oie-ensicaen [run]\">\r\n    <configuration name=\"AdditionTest\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\r\n      <ExternalSystemSettings>\r\n        <option name=\"executionName\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\r\n        <option name=\"scriptParameters\" value=\"\" />\r\n        <option name=\"taskDescriptions\">\r\n          <list />\r\n        </option>\r\n        <option name=\"taskNames\">\r\n          <list>\r\n            <option value=\":test\" />\r\n            <option value=\"--tests\" />\r\n            <option value=\"&quot;fr.ensicaen.ecole.genielogiciel.model.AdditionTest&quot;\" />\r\n          </list>\r\n        </option>\r\n        <option name=\"vmOptions\" />\r\n      </ExternalSystemSettings>\r\n      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>\r\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\r\n      <DebugAllEnabled>false</DebugAllEnabled>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"AdditionTest.additionnerNombresPositifs\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\r\n      <ExternalSystemSettings>\r\n        <option name=\"executionName\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\r\n        <option name=\"scriptParameters\" value=\"\" />\r\n        <option name=\"taskDescriptions\">\r\n          <list />\r\n        </option>\r\n        <option name=\"taskNames\">\r\n          <list>\r\n            <option value=\":test\" />\r\n            <option value=\"--tests\" />\r\n            <option value=\"&quot;fr.ensicaen.ecole.genielogiciel.model.AdditionTest.additionnerNombresPositifs&quot;\" />\r\n          </list>\r\n        </option>\r\n        <option name=\"vmOptions\" />\r\n      </ExternalSystemSettings>\r\n      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>\r\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\r\n      <DebugAllEnabled>false</DebugAllEnabled>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"jeu-oie-ensicaen [run]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\r\n      <ExternalSystemSettings>\r\n        <option name=\"executionName\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\r\n        <option name=\"scriptParameters\" />\r\n        <option name=\"taskDescriptions\">\r\n          <list />\r\n        </option>\r\n        <option name=\"taskNames\">\r\n          <list>\r\n            <option value=\"run\" />\r\n          </list>\r\n        </option>\r\n        <option name=\"vmOptions\" />\r\n      </ExternalSystemSettings>\r\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\r\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\r\n      <DebugAllEnabled>false</DebugAllEnabled>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"jeu_oie_template [clean]\" type=\"GradleRunConfiguration\" factoryName=\"Gradle\" temporary=\"true\">\r\n      <ExternalSystemSettings>\r\n        <option name=\"executionName\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"externalSystemIdString\" value=\"GRADLE\" />\r\n        <option name=\"scriptParameters\" />\r\n        <option name=\"taskDescriptions\">\r\n          <list />\r\n        </option>\r\n        <option name=\"taskNames\">\r\n          <list>\r\n            <option value=\"clean\" />\r\n          </list>\r\n        </option>\r\n        <option name=\"vmOptions\" />\r\n      </ExternalSystemSettings>\r\n      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>\r\n      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>\r\n      <DebugAllEnabled>false</DebugAllEnabled>\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\r\n      <module name=\"jeu-oie-ensicaen\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\r\n      <module name=\"jeu-oie-ensicaen\" />\r\n      <option name=\"filePath\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Gradle.jeu-oie-ensicaen [run]\" />\r\n        <item itemvalue=\"Gradle.jeu_oie_template [clean]\" />\r\n        <item itemvalue=\"Gradle.AdditionTest.additionnerNombresPositifs\" />\r\n        <item itemvalue=\"Gradle.AdditionTest\" />\r\n        <item itemvalue=\"Gradle.jeu-oie-ensicaen [run]\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6\" name=\"Changes\" comment=\"\" />\r\n      <created>1696167008745</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1696167008745</updated>\r\n      <workItem from=\"1696167009997\" duration=\"1337000\" />\r\n      <workItem from=\"1696343011523\" duration=\"6817000\" />\r\n      <workItem from=\"1696441205425\" duration=\"4753000\" />\r\n      <workItem from=\"1696439948621\" duration=\"300000\" />\r\n      <workItem from=\"1696592997735\" duration=\"6260000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Basic Model (paul cécile, only start and end square) with basic View (8 square) WITHOUT Presenter\">\r\n      <created>1696442080472</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696442080472</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Basic Model (paul cécile, only start and end square) with basic View (8 square) WITHOUT Presenter\">\r\n      <created>1696442117223</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696442117223</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Basic Model (paul cécile, only start and end square) with basic View (8 square) WITHOUT Presenter\">\r\n      <created>1696442121986</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696442121986</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Basic Model (paul cécile, only start and end square) with basic View (8 square) WITHOUT Presenter\">\r\n      <created>1696442129389</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696442129389</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Nouveau Model\">\r\n      <created>1696596622408</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696596622408</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Nouveau Model\">\r\n      <created>1696596636987</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1696596636987</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Basic Model (paul cécile, only start and end square) with basic View (8 square) WITHOUT Presenter\" />\r\n    <MESSAGE value=\"Nouveau Model\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Nouveau Model\" />\r\n    <option name=\"GROUP_MULTIFILE_MERGE_BY_DIRECTORY\" value=\"true\" />\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9f66cdf98c27ccb784356783a2cc803514e005f5)
++++ b/.idea/workspace.xml	(date 1696705281472)
+@@ -4,23 +4,10 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="Nouveau Model">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.java" afterDir="false" />
++    <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="Basic Model (paul cécile, only start and end square) with basic View (8 square) WITHOUT Presenter">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryEtudiant.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Assidu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Diligent.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Brillant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Brilliant.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryPrepa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryPrepa.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Diletante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Dilettante.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Student.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie/Case.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie/ConcreteFactoryLicenceTest.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie/Main.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie/Plateau.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -82,11 +69,6 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="architecture" />
+-      </map>
+-    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="MarkdownSettingsMigration">
+@@ -107,18 +89,13 @@
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+     "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Project",
++    "project.structure.last.edited": "Modules",
+     "project.structure.proportion": "0.0",
+     "project.structure.side.proportion": "0.0",
+     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+-  <component name="RecentsManager">
+-    <key name="MoveFile.RECENT_KEYS">
+-      <recent name="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/winnie" />
+-    </key>
+-  </component>
+   <component name="RunManager" selected="Gradle.jeu-oie-ensicaen [run]">
+     <configuration name="AdditionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+       <ExternalSystemSettings>
+@@ -178,27 +155,6 @@
+         <option name="taskNames">
+           <list>
+             <option value="run" />
+-          </list>
+-        </option>
+-        <option name="vmOptions" />
+-      </ExternalSystemSettings>
+-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+-      <DebugAllEnabled>false</DebugAllEnabled>
+-      <method v="2" />
+-    </configuration>
+-    <configuration name="jeu_oie_template [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+-      <ExternalSystemSettings>
+-        <option name="executionName" />
+-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+-        <option name="externalSystemIdString" value="GRADLE" />
+-        <option name="scriptParameters" />
+-        <option name="taskDescriptions">
+-          <list />
+-        </option>
+-        <option name="taskNames">
+-          <list>
+-            <option value="clean" />
+           </list>
+         </option>
+         <option name="vmOptions" />
+@@ -224,10 +180,8 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="Gradle.jeu-oie-ensicaen [run]" />
+-        <item itemvalue="Gradle.jeu_oie_template [clean]" />
+-        <item itemvalue="Gradle.AdditionTest.additionnerNombresPositifs" />
+         <item itemvalue="Gradle.AdditionTest" />
+-        <item itemvalue="Gradle.jeu-oie-ensicaen [run]" />
++        <item itemvalue="Gradle.AdditionTest.additionnerNombresPositifs" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -243,7 +197,6 @@
+       <workItem from="1696343011523" duration="6817000" />
+       <workItem from="1696441205425" duration="4753000" />
+       <workItem from="1696439948621" duration="300000" />
+-      <workItem from="1696592997735" duration="6260000" />
+     </task>
+     <task id="LOCAL-00001" summary="Basic Model (paul cécile, only start and end square) with basic View (8 square) WITHOUT Presenter">
+       <created>1696442080472</created>
+@@ -273,21 +226,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1696442129389</updated>
+     </task>
+-    <task id="LOCAL-00005" summary="Nouveau Model">
+-      <created>1696596622408</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1696596622408</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="Nouveau Model">
+-      <created>1696596636987</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1696596636987</updated>
+-    </task>
+-    <option name="localTasksCounter" value="7" />
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -304,7 +243,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="master" />
++                        <option value="origin/dev_maxime" />
+                       </list>
+                     </value>
+                   </entry>
+@@ -318,8 +257,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Basic Model (paul cécile, only start and end square) with basic View (8 square) WITHOUT Presenter" />
+-    <MESSAGE value="Nouveau Model" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Nouveau Model" />
++    <option name="LAST_COMMIT_MESSAGE" value="Basic Model (paul cécile, only start and end square) with basic View (8 square) WITHOUT Presenter" />
+     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
