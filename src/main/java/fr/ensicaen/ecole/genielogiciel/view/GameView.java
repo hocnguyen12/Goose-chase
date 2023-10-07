@@ -30,18 +30,17 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Stack;
 
 public final class GameView {
     private GamePresenter _gamePresenter;
     private Stage _stage;
-
     @FXML
-    private TilePane container;
-
-    private final int MAX_LENGTH = 8;
-
-    private final int MAX_HEIGHT = 1;
-
+    private TilePane container ;
+    @FXML
+    private GridPane grid_anchor;
+    private static final int MAX_LENGTH = 8;
+    private static final int MAX_HEIGHT = 8;
     private int count = 0;
 
     public static GameView createView() throws IOException {
@@ -55,10 +54,11 @@ public final class GameView {
         stage.setScene(scene);
         view._stage = stage;
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> view.onKeyPressed(event.getCode()));
+
         return view;
     }
 
-    public void setPresenter(GamePresenter gamePresenter) {
+    public void setPresenter( GamePresenter gamePresenter ) {
         _gamePresenter = gamePresenter;
     }
 
@@ -66,96 +66,41 @@ public final class GameView {
         _stage.show();
     }
 
-    private void onKeyPressed(KeyCode code) {
+    private void onKeyPressed( KeyCode code ) {
         if (code == KeyCode.SPACE) {
             _gamePresenter.runGameLoop();
         }
     }
 
-    private static int x = 0;
-    private static int y = 0;
-
-    private ArrayList<StackPane> stack_list;
-    private Circle pawn;
-    private Popup popup_txt;
-    private Popup popup_dice;
 
     public void initialize() {
         // Code pour une grille 8*8
+        GamePresenter presenter = new GamePresenter("test");
+        this.setPresenter(presenter);
+        grid_anchor.setAlignment(Pos.CENTER);
         container.setAlignment(Pos.CENTER);
-        pawn = new Circle(30);
+        Circle pawn = new Circle(30);
         pawn.setFill(Color.GREEN);
-        int direction = 0; // 0 : right, 1 : down, 2 : left, 3 : up
-        int max_length = MAX_LENGTH; // will vary during numbering
-        int max_height = MAX_HEIGHT; // will vary during numbering
-        int min_length = 0; // will vary during numbering
-        int min_height = 0; // will vary during numbering
-        stack_list = new ArrayList<>();
-        for (int i = 0; i < MAX_LENGTH * MAX_HEIGHT; i++) {
-            Rectangle tile = new Rectangle(80, 80);
-            tile.setStroke(Color.BLACK);
-            tile.setFill(Color.WHITE);
-            Text text = new Text(Integer.toString(y * MAX_LENGTH + x));
-            StackPane stack = new StackPane();
-            stack.getChildren().addAll(tile, text);
-            if (i == 0) {
-                stack.getChildren().add(pawn);
-            }
-            if (i == 4) {
-                tile.setStroke(Color.RED);
-            }
-            stack.setAlignment(Pos.CENTER);
-            //TilePane.setColumnIndex(tile,x);
-            //GridPane.setRowIndex(tile,y);
-            //GridPane.setColumnIndex(text,x);
-            //GridPane.setRowIndex(text,y);
-            //GridPane.setHalignment(text,HPos.CENTER);
-            container.getChildren().add(stack);
-            stack_list.add(stack);
-            switch (direction) {
-                case 0:
-                    //System.out.println("max_length" + max_length);
-                    if (x < max_length - 1) {
-                        x++;
-                        //System.out.println("x : "+ x +" y " + y);
-                    } else {
-                        direction = (direction + 1) % 4;
-                        max_length--;
-                        y++;
-                        //System.out.println("x : "+ x +" y " + y);
-                    }
-                    break;
-                case 1:
-                    if (y < max_height - 1) {
-                        y++;
-                    } else {
-                        direction = (direction + 1) % 4;
-                        max_height--;
-                        x--;
-                    }
-                    break;
-                case 2:
-                    if (x > min_length) {
-                        x--;
-                    } else {
-                        direction = (direction + 1) % 4;
-                        min_length++;
-                        y--;
-                    }
-                    break;
-                case 3:
-                    if (y > min_height) {
-                        y--;
-                    } else {
-                        direction = (direction + 1) % 4;
-                        min_height++;
-                        x++;
-                    }
-                    break;
+        StackPane[][] stack_array = new StackPane[MAX_LENGTH][MAX_HEIGHT];
+        int[][] array = SpiralPath.computeSpiralPath(MAX_HEIGHT);
+        for (int i = 0;i < MAX_LENGTH;i++){
+            for (int j = 0;j < MAX_HEIGHT;j++){
+                Rectangle rect = new Rectangle(80,80);
+                rect.setFill(Color.WHITE);
+                rect.setStroke(Color.BLACK);
+                System.out.println("i j :"+i+" "+j);
+                Text text = new Text(Integer.toString(array[i][j]));
+                StackPane stack = new StackPane();
+                stack.getChildren().addAll(rect,text);
+                stack_array[i][j] = stack;
+                stack_array[i][j].setId(Integer.toString(array[i][j]));
+                if (i==0 && j == 0) {
+                    stack_array[i][j].getChildren().add(pawn);
+                }
+                container.getChildren().add(stack_array[i][j]);
+
             }
         }
-
-
         /*StackPane stack1 = new StackPane();
         container.setAlignment(Pos.CENTER);
         Circle pawn1 = new Circle(25);
@@ -171,74 +116,37 @@ public final class GameView {
         Text text2 = new Text("2");
         stack2.getChildren().addAll(rect2,text2);
         container.getChildren().add(stack2);*/
-        Button btn = new Button("Dice Throw");
-        popup_txt = new Popup();
-        Text text = new Text("Victory !");
-        popup_txt.getContent().add(text);
-
+        Button btn = new Button("Lancer");
+        Popup popup = new Popup();
+        Text text = new Text("Victoire !");
+        popup.getContent().add(text);
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                //AJOUT PAUL MVP1
-                _gamePresenter.nextRound();
-            }
-        });
-        container.getChildren().add(btn);
 
-    }
-
-    public void moveForward() {
-        if (count < stack_list.size() - 1) {
-            count++;
-            stack_list.get(count).getChildren().add(pawn);
-        }
+                }
 /*
-        if (count == 4){
-            PauseTransition short_delay = new PauseTransition(Duration.seconds(1));
-            short_delay.setOnFinished(event2->{count++;stack_list.get(count).getChildren().add(pawn);});
-            short_delay.playFromStart();
+                if (count == 4){
 
-        }*/
-        if (count == 7) {
+                    PauseTransition short_delay = new PauseTransition(Duration.seconds(1));
+                    short_delay.setOnFinished(event2->{count++;stack_array[x][y].getChildren().add(pawn);});
+                    short_delay.playFromStart();
 
-            if (!popup_txt.isShowing()) {
-                popup_txt.show(_stage);
-            } else {
-                popup_txt.hide();
+                }
+                if (count == 7){
+
+                    if (!popup.isShowing()){
+                        popup.show(_stage);
+                    }
+                    else {
+                        popup.hide();
+                    }
+                }
             }
-        }
+            */
+        });
+        grid_anchor.getChildren().add(btn);
+
     }
 
-    // peut afficher n'importe quelle value
-    // est utilisée par le presenter pour afficher le dé avec displayValue(_game.getDiceValue());
-    /*
-    public void displayValue(int value) {
-        popup_dice = new Popup();
-        Text text = new Text("You got : " + value);
-        popup_dice.getContent().add(text);
-        if (!popup_dice.isShowing()){
-            popup_dice.show(_stage);
-        }
-        else {
-            popup_dice.hide();
-        }
-
-    }*/
-    public void displayValue(int value) {
-        Text diceText = new Text("You got : " + value);
-
-        StackPane dicePane = new StackPane(diceText);
-        dicePane.setAlignment(Pos.CENTER);
-
-        popup_dice = new Popup();
-        popup_dice.getContent().add(dicePane);
-
-        popup_dice.setX(_stage.getWidth() / 2 - 50);
-        popup_dice.setY(_stage.getHeight() / 2 - 100);
-        popup_dice.show(_stage);
-
-        PauseTransition pauseTransition = new PauseTransition(Duration.seconds(1));
-        pauseTransition.setOnFinished(event -> popup_dice.hide());
-        pauseTransition.play();
-    }
 }
