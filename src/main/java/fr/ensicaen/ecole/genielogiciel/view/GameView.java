@@ -29,8 +29,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.*;
 
 public final class GameView {
     private GamePresenter _gamePresenter;
@@ -39,9 +38,10 @@ public final class GameView {
     private TilePane container ;
     @FXML
     private GridPane grid_anchor;
+
     private static final int MAX_LENGTH = 8;
     private static final int MAX_HEIGHT = 8;
-    private int count = 0;
+    private int index = 0;
 
     public static GameView createView() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -81,7 +81,7 @@ public final class GameView {
         container.setAlignment(Pos.CENTER);
         Circle pawn = new Circle(30);
         pawn.setFill(Color.GREEN);
-        StackPane[][] stack_array = new StackPane[MAX_LENGTH][MAX_HEIGHT];
+        Map<Integer,StackPane> stack_array = new HashMap<>();
         int[][] array = SpiralPath.computeSpiralPath(MAX_HEIGHT);
         for (int i = 0;i < MAX_LENGTH;i++){
             for (int j = 0;j < MAX_HEIGHT;j++){
@@ -92,13 +92,13 @@ public final class GameView {
                 Text text = new Text(Integer.toString(array[i][j]));
                 StackPane stack = new StackPane();
                 stack.getChildren().addAll(rect,text);
-                stack_array[i][j] = stack;
-                stack_array[i][j].setId(Integer.toString(array[i][j]));
                 if (i==0 && j == 0) {
-                    stack_array[i][j].getChildren().add(pawn);
+                    stack.getChildren().add(pawn);
                 }
-                container.getChildren().add(stack_array[i][j]);
+                stack_array.put(array[i][j],stack);
+                //stack_array[i][j].setId(Integer.toString(array[i][j]));
 
+                container.getChildren().add(stack);
             }
         }
         /*StackPane stack1 = new StackPane();
@@ -123,8 +123,18 @@ public final class GameView {
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                if (index == 63){
+                    return;
                 }
+                index++;
+                stack_array.get(index).getChildren().add(pawn);
+                if (index == 63){
+                    if (!popup.isShowing()){
+                        popup.show(_stage);
+                    }
+                }
+
+            }
 /*
                 if (count == 4){
 
@@ -145,7 +155,7 @@ public final class GameView {
             }
             */
         });
-        grid_anchor.getChildren().add(btn);
+        container.getChildren().add(btn);
 
     }
 
