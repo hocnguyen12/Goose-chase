@@ -68,7 +68,7 @@ public final class GameView {
 
     private void onKeyPressed( KeyCode code ) {
         if (code == KeyCode.SPACE) {
-            _gamePresenter.runGameLoop();
+            _gamePresenter.initializeGame();
         }
     }
 

@@ -1,10 +1,5 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
-import javax.swing.*;
-import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.lang.reflect.GenericDeclaration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,23 +58,27 @@ public class Game {
         //Later read JSON config file
 
         //Start, Basic...Basic, End
-        _board[0] = new StartSquare(0);
+        _board[0] = new SquareStart(0);
         for (int i = 0; i < 63; i++){
-            _board[i] = new BasicSquare(i);
+            _board[i] = new SquareBasic(i);
         }
-        _board[63] = new EndSquare(63);
+        _board[63] = new SquareEnd(63);
 
     }
 
     public void executeRound() {
         if (gameIsFinished()) {
-
+            return;
         } else {
-            List<Integer> positionsList= new ArrayList<Integer>();
+            List<Integer> positionsList= new ArrayList<>();
 
             System.out.println("ROUND : " + _round);
             _round++;
             for (AbstractFactoryStudent student : _players) {
+                if (student.nextRoundSkipped())  {
+                    student.set_skipNextRound(false);
+                    continue;
+                }
                 _diceValue1 = rollDice();
                 _diceValue2 = rollDice();
 
@@ -92,7 +91,8 @@ public class Game {
                     diceTotal = (_diceValue1 + _diceValue2) * 2;
                 }
 
-                student.get_student().move(diceTotal);
+                student.move(diceTotal);
+                _board[student.get_squareNumber()].execute(student);
             }
         }
     }
@@ -103,26 +103,10 @@ public class Game {
 
     public boolean gameIsFinished(){
         for (AbstractFactoryStudent student : _players) {
-            if (student.get_student().get_position() == 63) {
+            if (student.get_squareNumber() == 63) {
                 return true;
             }
         }
         return false;
-    }
-
-    public int get_diceValue() {
-        return _diceValue1 /* + _diceValue2*/;
-    }
-
-    public int get_boardLength() {
-        return _boardLength;
-    }
-
-    public int get_playerPosition(){
-        return 0;
-    }
-
-    //tmp
-    public void caseBonus(){
     }
 }
