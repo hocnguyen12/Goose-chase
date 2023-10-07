@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/InvalidPlayersCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_10_2023_19_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_10_2023_19_49__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_09_53__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_09_53__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_09_53__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_05_10_2023_09_53__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_04_10_2023_19_50__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_04_10_2023_19_50__Changes_.xml" afterDir="false" />
+    <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="developing model, main game loop">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/Model/board_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Character.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/fr/ensicaen/ecole/genielogiciel/model/AdditionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/fr/ensicaen/ecole/genielogiciel/model/AdditionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Brilliant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Brilliant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/fr/ensicaen/ecole/genielogiciel/model/GameTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,26 +85,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.40689656",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="fr.ensicaen.ecole.genielogiciel.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.jeu-oie-ensicaen [run]">
+  <component name="RunManager" selected="Gradle.jeu_oie_template [buildDependents]">
     <configuration name="AdditionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -177,6 +175,48 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="jeu_oie_template [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="jeu_oie_template [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="jeu-oie-ensicaen" />
       <method v="2">
@@ -192,6 +232,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.jeu_oie_template [buildDependents]" />
+        <item itemvalue="Gradle.jeu_oie_template [build]" />
         <item itemvalue="Gradle.jeu-oie-ensicaen [run]" />
         <item itemvalue="Gradle.AdditionTest" />
         <item itemvalue="Gradle.AdditionTest.additionnerNombresPositifs" />
@@ -212,6 +254,14 @@
       <workItem from="1696439948621" duration="300000" />
       <workItem from="1696592688197" duration="11063000" />
     </task>
+    <task id="LOCAL-00001" summary="developing model, main game loop">
+      <created>1696708710203</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696708710203</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +277,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="developing model, main game loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="developing model, main game loop" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,5 +1,6 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import java.io.FileReader;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ public class Game {
         if (playersCount < 1 || playersCount > 4) {
             throw new InvalidPlayersCount("Player count must be between 1 and 4");
         }
+        //Later read JSON config file
         _board[0] = new StartSquare(0);
         _board[1] = new BasicSquare(1);
         _board[2] = new BasicSquare(2);
