@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fr.ensicaen.ecole.genielogiciel.model.AdditionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-07T20:29:54" hostname="DESKTOP-5FPHM5D" time="0.016">
+<testsuite name="fr.ensicaen.ecole.genielogiciel.model.AdditionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-07T21:00:16" hostname="DESKTOP-5FPHM5D" time="0.017">
   <properties/>
-  <testcase name="additionnerNombresPositifs()" classname="fr.ensicaen.ecole.genielogiciel.model.AdditionTest" time="0.016"/>
+  <testcase name="additionnerNombresPositifs()" classname="fr.ensicaen.ecole.genielogiciel.model.AdditionTest" time="0.017"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

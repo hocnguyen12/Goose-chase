@@ -28,7 +28,5 @@ public final class LoginMain extends Application {
         view.setPresenter(presenter);
         presenter.setView(view);
         view.show();
-
-        AbstractFactoryStudent eleve= new ConcreteFactoryPrepa();
     }
 }

@@ -2,14 +2,13 @@ package fr.ensicaen.ecole.genielogiciel.model;
 
 public class EndSquare implements Square {
     private int _number;
-    private Character _character;
+    private boolean _gameEnd;
     public EndSquare(int n){
         _number = n;
-        _character = null;
     }
     @Override
-    public void execute(Character c){
-        _character = c;
+    public void execute(Student s){
+        _gameEnd = true;
     }
 
     @Override
@@ -17,7 +16,7 @@ public class EndSquare implements Square {
        return _number;
     }
 
-    public Character get_character() {
-        return _character;
+    public boolean is_gameEnd() {
+        return _gameEnd;
     }
 }

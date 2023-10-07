@@ -21,7 +21,7 @@ public final class GamePresenter {
         _view = view;
     }
 
-    public void runGameLoop() {
+    public void initializeGame() {
         //GAME SETUP
         System.out.println("Et c'est parti...");
         _game = new Game();
@@ -33,11 +33,11 @@ public final class GamePresenter {
         playersTypes.add("Licence");
         playersTypes.add("Prepa");
 
-        // Get player Count
+        // Get player Count from view
         int playerCount = 4;
 
         try {
-            //Initialize game
+            //Initialize game with correct parameters
             _game.start(playerCount, playersTypes);
         } catch (InvalidPlayersCount e) {
             throw new RuntimeException(e);

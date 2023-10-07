@@ -1,7 +1,10 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import javax.swing.*;
 import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.Array;
+import java.lang.reflect.GenericDeclaration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +15,7 @@ public class Game {
     private int _diceValue1;
     private int _diceValue2;
     private int _round;
+    private BoardConfig _config;
 
     public Game() {
         _boardLength = 64;
@@ -22,19 +26,14 @@ public class Game {
     }
 
     public void start(int playersCount, List<String> playerTypes) throws InvalidPlayersCount {
+        //playerTypes = ["Prepa", "Licence", "DUT", "Prepa"]
         if (playersCount < 1 || playersCount > 4) {
             throw new InvalidPlayersCount("Player count must be between 1 and 4");
         }
-        //Later read JSON config file
-        _board[0] = new StartSquare(0);
-        _board[1] = new BasicSquare(1);
-        _board[2] = new BasicSquare(2);
-        _board[3] = new BasicSquare(3);
-        _board[4] = new BasicSquare(4);
-        _board[5] = new BasicSquare(5);
-        _board[6] = new BasicSquare(6);
-        _board[7] = new EndSquare(7);
 
+        configureBoard();
+
+        //Players creation
         for (int i = 0; i < playersCount; i++) {
             switch (playerTypes.get(i)) {
                 case "Prepa":
@@ -50,17 +49,41 @@ public class Game {
         }
     }
 
+    private void configureBoard() {
+        /*
+        try {
+            BoardConfigReader boardConfigReader = new BoardConfigReader();
+            _config = boardConfigReader.readBoardConfig();
+        } catch (IOException e) {
+            e.printStackTrace();
+            // Gérer les erreurs de lecture du fichier JSON ici
+        }
+
+        _board = _config.getSquares();*/
+        //Later read JSON config file
+
+        //Start, Basic...Basic, End
+        _board[0] = new StartSquare(0);
+        for (int i = 0; i < 63; i++){
+            _board[i] = new BasicSquare(i);
+        }
+        _board[63] = new EndSquare(63);
+
+    }
+
     public void executeRound() {
         if (gameIsFinished()) {
 
         } else {
+            List<Integer> positionsList= new ArrayList<Integer>();
+
             System.out.println("ROUND : " + _round);
             _round++;
             for (AbstractFactoryStudent student : _players) {
                 _diceValue1 = rollDice();
                 _diceValue2 = rollDice();
 
-                int diceTotal;
+                int diceTotal = 0;
                 if (student.get_student() instanceof Dilettante) {
                     diceTotal = (_diceValue1 + _diceValue2) / 2;
                 } else if (student.get_student() instanceof Diligent) {
@@ -68,18 +91,10 @@ public class Game {
                 } else if (student.get_student() instanceof Brilliant) {
                     diceTotal = (_diceValue1 + _diceValue2) * 2;
                 }
-/*
-                System.out.println("DE = " + _diceValue1 + "" + _diceValue2);
-                move(_character);
 
-                System.out.println("Je suis sur la case " + _character.getSquareNumber());
-                _board[_character.getSquareNumber()].execute(_character);*/
+                student.get_student().move(diceTotal);
             }
         }
-    }
-
-
-    void move(Character c) {
     }
 
     int rollDice() {
@@ -87,8 +102,10 @@ public class Game {
     }
 
     public boolean gameIsFinished(){
-        if (_board[_boardLength - 1].get_character() != null) {
-            return true;
+        for (AbstractFactoryStudent student : _players) {
+            if (student.get_student().get_position() == 63) {
+                return true;
+            }
         }
         return false;
     }
