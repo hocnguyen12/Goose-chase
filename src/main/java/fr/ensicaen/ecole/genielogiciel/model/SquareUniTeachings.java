@@ -1,21 +1,18 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
-public class SquareClass implements Square{
-    public SquareClass() {
+public class SquareUniTeachings implements Square{
+    public SquareUniTeachings() {
     }
-
     @Override
     public void execute(AbstractFactoryStudent s) {
-        s.increaseSkillLevel(1);
-    }
 
+    }
     @Override
     public String get_squareNameFR() {
-        return "Cours normal";
+        return "Cours de Licence";
     }
-
     @Override
     public String get_squareNameEN() {
-        return "Regular Class";
+        return "Uni Class";
     }
 }

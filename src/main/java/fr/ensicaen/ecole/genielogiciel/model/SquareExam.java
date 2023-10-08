@@ -8,7 +8,8 @@ public class SquareExam implements Square{
     public void execute(AbstractFactoryStudent s) {
         if (s.get_skillLevel() < 8) {
             if (s.get_squareNumber() - (8 - s.get_skillLevel()) < 0) {
-                //nothing, we don't want negative positions
+                //we don't want negative positions, back to start
+                s.set_squareNumber(0);
             } else {
                 s.set_squareNumber(s.get_squareNumber() - (8 - s.get_skillLevel()));
             }
