@@ -21,21 +21,23 @@ public final class LoginMain extends Application {
 
     @Override
     public void start( final Stage primaryStage ) throws Exception {
-
+/*
         LoginView view = LoginView.createView(primaryStage, "LoginDialog.fxml");
         LoginPresenter presenter = new LoginPresenter();
         view.setPresenter(presenter);
         presenter.setView(view);
-        view.show();
+        view.show();*/
 
         //Run example
+
         Game g = new Game();
         List<String> l = new ArrayList<>();
         l.add("Prepa");
         l.add("DUT");
         l.add("Licence");
         l.add("Prepa");
-        g.start(4, l);
+        String path = "fr/ensicaen/ecole/genielogiciel/board_config_1.json";
+        g.start(4, l, path);
 
         List<Integer> positions;
 

@@ -11,7 +11,7 @@ Jeu Oie Ensicaen
 
 **Release Manager :** Paul NGUYEN
 
-**Developpeurs :** Maxime Jingeaux, Ely Seraidarian, Winnie Kamtchueng-Fodjo-Kouam, Cécile Lu, Paul Nguyen
+**Developpeurs :** Maxime Jingeaux, Ely Seraidarian, Winnie Kamtchueng-Fodjo-Kouam, Cécile Lu, Paul Nguyen, Kevin Herman
 
 ## Description du projet
 

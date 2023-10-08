@@ -41,7 +41,8 @@ public final class GamePresenter {
 
         try {
             //Initialize game with correct parameters
-            _game.start(playerCount, playersTypes);
+            String path = "fr/ensicaen/ecole/genielogiciel/board_config_1.json";
+            _game.start(playerCount, playersTypes, path);
         } catch (InvalidPlayersCount e) {
             throw new RuntimeException(e);
         }

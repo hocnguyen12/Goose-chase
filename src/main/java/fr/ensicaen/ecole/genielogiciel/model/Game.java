@@ -19,12 +19,12 @@ public class Game {
         _round = 1;
     }
 
-    public void start(int playersCount, List<String> playerTypes) throws InvalidPlayersCount {
+    public void start(int playersCount, List<String> playerTypes, String configPath) throws InvalidPlayersCount {
         //playerTypes = ["Prepa", "Licence", "DUT", "Prepa"]
         if (playersCount < 1 || playersCount > 4) {
             throw new InvalidPlayersCount("Player count must be between 1 and 4");
         }
-        configureBoard();
+        configureBoard(configPath);
         //Players creation
         for (int i = 0; i < playersCount; i++) {
             System.out.println("Creation d'un joueur");
@@ -48,23 +48,23 @@ public class Game {
         }
     }
 
-    public void configureBoard() {
+    public void configureBoard(String path) {
         System.out.println("Configuring board from json file...");
         BoardConfigReader boardConfigReader = new BoardConfigReader();
 
         try {
-            _config = boardConfigReader.readBoardConfig();
+            _config = boardConfigReader.readBoardConfig(path);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
         // Accédez aux données de configuration
-        _boardLength = _config.getSize();
+        //_boardLength = _config.getSize();
         _board = _config.getSquares();
 
         //@TEST
-        System.out.println("Size : ");
-        _config.displaySize();
+        //System.out.println("Size : ");
+        //_config.displaySize();
         System.out.println("Board : ");
         _config.displayboard();
     }

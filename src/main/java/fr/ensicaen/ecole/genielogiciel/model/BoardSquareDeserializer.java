@@ -13,20 +13,33 @@ public class BoardSquareDeserializer extends JsonDeserializer<Square>{
         JsonNode node = jsonParser.getCodec().readTree(jsonParser);
         String type = node.get("type").asText();
 
-        // Vous devez implémenter la logique pour créer une instance de Square
-        // en fonction du type spécifié dans le fichier JSON
-        if ("SquareStart".equals(type)) {
-            return new SquareStart();
-        } else if ("SquareBasic".equals(type)) {
+        if ("SquareBasic".equals(type)) {
             return new SquareBasic();
-        } else if ("SquareExam".equals(type)) {
-            return new SquareExam();
-        } else if ("SquareParty".equals(type)) {
-            return new SquareParty();
+        } else if ("SquareClass".equals(type)) {
+            return new SquareClass();
+        } else if ("SquareDayAfterWEI".equals(type)) {
+            return new SquareDayAfterWEI();
+        } else if ("SquareDropout".equals(type)) {
+            return new SquareDropout();
+        } else if ("SquareDUTTeachings".equals(type)) {
+            return new SquareDUTTeachings();
         } else if ("SquareEnd".equals(type)) {
             return new SquareEnd();
+        } else if ("SquareExam".equals(type)) {
+            return new SquareExam();
+        } else if ("SquareInternshipAbroad".equals(type)) {
+            return new SquareEnd();
+        } else if ("SquareParty".equals(type)) {
+            return new SquareParty();
+        } else if ("SquarePrepaTeachings".equals(type)) {
+            return new SquarePrepaTeachings();
+        } else if ("SquareStart".equals(type)) {
+            return new SquareStart();
+        } else if ("SquareToeicFail".equals(type)) {
+            return new SquareToeicFail();
+        }else if ("SquareUniTeachings".equals(type)) {
+                return new SquareUniTeachings();
         } else {
-            // Gérez les types de cases inconnus ou non pris en charge
             throw new IllegalArgumentException("Type de case inconnu : " + type);
         }
     }
