@@ -10,6 +10,7 @@ public abstract class AbstractFactoryStudent {
         //If new position exceeds 63, the player goes backw²
         if (_squareNumber + n > 63) {
             _squareNumber = 63 - (_squareNumber + n - 63);
+            return;
         }
         _squareNumber += n;
     }

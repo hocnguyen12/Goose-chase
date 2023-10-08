@@ -5,10 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="added many squares and round skips.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_21_09__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_23_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_10_2023_23_41__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_07_10_2023_21_10__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_07_10_2023_21_10__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/LoginMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/LoginMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Brilliant.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Brilliant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryPrepa.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryPrepa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Dilettante.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Dilettante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Diligent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Diligent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareBasic.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareBasic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareDropout.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareDropout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareEnd.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareEnd.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareExam.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareExam.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareInternshipAbroad.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareInternshipAbroad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareParty.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareParty.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareStart.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareStart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoginMain.class.uniqueId2" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoginMain.class.uniqueId2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoginPresenter.class.uniqueId0" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/LoginPresenter.class.uniqueId0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/LoginMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryDUT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryLicence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryPrepa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/ConcreteFactoryPrepa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +331,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/architecture" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>

@@ -9,7 +9,7 @@ public class Game {
     private final int _boardLength;
     private int _diceValue1;
     private int _diceValue2;
-    private int _round;
+    public int _round;
     private BoardConfig _config;
 
     public Game() {
@@ -30,21 +30,28 @@ public class Game {
 
         //Players creation
         for (int i = 0; i < playersCount; i++) {
+            System.out.println("Creation d'un joueur");
             switch (playerTypes.get(i)) {
                 case "Prepa":
+                    System.out.println("new Prepa");
                     AbstractFactoryStudent sPrepa = new ConcreteFactoryPrepa();
                     _players.add(sPrepa);
+                    break;
                 case "Licence":
+                    System.out.println("new Licence");
                     AbstractFactoryStudent sLicence = new ConcreteFactoryLicence();
                     _players.add(sLicence);
+                    break;
                 case "DUT":
+                    System.out.println("new DUT");
                     AbstractFactoryStudent sDUT = new ConcreteFactoryDUT();
                     _players.add(sDUT);
+                    break;
             }
         }
     }
 
-    private void configureBoard() {
+    public void configureBoard() {
         /*
         try {
             BoardConfigReader boardConfigReader = new BoardConfigReader();
@@ -72,8 +79,7 @@ public class Game {
         } else {
             List<Integer> positionsList= new ArrayList<>();
 
-            System.out.println("ROUND : " + _round);
-            _round++;
+
             for (AbstractFactoryStudent student : _players) {
                 if (student.nextRoundSkipped())  {
                     student.set_skipNextRound(false);
@@ -90,12 +96,15 @@ public class Game {
                 } else if (student.get_student() instanceof Brilliant) {
                     diceTotal = (_diceValue1 + _diceValue2) * 2;
                 }
+                System.out.println("dice : " + diceTotal);
 
                 student.move(diceTotal);
                 _board[student.get_squareNumber()].execute(student);
+                System.out.println("Square : " + getSquareNameEN(student.get_squareNumber()));
 
                 positionsList.add(student.get_squareNumber());
             }
+            _round++;
             return positionsList;
         }
     }
