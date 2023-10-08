@@ -1,32 +1,28 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.core.JsonProcessingException;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.List;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 public class BoardConfigReader {
-    public BoardConfig readBoardConfig() {
-        try {
-            // Create an ObjectMapper (from Jackson)
-            ObjectMapper objectMapper = new ObjectMapper();
+    public BoardConfig readBoardConfig() throws IOException {
+        // Récupérez le chemin du fichier JSON depuis les ressources
+        ClassLoader classLoader = getClass().getClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream("fr/ensicaen/ecole/genielogiciel/board_config.json");
 
-            // Read the JSON file and convert it into an instance of BoardConfiguration
-            BoardConfig boardConfig = objectMapper.readValue(
-                    new File("board_config.json"), // Path to your JSON file
-                    BoardConfig.class
-            );
+        // Copiez le contenu du fichier JSON dans un fichier temporaire
+        Path tempFile = Files.createTempFile("board_config", ".json");
+        Files.copy(inputStream, tempFile, StandardCopyOption.REPLACE_EXISTING);
 
-            // Access the board configuration data
-            int size = boardConfig.getSize();
-            //List<String> squares = boardConfig.getSquares();
+        // Créez un objet ObjectMapper (de Jackson)
+        ObjectMapper objectMapper = new ObjectMapper();
 
-            // Do something with this data...
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        // Lisez le fichier JSON temporaire et convertissez-le en instance de BoardConfiguration
+        return objectMapper.readValue(tempFile.toFile(), BoardConfig.class);
     }
 }
+

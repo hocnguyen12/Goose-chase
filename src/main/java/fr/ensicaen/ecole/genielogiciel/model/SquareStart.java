@@ -1,10 +1,9 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 public class SquareStart implements Square {
-    private int _number;
-    public SquareStart(int n){
-          _number = n;
+    public SquareStart() {
     }
+
     @Override
     public void execute(AbstractFactoryStudent s){
     }

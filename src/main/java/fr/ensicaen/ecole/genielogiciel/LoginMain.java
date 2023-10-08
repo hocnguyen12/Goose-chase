@@ -21,13 +21,14 @@ public final class LoginMain extends Application {
 
     @Override
     public void start( final Stage primaryStage ) throws Exception {
-/*
+
         LoginView view = LoginView.createView(primaryStage, "LoginDialog.fxml");
         LoginPresenter presenter = new LoginPresenter();
         view.setPresenter(presenter);
         presenter.setView(view);
-        view.show();*/
+        view.show();
 
+        //Run example
         Game g = new Game();
         List<String> l = new ArrayList<>();
         l.add("Prepa");
@@ -35,15 +36,14 @@ public final class LoginMain extends Application {
         l.add("Licence");
         l.add("Prepa");
         g.start(4, l);
-        g.configureBoard();
 
-        List<Integer> positions = new ArrayList<>();
+        List<Integer> positions;
 
-        System.out.println("ROUND : " + g._round);
+        System.out.println("ROUND : " + g.get_round());
         positions = g.executeRound();
         System.out.println(positions);
         while (positions != null) {
-            System.out.println("ROUND : " + g._round);
+            System.out.println("ROUND : " + g.get_round());
             positions = g.executeRound();
             System.out.println(positions);
         }

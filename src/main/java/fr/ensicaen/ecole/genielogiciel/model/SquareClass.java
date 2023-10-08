@@ -1,10 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 public class SquareClass implements Square{
-    private int _number;
-
-    public SquareClass(int _number) {
-        this._number = _number;
+    public SquareClass() {
     }
 
     @Override

@@ -1,0 +1,89 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]" date="1696763647464" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 08/10/2023 13:14 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareExam.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareExam.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/SquareExam.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Brilliant.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Brilliant.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/Brilliant.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/GamePresenter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Dilettante.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Dilettante.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/Dilettante.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareBasic.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareBasic.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/SquareBasic.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareEnd.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareEnd.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/SquareEnd.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Square.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Square.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/Square.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareInternshipAbroad.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareInternshipAbroad.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/SquareInternshipAbroad.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareParty.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareParty.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/SquareParty.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/AbstractFactoryStudent.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Student.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Student.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/Student.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareDropout.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareDropout.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/SquareDropout.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Diligent.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Diligent.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/Diligent.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareStart.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareStart.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/SquareStart.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="AFTER_PATH" value="build/tmp/compileJava/previous-compilation-data.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/previous-compilation-data.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/LoginMain.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/LoginMain.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/LoginMain.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Game.class" />
+    <option name="AFTER_PATH" value="build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/Game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_10_2023_13_14_[Changes]/Game.class" />
+  </binary>
+</changelist>

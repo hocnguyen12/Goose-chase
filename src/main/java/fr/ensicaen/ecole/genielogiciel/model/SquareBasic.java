@@ -1,10 +1,10 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 public class SquareBasic implements Square{
-    private final int _number;
-    public SquareBasic(int n){
-        _number = n;
+
+    public SquareBasic() {
     }
+
     @Override
     public void execute(AbstractFactoryStudent s) {
 

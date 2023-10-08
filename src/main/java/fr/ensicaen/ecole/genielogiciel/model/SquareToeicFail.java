@@ -1,10 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 public class SquareToeicFail implements Square{
-    private int _number;
-
-    public SquareToeicFail(int _number) {
-        this._number = _number;
+    public SquareToeicFail() {
     }
 
     @Override

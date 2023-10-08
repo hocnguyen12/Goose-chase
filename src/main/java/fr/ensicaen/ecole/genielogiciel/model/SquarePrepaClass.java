@@ -1,12 +1,8 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 public class SquarePrepaClass implements Square{
-    private int _number;
-
-    public SquarePrepaClass(int _number) {
-        this._number = _number;
+    public SquarePrepaClass() {
     }
-
     @Override
     public void execute(AbstractFactoryStudent s) {
         s.increaseSkillLevel(1);

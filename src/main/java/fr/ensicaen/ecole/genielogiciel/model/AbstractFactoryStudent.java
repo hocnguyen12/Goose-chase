@@ -7,7 +7,7 @@ public abstract class AbstractFactoryStudent {
     private int _squareNumber = 0;
 
     public void move(int n){
-        //If new position exceeds 63, the player goes backw²
+        //If new position exceeds 63, the player goes back
         if (_squareNumber + n > 63) {
             _squareNumber = 63 - (_squareNumber + n - 63);
             return;

@@ -1,10 +1,9 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 public class SquareDUTClass implements Square{
-    private int _number;
-    public SquareDUTClass(int _number) {
-        this._number = _number;
+    public SquareDUTClass() {
     }
+
     @Override
     public void execute(AbstractFactoryStudent s) {
         s.increaseSkillLevel(1);

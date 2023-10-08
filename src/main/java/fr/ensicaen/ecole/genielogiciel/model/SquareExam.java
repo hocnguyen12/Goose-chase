@@ -1,18 +1,17 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 public class SquareExam implements Square{
-    private int _number;
-
-    public SquareExam(int _number) {
-        this._number = _number;
+    public SquareExam() {
     }
 
     @Override
     public void execute(AbstractFactoryStudent s) {
-        //student s = s.get_student()
-        int skillLevel = s.get_skillLevel();
-        if (skillLevel < 8) {
-            s.set_squareNumber(s.get_skillLevel() - (8 - skillLevel));
+        if (s.get_skillLevel() < 8) {
+            if (s.get_squareNumber() - (8 - s.get_skillLevel()) < 0) {
+                //nothing, we don't want negative positions
+            } else {
+                s.set_squareNumber(s.get_squareNumber() - (8 - s.get_skillLevel()));
+            }
         }
     }
 

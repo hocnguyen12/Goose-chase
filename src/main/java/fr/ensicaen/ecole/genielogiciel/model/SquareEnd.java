@@ -1,13 +1,9 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class SquareEnd implements Square {
-    private final int _number;
-    public SquareEnd(int n){
-        _number = n;
+    public SquareEnd() {
     }
+
     @Override
     public void execute(AbstractFactoryStudent s){
     }

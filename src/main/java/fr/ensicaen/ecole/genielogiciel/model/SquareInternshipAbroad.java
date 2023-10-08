@@ -1,11 +1,9 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 public class SquareInternshipAbroad implements Square{
-    private int _number;
-
-    public SquareInternshipAbroad(int _number) {
-        this._number = _number;
+    public SquareInternshipAbroad() {
     }
+
     @Override
     public void execute(AbstractFactoryStudent s) {
         s.increaseSkillLevel(2);
