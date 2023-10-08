@@ -61,7 +61,7 @@ todo :
 
 - [x] Pion se déplacant en spirale
 - [x] Grille de 64 cases
-- [ ] Modifier écran de login :
+- [ ] Modifier écran de login
 - [ ] demander la langue (fr, en)
 - [ ] prendre en compte le nombre de joueur
 - [ ] pour chaque joueur qu'on veut créer, demander le nom et hard skill (prepa, DUT, licence)
@@ -74,6 +74,11 @@ todo :
 - Zone de statistiques : fonction qui affiche nom, niveau de competence , et case actuelle
 - afficher le nom du joueur qui doit lancer les dés et lui demander d'appuyer sur le bouton
 - zone qui affiche la valeurs des dés
+
+## PRESENTER
+todo :
+
+*necessite les fonctions de VIEW.*
 
 ## MODEL 
 todo :
