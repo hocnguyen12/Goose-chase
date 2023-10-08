@@ -21,6 +21,8 @@ Modèle-Vue-Présentation.
 
 Le projet est géré par le moteur de production 'gradle'.
 
+La configuration se fait à partir d'un fichier JSON présent à l'emplacement src/resources/fr.ensicaen.ecole.genielogiciel.
+
 **Version actuelle :** 
 - Grille de 64 case sur laquelle se déplace un personnage en spirale
 - 4 joueurs max
