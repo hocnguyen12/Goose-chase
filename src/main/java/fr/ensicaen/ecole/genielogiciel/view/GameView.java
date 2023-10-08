@@ -34,6 +34,8 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.*;
 
+import static java.util.Objects.isNull;
+
 public final class GameView {
     private GamePresenter _gamePresenter;
     private Stage _stage;
@@ -48,7 +50,12 @@ public final class GameView {
 
     private static final int MAX_LENGTH = 8;
     private static final int MAX_HEIGHT = 8;
-    private int index = 0;
+
+    private int index1 = 0;
+
+    private int index2 = 0;
+
+    private boolean isPlayer1 = true;
 
     public static GameView createView(String nickName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -61,6 +68,7 @@ public final class GameView {
         stage.setScene(scene);
         view._stage = stage;
         Text player_name = new Text(nickName);
+        view.nickName1 = nickName;
         view.container.getChildren().add(player_name);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> view.onKeyPressed(event.getCode()));
         return view;
@@ -77,8 +85,10 @@ public final class GameView {
         stage.setScene(scene);
         view._stage = stage;
         Text player_name1 = new Text(nickName1);
+        view.nickName1 = nickName1;
         view.container.getChildren().add(player_name1);
         Text player_name2 = new Text(nickName2);
+        view.nickName2 = nickName2;
         view.container.getChildren().add(player_name2);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> view.onKeyPressed(event.getCode()));
         return view;
@@ -86,9 +96,6 @@ public final class GameView {
     public void setPresenter( GamePresenter gamePresenter ) {
         _gamePresenter = gamePresenter;
     }
-
-    public void setNickName1(String nickName){nickName1 = nickName;}
-    public void setNickName2(String nickName){nickName2 = nickName;}
 
     public void show() {
         _stage.show();
@@ -106,8 +113,10 @@ public final class GameView {
         //System.out.println(_gamePresenter);
         grid_anchor.setAlignment(Pos.CENTER);
         container.setAlignment(Pos.CENTER);
-        Circle pawn = new Circle(30);
-        pawn.setFill(Color.GREEN);
+        Circle pawn1 = new Circle(30);
+        pawn1.setFill(Color.GREEN);
+        Circle pawn2 = new Circle(30);
+        pawn2.setFill(Color.RED);
         Map<Integer,StackPane> stack_array = new HashMap<>();
         int[][] array = SpiralPath.computeSpiralPath(MAX_HEIGHT);
         for (int i = 0;i < MAX_LENGTH;i++){
@@ -120,7 +129,10 @@ public final class GameView {
                 StackPane stack = new StackPane();
                 stack.getChildren().addAll(rect,text);
                 if (i==0 && j == 0) {
-                    stack.getChildren().add(pawn);
+                    stack.getChildren().add(pawn1);
+                    if (!isNull(nickName2)){
+                        stack.getChildren().add(pawn2);
+                    }
                 }
                 stack_array.put(array[i][j],stack);
                 //stack_array[i][j].setId(Integer.toString(array[i][j]));
@@ -128,29 +140,71 @@ public final class GameView {
                 container.getChildren().add(stack);
             }
         }
-        Button btn = new Button("Lancer");
+        Button btn_singlePlayer = new Button("Lancer");
         Popup popup = new Popup();
         Text text = new Text("Victoire !");
 
         text.setFont(new Font("Arial",20));
         popup.getContent().add(text);
-        btn.setOnAction(new EventHandler<ActionEvent>() {
+        btn_singlePlayer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (index == 63){
+                if (index1 == 63){
                     return;
                 }
-                index++;
-                stack_array.get(index).getChildren().add(pawn);
-                if (index == 63){
+                index1++;
+                stack_array.get(index1).getChildren().add(pawn1);
+                if (index1 == 63){
                     if (!popup.isShowing()){
                         popup.show(_stage);
                     }
                 }
+            }
+
+        });
+        Button btn_multiPlayer = new Button("Lancer");
+        btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                if (isPlayer1){
+                    if (index1 == 63){
+                        return;
+                    }
+                    index1++;
+                    stack_array.get(index1).getChildren().add(pawn1);
+                    if (index1 == 63){
+                        if (!popup.isShowing()){
+                            popup.show(_stage);
+                        }
+                    }
+                    isPlayer1 = false;
+                    return;
+                }
+                else {
+                    if (index2 == 63){
+                        return;
+                    }
+                    index2++;
+                    stack_array.get(index2).getChildren().add(pawn2);
+                    if (index2 == 63){
+                        if (!popup.isShowing()){
+                            popup.show(_stage);
+                        }
+                    }
+                    isPlayer1 = true;
+                    return;
+                }
+
 
             }
+
         });
-        container.getChildren().add(btn);
+        System.out.println(nickName2); // PB : nickName2  n'est pas rempli
+        if (isNull(nickName2)){
+            container.getChildren().add(btn_singlePlayer);
+        }
+        else {
+            container.getChildren().add(btn_multiPlayer);
+        }
     }
 
 }
