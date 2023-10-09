@@ -97,7 +97,7 @@ public final class GameView {
         _gamePresenter = gamePresenter;
         this.nickName1 = _gamePresenter.getNickname1();
         this.nickName2 = _gamePresenter.getNickname2();
-        Button btn_restart = new Button("Recommencer");
+        Button btn_restart = new Button(LoginMain.getMessageBundle().getString("restart.button.text"));
         btn_restart.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -155,7 +155,7 @@ public final class GameView {
 
         });
         popup.getContent().add(text);
-        Button btn_multiPlayer = new Button("Lancer");
+        Button btn_multiPlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 if (isPlayer1){
