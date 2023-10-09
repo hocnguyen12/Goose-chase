@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareDUTTeachings implements Square{
     public SquareDUTTeachings() {
     }
@@ -14,11 +16,9 @@ public class SquareDUTTeachings implements Square{
         }
     }
     @Override
-    public String get_squareNameFR() {
-        return "Cours de DUT";
+    public String get_squareName() {
+
+        return LoginMain.getMessageBundle().getString("squarename.dut");
     }
-    @Override
-    public String get_squareNameEN() {
-        return "DUT Class";
-    }
+
 }

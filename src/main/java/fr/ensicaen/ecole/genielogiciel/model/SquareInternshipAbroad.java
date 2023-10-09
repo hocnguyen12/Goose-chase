@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareInternshipAbroad implements Square{
     public SquareInternshipAbroad() {
     }
@@ -10,12 +12,8 @@ public class SquareInternshipAbroad implements Square{
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Stage à l'étranger";
+    public String get_squareName() {
+        return LoginMain.getMessageBundle().getString("squarename.abroad");
     }
 
-    @Override
-    public String get_squareNameEN() {
-        return "Internship Abroad";
-    }
 }

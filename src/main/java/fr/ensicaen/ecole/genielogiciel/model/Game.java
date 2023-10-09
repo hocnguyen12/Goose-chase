@@ -95,7 +95,7 @@ public class Game {
 
                 student.move(diceTotal);
                 _board.get(student.get_squareNumber()).execute(student);
-                System.out.println("Square : " + getSquareNameEN(student.get_squareNumber()));
+                System.out.println("Square : " + getSquareName(student.get_squareNumber()));
 
                 positionsList.add(student.get_squareNumber());
             }
@@ -117,11 +117,8 @@ public class Game {
         return false;
     }
 
-    public String getSquareNameEN(int n) {
-        return _board.get(n).get_squareNameEN();
-    }
-    public String getSquareNameFR(int n) {
-        return _board.get(n).get_squareNameFR();
+    public String getSquareName(int n) {
+        return _board.get(n).get_squareName();
     }
 
     public int get_round() {

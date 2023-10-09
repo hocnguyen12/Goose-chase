@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareEnd implements Square {
     public SquareEnd() {
     }
@@ -9,13 +11,9 @@ public class SquareEnd implements Square {
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Fin";
-    }
+    public String get_squareName() {
 
-    @Override
-    public String get_squareNameEN() {
-        return "End";
+        return LoginMain.getMessageBundle().getString("squarename.end");
     }
 
 }

@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareStart implements Square {
     public SquareStart() {
     }
@@ -9,13 +11,9 @@ public class SquareStart implements Square {
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Départ";
+    public String get_squareName() {
+        return LoginMain.getMessageBundle().getString("squarename.start");
     }
 
-    @Override
-    public String get_squareNameEN() {
-        return "Start";
-    }
 
 }

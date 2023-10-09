@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareDropout implements Square{
     public SquareDropout() {
     }
@@ -10,12 +12,9 @@ public class SquareDropout implements Square{
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Arret des études";
+    public String get_squareName() {
+
+        return LoginMain.getMessageBundle().getString("squarename.dropout");
     }
 
-    @Override
-    public String get_squareNameEN() {
-        return "College Dropout";
-    }
 }

@@ -1,6 +1,8 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
-public class SquareClass implements Square{
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
+public class SquareClass implements Square {
     public SquareClass() {
     }
 
@@ -10,12 +12,8 @@ public class SquareClass implements Square{
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Cours normal";
-    }
-
-    @Override
-    public String get_squareNameEN() {
-        return "Regular Class";
+    public String get_squareName() {
+        return LoginMain.getMessageBundle().getString("squarename.class");
     }
 }
+

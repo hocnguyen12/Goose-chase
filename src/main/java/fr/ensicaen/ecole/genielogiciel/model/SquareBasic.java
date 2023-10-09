@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareBasic implements Square{
 
     public SquareBasic() {
@@ -11,12 +13,7 @@ public class SquareBasic implements Square{
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Vide";
-    }
-
-    @Override
-    public String get_squareNameEN() {
-        return "Empty";
+    public String get_squareName() {
+        return LoginMain.getMessageBundle().getString("squarename.state");
     }
 }
