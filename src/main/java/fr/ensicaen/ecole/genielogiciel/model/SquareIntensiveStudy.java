@@ -1,21 +1,25 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
-public class SquareDayAfterWEI implements Square{
-    public SquareDayAfterWEI() {
+public class SquareIntensiveStudy implements Square{
+
+    public SquareIntensiveStudy() {
+
     }
 
     @Override
     public void execute(AbstractFactoryStudent s) {
-        s.set_skipNextRoundWEI(true);
+        s.increaseSkillLevel(1);
+        s.set_squareNumber(12);
     }
 
     @Override
     public String get_squareNameFR() {
-        return "Landemain de WEI";
+        return "Revisions Intensives";
     }
 
     @Override
     public String get_squareNameEN() {
-        return "Day after WEI";
+        return "Intensive Studying";
     }
 }
+
