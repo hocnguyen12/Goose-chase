@@ -1,5 +1,6 @@
 package fr.ensicaen.ecole.genielogiciel.view;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
 import fr.ensicaen.ecole.genielogiciel.model.Model;
 import fr.ensicaen.ecole.genielogiciel.presenter.GamePresenter;
 
@@ -116,9 +117,9 @@ public final class GameView {
         Text text2 = new Text("2");
         stack2.getChildren().addAll(rect2,text2);
         container.getChildren().add(stack2);*/
-        Button btn = new Button("Lancer");
+        Button btn = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         Popup popup = new Popup();
-        Text text = new Text("Victoire !");
+        Text text = new Text(LoginMain.getMessageBundle().getString("victory.text"));
         popup.getContent().add(text);
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
