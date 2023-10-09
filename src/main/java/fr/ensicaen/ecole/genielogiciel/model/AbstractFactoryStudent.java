@@ -2,7 +2,10 @@ package fr.ensicaen.ecole.genielogiciel.model;
 
 public abstract class AbstractFactoryStudent {
     private Student _student;
-    private boolean _skipNextRound;
+    private boolean _skipNextRoundWEI = false;
+    private boolean _InformaticsProblem = false;
+
+    private boolean _BDE = false;
     private int _skillLevel = 0;
     private int _squareNumber = 0;
 
@@ -13,6 +16,22 @@ public abstract class AbstractFactoryStudent {
             return;
         }
         _squareNumber += n;
+    }
+
+    public boolean has_InformaticsProblem() {
+        return _InformaticsProblem;
+    }
+
+    public boolean is_BDE() {
+        return _BDE;
+    }
+
+    public void set_BDE(boolean _BDE) {
+        this._BDE = _BDE;
+    }
+
+    public void set_InformaticsProblem(boolean _InformaticsProblem) {
+        this._InformaticsProblem = _InformaticsProblem;
     }
 
     public int get_squareNumber() {
@@ -27,11 +46,11 @@ public abstract class AbstractFactoryStudent {
     public void increaseSkillLevel(int value) {
         this._skillLevel += value;
     }
-    public void set_skipNextRound(boolean b) {
-        _skipNextRound = b;
+    public void set_skipNextRoundWEI(boolean b) {
+        _skipNextRoundWEI = b;
     }
     public boolean nextRoundSkipped() {
-        return _skipNextRound;
+        return _skipNextRoundWEI;
     }
     public  abstract Dilettante createDilettante();
     public abstract Diligent createDiligent();

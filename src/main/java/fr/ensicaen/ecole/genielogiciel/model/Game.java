@@ -77,11 +77,29 @@ public class Game {
 
             for (AbstractFactoryStudent student : _players) {
                 if (student.nextRoundSkipped())  {
-                    student.set_skipNextRound(false);
+                    student.set_skipNextRoundWEI(false);
                     continue;
                 }
+                if(student.is_BDE()){
+                    continue;
+                }
+                if(student.has_InformaticsProblem()){
+                    continue;
+                }
+
                 _diceValue1 = rollDice();
                 _diceValue2 = rollDice();
+
+                if(_round == 1){
+                    if(_diceValue1 == 6 && _diceValue2 == 3 || _diceValue1 == 3 && _diceValue2 == 6){
+                        student.move(26);
+                    }
+                    if(_diceValue1 == 5 && _diceValue2 == 4 || _diceValue1 == 4 && _diceValue2 == 5){
+                        student.move(53);
+                    }
+                    _board.get(student.get_squareNumber()).execute(student);
+                    continue;
+                }
 
                 int diceTotal = 0;
                 if (student.get_student() instanceof Dilettante) {

@@ -8,7 +8,7 @@ public class SquareDayAfterWEI implements Square{
 
     @Override
     public void execute(AbstractFactoryStudent s) {
-        s.set_skipNextRound(true);
+        s.set_skipNextRoundWEI(true);
     }
 
     @Override
