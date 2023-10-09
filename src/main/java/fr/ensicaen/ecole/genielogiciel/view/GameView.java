@@ -138,6 +138,7 @@ public final class GameView {
         Popup popup = new Popup();
         Text text = new Text(LoginMain.getMessageBundle().getString("victory.text"));
         text.setFont(new Font("Arial",20));
+        popup.getContent().add(text);
         btn_singlePlayer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -154,7 +155,6 @@ public final class GameView {
             }
 
         });
-        popup.getContent().add(text);
         Button btn_multiPlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
@@ -188,17 +188,29 @@ public final class GameView {
                 }
             }
         });
-        Text player_name1 = new Text(this.nickName1);
-        container.getChildren().add(player_name1);
+        Text player_name1 = new Text(LoginMain.getMessageBundle().getString("player1.text") + this.nickName1);
+        grid_anchor.getChildren().add(player_name1);
+        grid_anchor.setRowIndex(player_name1,0);
+        grid_anchor.setColumnIndex(player_name1,9);
+
         if (!isNull(this.nickName2)){
-            Text player_name2 = new Text(this.nickName2);
-            container.getChildren().add(player_name2);
+            Text player_name2 = new Text(LoginMain.getMessageBundle().getString("player2.text") + this.nickName2);
+            grid_anchor.getChildren().add(player_name2);
+            grid_anchor.setRowIndex(player_name2,1);
+            grid_anchor.setColumnIndex(player_name2,9);
+
         }
         if (isNull(nickName2)){
-            _lancer = btn_singlePlayer;
+            grid_anchor.getChildren().add(btn_singlePlayer);
+            grid_anchor.setRowIndex(btn_singlePlayer,8);
+            grid_anchor.setColumnIndex(btn_singlePlayer,2);
+
         }
         else {
-            _lancer = btn_multiPlayer;
+            grid_anchor.getChildren().add(btn_multiPlayer);
+            grid_anchor.setRowIndex(btn_multiPlayer,8);
+            grid_anchor.setColumnIndex(btn_multiPlayer,1);
+
         }
     }
 
