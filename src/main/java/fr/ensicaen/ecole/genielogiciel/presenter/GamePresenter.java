@@ -71,7 +71,7 @@ public final class GamePresenter {
             //display pawns at their new square
 
             if (_lang.equals("en")) {
-                _game.getSquareNameEN(i);
+                _game.getSquareName(i);
             }
         }
         /*

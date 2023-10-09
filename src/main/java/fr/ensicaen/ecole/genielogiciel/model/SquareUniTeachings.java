@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareUniTeachings implements Square{
     public SquareUniTeachings() {
     }
@@ -8,11 +10,9 @@ public class SquareUniTeachings implements Square{
 
     }
     @Override
-    public String get_squareNameFR() {
-        return "Cours de Licence";
+    public String get_squareName() {
+
+        return LoginMain.getMessageBundle().getString("squarename.uni");
     }
-    @Override
-    public String get_squareNameEN() {
-        return "Uni Class";
-    }
+
 }

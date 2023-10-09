@@ -21,12 +21,12 @@ public final class LoginMain extends Application {
 
     @Override
     public void start( final Stage primaryStage ) throws Exception {
-/*
+
         LoginView view = LoginView.createView(primaryStage, "LoginDialog.fxml");
         LoginPresenter presenter = new LoginPresenter();
         view.setPresenter(presenter);
         presenter.setView(view);
-        view.show();*/
+        view.show();
 
         //Run example
 

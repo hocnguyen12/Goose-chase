@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareDayAfterWEI implements Square{
     public SquareDayAfterWEI() {
     }
@@ -10,12 +12,9 @@ public class SquareDayAfterWEI implements Square{
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Landemain de WEI";
+    public String get_squareName() {
+
+        return LoginMain.getMessageBundle().getString("squarename.wei");
     }
 
-    @Override
-    public String get_squareNameEN() {
-        return "Day after WEI";
-    }
 }

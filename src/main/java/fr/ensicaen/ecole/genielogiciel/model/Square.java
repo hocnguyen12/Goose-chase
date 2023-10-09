@@ -6,9 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 public interface Square {
     void execute(AbstractFactoryStudent s);
 
-    String get_squareNameFR();
-
-    String get_squareNameEN();
+    String get_squareName();
 }
 
 

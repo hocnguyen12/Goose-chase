@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareToeicFail implements Square{
     public SquareToeicFail() {
     }
@@ -10,12 +12,9 @@ public class SquareToeicFail implements Square{
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Echec du Toeic";
+    public String get_squareName() {
+
+        return LoginMain.getMessageBundle().getString("squarename.toeic");
     }
 
-    @Override
-    public String get_squareNameEN() {
-        return "Toeic Fail";
-    }
 }

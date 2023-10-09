@@ -16,7 +16,7 @@ public class BoardConfig {
 
     public void displayboard(){
         for (int i = 0; i < 64; i++){
-            System.out.println(_squares.get(i).get_squareNameEN());
+            System.out.println(_squares.get(i).get_squareName());
         }
     }
 }
