@@ -4,7 +4,6 @@ public abstract class AbstractFactoryStudent {
     private Student _student;
     private boolean _skipNextRoundWEI = false;
     private boolean _InformaticsProblem = false;
-
     private boolean _BDE = false;
     private int _skillLevel = 0;
     private int _squareNumber = 0;

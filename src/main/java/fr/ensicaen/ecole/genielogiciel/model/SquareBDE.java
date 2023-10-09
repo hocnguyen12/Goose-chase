@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareBDE implements Square{
     private AbstractFactoryStudent _characterInSquare = null;
 
@@ -20,13 +22,8 @@ public class SquareBDE implements Square{
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Bloqué BDE";
-    }
-
-    @Override
-    public String get_squareNameEN() {
-        return "Stuck in BDE";
+    public String get_squareName() {
+        return LoginMain.getMessageBundle().getString("squarename.BDE");
     }
 }
 

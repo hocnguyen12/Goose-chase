@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareIntensiveStudy implements Square{
 
     public SquareIntensiveStudy() {
@@ -13,13 +15,8 @@ public class SquareIntensiveStudy implements Square{
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Revisions Intensives";
-    }
-
-    @Override
-    public String get_squareNameEN() {
-        return "Intensive Studying";
+    public String get_squareName() {
+        return LoginMain.getMessageBundle().getString("squarename.Intensive");
     }
 }
 

@@ -5,29 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="Added Square BDE, Informatics Problems and Intensives Studies">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareBDE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareInformaticsIssues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareIntensiveStudy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/BoardConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/BoardConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/BoardConfigReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/BoardConfigReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/BoardSquareDeserializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/BoardSquareDeserializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareDayAfterWEI.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareDayAfterWEI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareInternshipAbroad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareParty.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareStart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/model/SquareToeicFail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/GamePresenter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/presenter/LoginPresenter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/LoginView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/SpiralPath.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/AbstractFactoryStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareBDE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareBDE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDUTTeachings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDUTTeachings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDayAfterWEI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDayAfterWEI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDropout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDropout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareEnd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareExam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareExam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareInformaticsIssues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareInformaticsIssues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareIntensiveStudy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareIntensiveStudy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquarePrepaTeachings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquarePrepaTeachings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareToeicFail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareToeicFail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareUniTeachings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareUniTeachings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle_en_US.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +84,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev_cécile" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,24 +97,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/lu/jeu-oie/jeu-oie-ensicaen",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.40689656",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lu/jeu-oie/jeu-oie-ensicaen&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.40689656&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="fr.ensicaen.ecole.genielogiciel.model" />

@@ -98,6 +98,8 @@ public class Game {
                         student.move(53);
                     }
                     _board.get(student.get_squareNumber()).execute(student);
+                    System.out.println("Square : " + getSquareName(student.get_squareNumber()));
+                    positionsList.add(student.get_squareNumber());
                     continue;
                 }
 

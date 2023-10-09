@@ -17,7 +17,6 @@ public class SquarePrepaTeachings implements Square{
 
     @Override
     public String get_squareName() {
-
         return LoginMain.getMessageBundle().getString("squarename.prepa");
     }
 

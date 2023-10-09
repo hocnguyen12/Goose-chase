@@ -1,5 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
+
 public class SquareInformaticsIssues implements Square{
     private AbstractFactoryStudent _characterInSquare = null;
 
@@ -19,12 +21,7 @@ public class SquareInformaticsIssues implements Square{
     }
 
     @Override
-    public String get_squareNameFR() {
-        return "Problemes Informatiques";
-    }
-
-    @Override
-    public String get_squareNameEN() {
-        return "Informatics Issues";
+    public String get_squareName() {
+        return LoginMain.getMessageBundle().getString("squarename.ITissue");
     }
 }

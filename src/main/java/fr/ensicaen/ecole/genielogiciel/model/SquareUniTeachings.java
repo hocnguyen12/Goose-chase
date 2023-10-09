@@ -11,7 +11,6 @@ public class SquareUniTeachings implements Square{
     }
     @Override
     public String get_squareName() {
-
         return LoginMain.getMessageBundle().getString("squarename.uni");
     }
 
