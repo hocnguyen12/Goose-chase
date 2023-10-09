@@ -14,16 +14,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.TilePane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.scene.text.Font;
@@ -115,34 +113,17 @@ public final class GameView {
         pawn2.setFill(Color.RED);
         Map<Integer,StackPane> stack_array = new HashMap<>();
         int[][] array = SpiralPath.computeSpiralPath(MAX_HEIGHT);
-        for (int i = 0;i < MAX_LENGTH;i++){
-            for (int j = 0;j < MAX_HEIGHT;j++){
-                Rectangle rect = new Rectangle(80,80);
-                rect.setFill(Color.WHITE);
-                rect.setStroke(Color.BLACK);
-                System.out.println("i j :"+i+" "+j);
-                Text text = new Text(Integer.toString(array[i][j]));
-                StackPane stack = new StackPane();
-                stack.getChildren().addAll(rect,text);
-                if (i==0 && j == 0) {
-                    stack.getChildren().add(pawn1);
-                    if (!isNull(nickName2)){
-                        stack.getChildren().add(pawn2);
-                    }
-                }
-                stack_array.put(array[i][j],stack);
-                container.getChildren().add(stack);
-            }
-        }
+        drawBoard(array,stack_array,pawn1,pawn2);
         Text whosturn = new Text(LoginMain.getMessageBundle().getString("whosturn.text"));
-        grid_anchor.getChildren().add(whosturn);
-        grid_anchor.setRowIndex(whosturn,0);
-        grid_anchor.setColumnIndex(whosturn,9);
+        placeNode(grid_anchor,whosturn,0,9);
         Button btn_singlePlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         Popup popup = new Popup();
         Text text = new Text(LoginMain.getMessageBundle().getString("victory.text"));
+        Pane pane = new Pane();
+        pane.getChildren().add(popup);
         text.setFont(new Font("Arial",20));
         popup.getContent().add(text);
+        placeNode(grid_anchor,popup,9,5);
         btn_singlePlayer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -157,7 +138,6 @@ public final class GameView {
                     }
                 }
             }
-
         });
         Text player = new Text();
         grid_anchor.getChildren().add(player);
@@ -239,6 +219,33 @@ public final class GameView {
         });
     }
 
+    private void drawBoard(int[][] array,Map<Integer,StackPane> stack_array,Circle pawn1,Circle pawn2){
+        for (int i = 0;i < MAX_LENGTH;i++){
+            for (int j = 0;j < MAX_HEIGHT;j++){
+                Rectangle rect = new Rectangle(80,80);
+                rect.setFill(Color.WHITE);
+                rect.setStroke(Color.BLACK);
+                System.out.println("i j :"+i+" "+j);
+                Text text = new Text(Integer.toString(array[i][j]));
+                StackPane stack = new StackPane();
+                stack.getChildren().addAll(rect,text);
+                if (i==0 && j == 0) {
+                    stack.getChildren().add(pawn1);
+                    if (!isNull(nickName2)){
+                        stack.getChildren().add(pawn2);
+                    }
+                }
+                stack_array.put(array[i][j],stack);
+                container.getChildren().add(stack);
+            }
+        }
+    }
+
+    public void placeNode(GridPane gridpane, Node node,int row,int col){
+        grid_anchor.getChildren().add(node);
+        grid_anchor.setRowIndex(node,row);
+        grid_anchor.setColumnIndex(node,col);
+    }
     public void show() {
         _stage.show();
     }
