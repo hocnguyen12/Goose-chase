@@ -158,7 +158,14 @@ public final class GameView {
         Button btn_multiPlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
+                Text whosturn = new Text(LoginMain.getMessageBundle().getString("whosturn.text"));
+                Text player1 = new Text(nickName1);
+                Text player2 = new Text(nickName2);
                 if (isPlayer1){
+                    grid_anchor.getChildren().add(whosturn);
+                    grid_anchor.getChildren().add(player1);
+                    grid_anchor.setRowIndex(player1,0);
+                    grid_anchor.setColumnIndex(player1,9);
                     if (index1 == 63){
                         return;
                     }
@@ -173,6 +180,10 @@ public final class GameView {
                     return;
                 }
                 else {
+                    grid_anchor.getChildren().remove(player1);
+                    grid_anchor.getChildren().add(player2);
+                    grid_anchor.setRowIndex(player1,0);
+                    grid_anchor.setColumnIndex(player1,9);
                     if (index2 == 63){
                         return;
                     }
@@ -184,21 +195,23 @@ public final class GameView {
                         }
                     }
                     isPlayer1 = true;
+                    grid_anchor.getChildren().remove(player2);
                     return;
                 }
             }
         });
         Text player_name1 = new Text(LoginMain.getMessageBundle().getString("player1.text") + this.nickName1);
+        player_name1.setFill(Color.GREEN);
         grid_anchor.getChildren().add(player_name1);
-        grid_anchor.setRowIndex(player_name1,0);
+        grid_anchor.setRowIndex(player_name1,1);
         grid_anchor.setColumnIndex(player_name1,9);
 
         if (!isNull(this.nickName2)){
             Text player_name2 = new Text(LoginMain.getMessageBundle().getString("player2.text") + this.nickName2);
+            player_name2.setFill(Color.RED);
             grid_anchor.getChildren().add(player_name2);
-            grid_anchor.setRowIndex(player_name2,1);
+            grid_anchor.setRowIndex(player_name2,2);
             grid_anchor.setColumnIndex(player_name2,9);
-
         }
         if (isNull(nickName2)){
             grid_anchor.getChildren().add(btn_singlePlayer);
