@@ -1,10 +1,12 @@
 package fr.ensicaen.ecole.genielogiciel.view;
 
+import fr.ensicaen.ecole.genielogiciel.LoginMain;
 import fr.ensicaen.ecole.genielogiciel.model.Model;
 import fr.ensicaen.ecole.genielogiciel.presenter.GamePresenter;
 
 import javafx.animation.PathTransition;
 import javafx.animation.PauseTransition;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -57,6 +59,12 @@ public final class GameView {
 
     private boolean isPlayer1 = true;
 
+    @FXML
+    private Button _restart;
+
+    @FXML
+    private Button _lancer;
+
     public static GameView createView(String nickName1) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(GameView.class.getResource("Board.fxml"));
@@ -85,8 +93,18 @@ public final class GameView {
     }
     public void setPresenter( GamePresenter gamePresenter ) {
         _gamePresenter = gamePresenter;
-        this.nickName1 = gamePresenter.getNickname1();
-        this.nickName2 = gamePresenter.getNickname2();
+        this.nickName1 = _gamePresenter.getNickname1();
+        this.nickName2 = _gamePresenter.getNickname2();
+        Button btn_restart = new Button("Recommencer");
+        btn_restart.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                restart();
+            }
+        });
+        grid_anchor.getChildren().add(btn_restart);
+        grid_anchor.setRowIndex(btn_restart,8);
+        grid_anchor.setColumnIndex(btn_restart,0);
         grid_anchor.setAlignment(Pos.CENTER);
         container.setAlignment(Pos.CENTER);
         Circle pawn1 = new Circle(30);
@@ -169,19 +187,30 @@ public final class GameView {
             }
         });
         Text player_name1 = new Text(this.nickName1);
-
         container.getChildren().add(player_name1);
-
         if (!isNull(this.nickName2)){
             Text player_name2 = new Text(this.nickName2);
             container.getChildren().add(player_name2);
         }
         if (isNull(nickName2)){
-            container.getChildren().add(btn_singlePlayer);
+            _lancer = btn_singlePlayer;
         }
         else {
-            container.getChildren().add(btn_multiPlayer);
+            _lancer = btn_multiPlayer;
         }
+
+    }
+
+    private void restart() {
+        _stage.close();
+        Platform.runLater(() -> {
+            try {
+                new LoginMain().start(new Stage());
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+
     }
     public void show() {
         _stage.show();
