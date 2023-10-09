@@ -57,7 +57,7 @@ public final class GameView {
 
     private boolean isPlayer1 = true;
 
-    public static GameView createView(String nickName) throws IOException {
+    public static GameView createView(String nickName1) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(GameView.class.getResource("Board.fxml"));
         Parent root = fxmlLoader.load();
@@ -67,13 +67,9 @@ public final class GameView {
         Stage stage = new Stage();
         stage.setScene(scene);
         view._stage = stage;
-        Text player_name = new Text(nickName);
-        view.nickName1 = nickName;
-        view.container.getChildren().add(player_name);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> view.onKeyPressed(event.getCode()));
         return view;
     }
-
     public static GameView createView(String nickName1,String nickName2) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(GameView.class.getResource("Board.fxml"));
@@ -84,33 +80,13 @@ public final class GameView {
         Stage stage = new Stage();
         stage.setScene(scene);
         view._stage = stage;
-        Text player_name1 = new Text(nickName1);
-        view.nickName1 = nickName1;
-        view.container.getChildren().add(player_name1);
-        Text player_name2 = new Text(nickName2);
-        view.nickName2 = nickName2;
-        view.container.getChildren().add(player_name2);
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> view.onKeyPressed(event.getCode()));
         return view;
     }
     public void setPresenter( GamePresenter gamePresenter ) {
         _gamePresenter = gamePresenter;
-    }
-
-    public void show() {
-        _stage.show();
-    }
-
-    private void onKeyPressed( KeyCode code ) {
-        if (code == KeyCode.SPACE) {
-            _gamePresenter.runGameLoop();
-        }
-    }
-
-
-    public void initialize() {
-        // Code pour une grille 8*8
-        //System.out.println(_gamePresenter);
+        this.nickName1 = gamePresenter.getNickname1();
+        this.nickName2 = gamePresenter.getNickname2();
         grid_anchor.setAlignment(Pos.CENTER);
         container.setAlignment(Pos.CENTER);
         Circle pawn1 = new Circle(30);
@@ -135,15 +111,12 @@ public final class GameView {
                     }
                 }
                 stack_array.put(array[i][j],stack);
-                //stack_array[i][j].setId(Integer.toString(array[i][j]));
-
                 container.getChildren().add(stack);
             }
         }
         Button btn_singlePlayer = new Button("Lancer");
         Popup popup = new Popup();
         Text text = new Text("Victoire !");
-
         text.setFont(new Font("Arial",20));
         popup.getContent().add(text);
         btn_singlePlayer.setOnAction(new EventHandler<ActionEvent>() {
@@ -193,12 +166,16 @@ public final class GameView {
                     isPlayer1 = true;
                     return;
                 }
-
-
             }
-
         });
-        System.out.println(nickName2); // PB : nickName2  n'est pas rempli
+        Text player_name1 = new Text(this.nickName1);
+
+        container.getChildren().add(player_name1);
+
+        if (!isNull(this.nickName2)){
+            Text player_name2 = new Text(this.nickName2);
+            container.getChildren().add(player_name2);
+        }
         if (isNull(nickName2)){
             container.getChildren().add(btn_singlePlayer);
         }
@@ -206,5 +183,13 @@ public final class GameView {
             container.getChildren().add(btn_multiPlayer);
         }
     }
+    public void show() {
+        _stage.show();
+    }
 
+    private void onKeyPressed( KeyCode code ) {
+        if (code == KeyCode.SPACE) {
+            _gamePresenter.runGameLoop();
+        }
+    }
 }

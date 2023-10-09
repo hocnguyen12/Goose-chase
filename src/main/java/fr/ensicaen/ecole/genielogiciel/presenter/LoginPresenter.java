@@ -38,7 +38,6 @@ public final class LoginPresenter {
                     e.printStackTrace();
                 }
             }
-
             _view.close();
         }
     }
