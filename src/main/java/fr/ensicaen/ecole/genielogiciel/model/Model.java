@@ -13,5 +13,8 @@ public class Model {
     public void setNickname1( String nickname ) {
         _nickname1 = nickname;
     }
+
+
     public void setNickname2( String nickname ) {_nickname2 = nickname;}
 }
+

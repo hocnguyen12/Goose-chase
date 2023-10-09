@@ -36,7 +36,9 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.*;
 
+
 import static java.util.Objects.isNull;
+
 
 public final class GameView {
     private GamePresenter _gamePresenter;
@@ -45,7 +47,6 @@ public final class GameView {
     private TilePane container ;
     @FXML
     private GridPane grid_anchor;
-
     private String nickName1;
 
     private String nickName2;
@@ -78,6 +79,7 @@ public final class GameView {
         scene.addEventHandler(KeyEvent.KEY_PRESSED, event -> view.onKeyPressed(event.getCode()));
         return view;
     }
+
     public static GameView createView(String nickName1,String nickName2) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(GameView.class.getResource("Board.fxml"));
@@ -95,7 +97,7 @@ public final class GameView {
         _gamePresenter = gamePresenter;
         this.nickName1 = _gamePresenter.getNickname1();
         this.nickName2 = _gamePresenter.getNickname2();
-        Button btn_restart = new Button("Recommencer");
+        Button btn_restart = new Button(LoginMain.getMessageBundle().getString("restart.button.text"));
         btn_restart.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -132,9 +134,9 @@ public final class GameView {
                 container.getChildren().add(stack);
             }
         }
-        Button btn_singlePlayer = new Button("Lancer");
+        Button btn_singlePlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         Popup popup = new Popup();
-        Text text = new Text("Victoire !");
+        Text text = new Text(LoginMain.getMessageBundle().getString("victory.text"));
         text.setFont(new Font("Arial",20));
         popup.getContent().add(text);
         btn_singlePlayer.setOnAction(new EventHandler<ActionEvent>() {
@@ -153,7 +155,7 @@ public final class GameView {
             }
 
         });
-        Button btn_multiPlayer = new Button("Lancer");
+        Button btn_multiPlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 if (isPlayer1){
@@ -186,6 +188,7 @@ public final class GameView {
                 }
             }
         });
+<<<<<<< HEAD
         Text player_name1 = new Text(this.nickName1);
         grid_anchor.getChildren().add(player_name1);
         grid_anchor.setRowIndex(player_name1,0);
@@ -195,18 +198,39 @@ public final class GameView {
             container.getChildren().add(player_name2);
             grid_anchor.setRowIndex(player_name2,2);
             grid_anchor.setColumnIndex(player_name2,9);
+=======
+        Text player_name1 = new Text(LoginMain.getMessageBundle().getString("player1.text") + this.nickName1);
+        grid_anchor.getChildren().add(player_name1);
+        grid_anchor.setRowIndex(player_name1,0);
+        grid_anchor.setColumnIndex(player_name1,9);
+
+        if (!isNull(this.nickName2)){
+            Text player_name2 = new Text(LoginMain.getMessageBundle().getString("player2.text") + this.nickName2);
+            grid_anchor.getChildren().add(player_name2);
+            grid_anchor.setRowIndex(player_name2,1);
+            grid_anchor.setColumnIndex(player_name2,9);
+
+>>>>>>> 96f3e40d767004d0a92a254f060595064888f650
         }
         if (isNull(nickName2)){
             grid_anchor.getChildren().add(btn_singlePlayer);
             grid_anchor.setRowIndex(btn_singlePlayer,8);
             grid_anchor.setColumnIndex(btn_singlePlayer,2);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 96f3e40d767004d0a92a254f060595064888f650
         }
         else {
             grid_anchor.getChildren().add(btn_multiPlayer);
             grid_anchor.setRowIndex(btn_multiPlayer,8);
             grid_anchor.setColumnIndex(btn_multiPlayer,1);
+<<<<<<< HEAD
         }
+=======
+>>>>>>> 96f3e40d767004d0a92a254f060595064888f650
 
+        }
     }
 
     private void restart() {
@@ -218,8 +242,8 @@ public final class GameView {
                 throw new RuntimeException(e);
             }
         });
-
     }
+
     public void show() {
         _stage.show();
     }
@@ -229,4 +253,7 @@ public final class GameView {
             _gamePresenter.runGameLoop();
         }
     }
+
+
 }
+

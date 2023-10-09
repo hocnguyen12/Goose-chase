@@ -48,6 +48,7 @@ public final class LoginPresenter {
         view.setPresenter(gamePresenter);
         gamePresenter.setView(view);
         view.show();
+        gamePresenter.initializeGame();
     }
 
     private void createAndDisplayGameView( String nickName1, String nickName2 ) throws IOException {

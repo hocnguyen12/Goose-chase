@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="Corrected README (1)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle_en_US.properties" afterDir="false" />
+=======
     <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/view/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/view/Board.fxml" afterDir="false" />
+>>>>>>> dev_maxime
+>>>>>>> 96f3e40d767004d0a92a254f060595064888f650
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +36,9 @@
     <system id="GRADLE">
       <state>
         <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/jeu_oie_template/gradle">
           <activation />
         </task>
         <projects_view>
@@ -70,6 +85,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -80,20 +100,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/seraidarian/Patrons/projet/jeu-oie-ensicaen",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.40689656",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="fr.ensicaen.ecole.genielogiciel.model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\paulo\IdeaProjects\jeu_oie_template\src\main\resources\fr\ensicaen\ecole\genielogiciel" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.jeu-oie-ensicaen [run]">
     <configuration name="AdditionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -146,13 +178,55 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--stacktrace" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="jeu_oie_template [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="jeu_oie_template [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -178,8 +252,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.jeu-oie-ensicaen [run]" />
-        <item itemvalue="Gradle.AdditionTest" />
+        <item itemvalue="Gradle.jeu_oie_template [buildDependents]" />
+        <item itemvalue="Gradle.jeu_oie_template [build]" />
         <item itemvalue="Gradle.AdditionTest.additionnerNombresPositifs" />
+        <item itemvalue="Gradle.AdditionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -195,11 +271,84 @@
       <workItem from="1696343011523" duration="6817000" />
       <workItem from="1696441205425" duration="4753000" />
       <workItem from="1696439948621" duration="300000" />
+<<<<<<< HEAD
+      <workItem from="1696592688197" duration="11063000" />
+      <workItem from="1696834448548" duration="5569000" />
+    </task>
+    <task id="LOCAL-00001" summary="developing model, main game loop">
+      <created>1696708710203</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696708710203</updated>
+    </task>
+    <task id="LOCAL-00002" summary="issue with json">
+      <created>1696710625808</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696710625808</updated>
+    </task>
+    <task id="LOCAL-00003" summary="issue with json">
+      <created>1696710636647</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696710636647</updated>
+=======
       <workItem from="1696592688197" duration="11545000" />
       <workItem from="1696680551828" duration="5393000" />
       <workItem from="1696770404293" duration="7149000" />
+<<<<<<< HEAD
       <workItem from="1696835159232" duration="7215000" />
+=======
+      <workItem from="1696835159232" duration="5155000" />
+>>>>>>> dev_maxime
     </task>
+    <task id="LOCAL-00004" summary="added many squares and round skips.">
+      <created>1696719428279</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696719428279</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Reads config from json file, corrected bug (SquareExam)">
+      <created>1696773760565</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696773760565</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added SquareUniTeachings and fixed SquareExam bug with negative indexes">
+      <created>1696779811764</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696779811764</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updated README">
+      <created>1696779898386</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696779898386</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Corrected README">
+      <created>1696780042049</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696780042049</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Corrected README (1)">
+      <created>1696780211809</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696780211809</updated>
+>>>>>>> 96f3e40d767004d0a92a254f060595064888f650
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,12 +359,36 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
+<<<<<<< HEAD
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="developing model, main game loop" />
+    <MESSAGE value="issue with json" />
+    <MESSAGE value="added many squares and round skips." />
+    <MESSAGE value="Reads config from json file, corrected bug (SquareExam)" />
+    <MESSAGE value="Added SquareUniTeachings and fixed SquareExam bug with negative indexes" />
+    <MESSAGE value="Updated README" />
+    <MESSAGE value="Corrected README" />
+    <MESSAGE value="Corrected README (1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected README (1)" />
+=======
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -225,6 +398,7 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+>>>>>>> dev_maxime
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

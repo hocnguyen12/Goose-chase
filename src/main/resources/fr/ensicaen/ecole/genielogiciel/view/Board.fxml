@@ -6,6 +6,27 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.Button?>
 <GridPane fx:id="grid_anchor" stylesheets="@Board.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ensicaen.ecole.genielogiciel.view.GameView" >
+        <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+                <ColumnConstraints hgrow="NEVER" minWidth="80.0" />
+        </columnConstraints>
+        <rowConstraints>
+                <RowConstraints minHeight="80.0" vgrow="NEVER" />
+                <RowConstraints minHeight="80.0"  vgrow="NEVER" />
+                <RowConstraints minHeight="80.0"  vgrow="NEVER" />
+                <RowConstraints minHeight="80.0" vgrow="NEVER" />
+                <RowConstraints minHeight="80.0" vgrow="NEVER" />
+                <RowConstraints minHeight="80.0"  vgrow="NEVER" />
+                <RowConstraints minHeight="80.0"  vgrow="NEVER" />
+                <RowConstraints minHeight="80.0"  vgrow="NEVER" />
+        </rowConstraints>
+
         <TilePane fx:id="container" prefRows="8" prefColumns="8"  GridPane.rowSpan="8" GridPane.columnSpan="8" maxHeight="800" maxWidth="800" styleClass="board" stylesheets="@Board.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
         </TilePane>
 </GridPane>

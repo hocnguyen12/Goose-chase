@@ -1,10 +1,13 @@
 package fr.ensicaen.ecole.genielogiciel;
 
+import fr.ensicaen.ecole.genielogiciel.model.Game;
 import fr.ensicaen.ecole.genielogiciel.presenter.LoginPresenter;
 import fr.ensicaen.ecole.genielogiciel.view.LoginView;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public final class LoginMain extends Application {
@@ -18,10 +21,33 @@ public final class LoginMain extends Application {
 
     @Override
     public void start( final Stage primaryStage ) throws Exception {
+
         LoginView view = LoginView.createView(primaryStage, "LoginDialog.fxml");
         LoginPresenter presenter = new LoginPresenter();
         view.setPresenter(presenter);
         presenter.setView(view);
         view.show();
+
+        //Run example
+
+        Game g = new Game();
+        List<String> l = new ArrayList<>();
+        l.add("Prepa");
+        l.add("DUT");
+        l.add("Licence");
+        l.add("Prepa");
+        String path = "fr/ensicaen/ecole/genielogiciel/board_config_1.json";
+        g.start(4, l, path);
+
+        List<Integer> positions;
+
+        System.out.println("ROUND : " + g.get_round());
+        positions = g.executeRound();
+        System.out.println(positions);
+        while (positions != null) {
+            System.out.println("ROUND : " + g.get_round());
+            positions = g.executeRound();
+            System.out.println(positions);
+        }
     }
 }
