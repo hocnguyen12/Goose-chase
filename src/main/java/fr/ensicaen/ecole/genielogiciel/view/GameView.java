@@ -134,6 +134,10 @@ public final class GameView {
                 container.getChildren().add(stack);
             }
         }
+        Text whosturn = new Text(LoginMain.getMessageBundle().getString("whosturn.text"));
+        grid_anchor.getChildren().add(whosturn);
+        grid_anchor.setRowIndex(whosturn,0);
+        grid_anchor.setColumnIndex(whosturn,9);
         Button btn_singlePlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         Popup popup = new Popup();
         Text text = new Text(LoginMain.getMessageBundle().getString("victory.text"));
@@ -155,17 +159,16 @@ public final class GameView {
             }
 
         });
+        Text player = new Text();
+        grid_anchor.getChildren().add(player);
+        grid_anchor.setRowIndex(player,0);
         Button btn_multiPlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                Text whosturn = new Text(LoginMain.getMessageBundle().getString("whosturn.text"));
-                Text player1 = new Text(nickName1);
-                Text player2 = new Text(nickName2);
+
+                grid_anchor.setColumnIndex(player,10);
                 if (isPlayer1){
-                    grid_anchor.getChildren().add(whosturn);
-                    grid_anchor.getChildren().add(player1);
-                    grid_anchor.setRowIndex(player1,0);
-                    grid_anchor.setColumnIndex(player1,9);
+                    player.setText(nickName1);
                     if (index1 == 63){
                         return;
                     }
@@ -180,10 +183,7 @@ public final class GameView {
                     return;
                 }
                 else {
-                    grid_anchor.getChildren().remove(player1);
-                    grid_anchor.getChildren().add(player2);
-                    grid_anchor.setRowIndex(player1,0);
-                    grid_anchor.setColumnIndex(player1,9);
+                    player.setText(nickName2);
                     if (index2 == 63){
                         return;
                     }
@@ -195,7 +195,6 @@ public final class GameView {
                         }
                     }
                     isPlayer1 = true;
-                    grid_anchor.getChildren().remove(player2);
                     return;
                 }
             }
