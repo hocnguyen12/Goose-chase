@@ -15,9 +15,15 @@ public final class GamePresenter {
 
     public GamePresenter( String nickName ) {
         _model = new Model();
-        _model.setNickname(nickName);
+        _model.setNickname1(nickName);
     }
-
+    public GamePresenter( String nickName1, String nickName2 ) {
+        _model = new Model();
+        _model.setNickname1(nickName1);
+        _model.setNickname2(nickName2);
+    }
+    public String getNickname1() {return _model.getNickname1();}
+    public String getNickname2() {return _model.getNickname2();}
     public void setView( GameView view ) {
         _view = view;
     }
@@ -49,6 +55,9 @@ public final class GamePresenter {
 
         //VIEW
         //Create n pawns
+    }
+    public void runGameLoop() {
+        System.out.println("Et c'est parti...");
     }
 
     private void update() {
