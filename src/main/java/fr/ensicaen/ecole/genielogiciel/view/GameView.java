@@ -200,6 +200,7 @@ public final class GameView {
                 }
             }
         });
+
         Text player_name1 = new Text(LoginMain.getMessageBundle().getString("player1.text") + this.nickName1);
         player_name1.setFill(Color.GREEN);
         grid_anchor.getChildren().add(player_name1);
@@ -212,6 +213,7 @@ public final class GameView {
             grid_anchor.getChildren().add(player_name2);
             grid_anchor.setRowIndex(player_name2,2);
             grid_anchor.setColumnIndex(player_name2,9);
+
         }
         if (isNull(nickName2)){
             grid_anchor.getChildren().add(btn_singlePlayer);
