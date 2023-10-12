@@ -8,10 +8,10 @@ public class SquarePrepaTeachings implements Square{
     @Override
     public void execute(AbstractFactoryStudent s) {
         s.increaseSkillLevel(1);
-        if (s instanceof ConcreteFactoryLicence) {
-            s.set_squareNumber(s.get_squareNumber() + 1);
+        if (s instanceof ConcreteFactoryPrepa) {
+            s.setSquareNumber(s.getSquareNumber() + 1);
         } else {
-            s.set_squareNumber(s.get_squareNumber() - 1);
+            s.setSquareNumber(s.getSquareNumber() - 1);
         }
     }
 

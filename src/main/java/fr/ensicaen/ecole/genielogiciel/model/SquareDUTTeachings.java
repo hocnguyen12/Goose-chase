@@ -10,9 +10,9 @@ public class SquareDUTTeachings implements Square{
     public void execute(AbstractFactoryStudent s) {
         s.increaseSkillLevel(1);
         if (s instanceof ConcreteFactoryDUT) {
-            s.set_squareNumber(s.get_squareNumber() + 1);
+            s.setSquareNumber(s.getSquareNumber() + 1);
         } else {
-            s.set_squareNumber(s.get_squareNumber() - 1);
+            s.setSquareNumber(s.getSquareNumber() - 1);
         }
     }
     @Override

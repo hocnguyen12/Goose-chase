@@ -29,7 +29,7 @@ public class ConcreteFactoryPrepa extends AbstractFactoryStudent{
         return new Brilliant();
     }
 
-    public Student get_student() {
+    public Student getStudent() {
         return _student;
     }
 }

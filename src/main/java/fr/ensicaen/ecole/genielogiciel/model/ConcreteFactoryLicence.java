@@ -15,23 +15,22 @@ public class ConcreteFactoryLicence extends AbstractFactoryStudent {
 
     @Override
     public Dilettante createDilettante() {
-        System.out.println("new Dilettante");
         return new Dilettante();
     }
 
     @Override
     public Diligent createDiligent() {
-        System.out.println("new Diligent");
+
         return new Diligent();
     }
 
     @Override
     public Brilliant createBrilliant() {
-        System.out.println("new Brilliant");
+
         return new Brilliant();
     }
 
-    public Student get_student() {
+    public Student getStudent() {
         return _student;
     }
 }

@@ -17,35 +17,41 @@ public abstract class AbstractFactoryStudent {
         _squareNumber += n;
     }
 
-    public boolean has_InformaticsProblem() {
+    public boolean hasInformaticsProblem() {
         return _InformaticsProblem;
     }
 
-    public boolean is_BDE() {
+    public boolean isBDE() {
         return _BDE;
     }
 
-    public void set_BDE(boolean _BDE) {
+    public void setBDE(boolean _BDE) {
         this._BDE = _BDE;
     }
 
-    public void set_InformaticsProblem(boolean _InformaticsProblem) {
+    public void setInformaticsProblem(boolean _InformaticsProblem) {
         this._InformaticsProblem = _InformaticsProblem;
     }
 
-    public int get_squareNumber() {
+    public int getSquareNumber() {
         return _squareNumber;
     }
-    public void set_squareNumber(int _squareNumber) {
+    public void setSquareNumber(int _squareNumber) {
         this._squareNumber = _squareNumber;
+        if(_squareNumber < 0){
+            this._squareNumber= 0;
+        }
     }
-    public int get_skillLevel() {
+    public int getSkillLevel() {
         return _skillLevel;
     }
     public void increaseSkillLevel(int value) {
         this._skillLevel += value;
+        if(_skillLevel < 0){
+            _skillLevel = 0;
+        }
     }
-    public void set_skipNextRoundWEI(boolean b) {
+    public void setSkipNextRoundWEI(boolean b) {
         _skipNextRoundWEI = b;
     }
     public boolean nextRoundSkipped() {
@@ -55,5 +61,5 @@ public abstract class AbstractFactoryStudent {
     public abstract Diligent createDiligent();
     public abstract Brilliant createBrilliant();
 
-    public abstract Student get_student();
+    public abstract Student getStudent();
 }

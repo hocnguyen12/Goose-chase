@@ -8,7 +8,7 @@ public class SquareToeicFail implements Square{
 
     @Override
     public void execute(AbstractFactoryStudent s) {
-        s.set_squareNumber(s.get_squareNumber() - 12);
+        s.setSquareNumber(s.getSquareNumber() - 12);
     }
 
     @Override

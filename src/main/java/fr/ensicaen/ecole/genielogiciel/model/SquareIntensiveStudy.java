@@ -11,7 +11,7 @@ public class SquareIntensiveStudy implements Square{
     @Override
     public void execute(AbstractFactoryStudent s) {
         s.increaseSkillLevel(1);
-        s.set_squareNumber(12);
+        s.setSquareNumber(12);
     }
 
     @Override

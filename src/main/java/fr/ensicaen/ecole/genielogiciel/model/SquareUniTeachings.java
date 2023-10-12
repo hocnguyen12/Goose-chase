@@ -7,7 +7,12 @@ public class SquareUniTeachings implements Square{
     }
     @Override
     public void execute(AbstractFactoryStudent s) {
-
+        s.increaseSkillLevel(1);
+        if (s instanceof ConcreteFactoryLicence) {
+            s.setSquareNumber(s.getSquareNumber() + 1);
+        } else {
+            s.setSquareNumber(s.getSquareNumber() - 1);
+        }
     }
     @Override
     public String get_squareName() {

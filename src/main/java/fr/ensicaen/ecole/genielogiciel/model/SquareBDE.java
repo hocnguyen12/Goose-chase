@@ -12,11 +12,11 @@ public class SquareBDE implements Square{
     @Override
     public void execute(AbstractFactoryStudent s) {
         if(_characterInSquare == null){
-            s.set_BDE(true);
+            s.setBDE(true);
             _characterInSquare = s;
         }else {
-            s.set_BDE(true);
-            _characterInSquare.set_BDE(false);
+            s.setBDE(true);
+            _characterInSquare.setBDE(false);
             _characterInSquare = s;
         }
     }

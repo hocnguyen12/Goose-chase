@@ -77,13 +77,13 @@ public class Game {
 
             for (AbstractFactoryStudent student : _players) {
                 if (student.nextRoundSkipped())  {
-                    student.set_skipNextRoundWEI(false);
+                    student.setSkipNextRoundWEI(false);
                     continue;
                 }
-                if(student.is_BDE()){
+                if(student.isBDE()){
                     continue;
                 }
-                if(student.has_InformaticsProblem()){
+                if(student.hasInformaticsProblem()){
                     continue;
                 }
 
@@ -97,27 +97,27 @@ public class Game {
                     if(_diceValue1 == 5 && _diceValue2 == 4 || _diceValue1 == 4 && _diceValue2 == 5){
                         student.move(53);
                     }
-                    _board.get(student.get_squareNumber()).execute(student);
-                    System.out.println("Square : " + getSquareName(student.get_squareNumber()));
-                    positionsList.add(student.get_squareNumber());
+                    _board.get(student.getSquareNumber()).execute(student);
+                    System.out.println("Square : " + getSquareName(student.getSquareNumber()));
+                    positionsList.add(student.getSquareNumber());
                     continue;
                 }
 
                 int diceTotal = 0;
-                if (student.get_student() instanceof Dilettante) {
+                if (student.getStudent() instanceof Dilettante) {
                     diceTotal = (_diceValue1 + _diceValue2) / 2;
-                } else if (student.get_student() instanceof Diligent) {
+                } else if (student.getStudent() instanceof Diligent) {
                     diceTotal = _diceValue1 + _diceValue2;
-                } else if (student.get_student() instanceof Brilliant) {
+                } else if (student.getStudent() instanceof Brilliant) {
                     diceTotal = (_diceValue1 + _diceValue2) * 2;
                 }
                 System.out.println("dice : " + diceTotal);
 
                 student.move(diceTotal);
-                _board.get(student.get_squareNumber()).execute(student);
-                System.out.println("Square : " + getSquareName(student.get_squareNumber()));
+                _board.get(student.getSquareNumber()).execute(student);
+                System.out.println("Square : " + getSquareName(student.getSquareNumber()));
 
-                positionsList.add(student.get_squareNumber());
+                positionsList.add(student.getSquareNumber());
             }
             _round++;
             return positionsList;
@@ -130,7 +130,7 @@ public class Game {
 
     public boolean gameIsFinished(){
         for (AbstractFactoryStudent student : _players) {
-            if (student.get_squareNumber() == 63) {
+            if (student.getSquareNumber() == 63) {
                 return true;
             }
         }

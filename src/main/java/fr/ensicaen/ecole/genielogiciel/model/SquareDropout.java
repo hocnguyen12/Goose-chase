@@ -8,7 +8,7 @@ public class SquareDropout implements Square{
 
     @Override
     public void execute(AbstractFactoryStudent s) {
-        s.set_squareNumber(0);
+        s.setSquareNumber(0);
     }
 
     @Override

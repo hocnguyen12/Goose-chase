@@ -12,10 +12,10 @@ public class SquareInformaticsIssues implements Square{
     @Override
     public void execute(AbstractFactoryStudent s) {
         if(_characterInSquare == null){
-            s.set_InformaticsProblem(true);
+            s.setInformaticsProblem(true);
             _characterInSquare = s;
         }else {
-            _characterInSquare.set_InformaticsProblem(false);
+            _characterInSquare.setInformaticsProblem(false);
             _characterInSquare = null;
         }
     }
