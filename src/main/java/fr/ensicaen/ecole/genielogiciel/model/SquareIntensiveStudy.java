@@ -13,6 +13,7 @@ public class SquareIntensiveStudy implements Square{
         student.increaseSkillLevel(3);
         System.out.println("Square N" + student.getSquareNumber() + ": " + board.get(student.getSquareNumber()).getSquareName());
         student.setSquareNumber(12);
+        board.get(student.getSquareNumber()).execute(student, diceTotal, board);
     }
 
     @Override

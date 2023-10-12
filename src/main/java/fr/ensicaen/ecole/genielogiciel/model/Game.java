@@ -75,7 +75,7 @@ public class Game {
         }
 
         System.out.println("\n*** ROUND : " + _round + "***");
-        List<Integer> positionsList= new ArrayList<>();
+        List<Integer> positionsList = new ArrayList<>();
 
         for (AbstractFactoryStudent student : _players) {
             if (gameIsFinished()) {

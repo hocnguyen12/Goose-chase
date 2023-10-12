@@ -25,14 +25,11 @@ class SquarePartyTest {
     @Test
     void execute() {
         student.increaseSkillLevel(6);
-
-        assertEquals(6, student.getSkillLevel());
-        assertNotEquals(5, student.getSkillLevel());
-
         square_party.execute(student, 0, null);
-
         assertEquals(5, student.getSkillLevel());
-        assertNotEquals(6, student.getSkillLevel());
 
+        student.increaseSkillLevel(-5);
+        square_party.execute(student, 0, null);
+        assertEquals(0, student.getSkillLevel());
     }
 }

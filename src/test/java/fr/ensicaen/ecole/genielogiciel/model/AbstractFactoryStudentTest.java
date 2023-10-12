@@ -21,7 +21,6 @@ class AbstractFactoryStudentTest {
     void move() {
         student.move(2);
         assertEquals(2, student.getSquareNumber());
-        assertFalse(student.getSquareNumber() == 4);
 
         student.move(5);
         assertEquals(7, student.getSquareNumber());
@@ -33,7 +32,6 @@ class AbstractFactoryStudentTest {
         assertEquals(0, student.getSquareNumber());
 
         assertFalse(student.getSquareNumber() == 49);
-
     }
 
     @Test
@@ -47,7 +45,6 @@ class AbstractFactoryStudentTest {
     void get_squareNumber() {
         student.setSquareNumber(3);
         assertEquals(3, student.getSquareNumber());
-        assertFalse(student.getSquareNumber() == 4);
     }
 
     @Test
@@ -69,7 +66,6 @@ class AbstractFactoryStudentTest {
         student.increaseSkillLevel(-2);
         assertEquals(3, student.getSkillLevel());
         assertFalse(1 == student.getSkillLevel());
-
     }
 
     @Test

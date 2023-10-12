@@ -4,42 +4,41 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SquareIntensiveStudyTest {
     AbstractFactoryStudent student;
     SquareIntensiveStudy squareIntensiveStudy;
+    List<Square> board;
+
     @BeforeEach
     void setUp() {
         student= new ConcreteFactoryPrepa();
         squareIntensiveStudy= new SquareIntensiveStudy();
+        board = new ArrayList<>();
+        for (int i = 0; i < 63; i++) {
+            board.add(new SquareBasic());
+        }
+        board.add(5, squareIntensiveStudy);
     }
 
     @AfterEach
     void tearDown() {
-        student= null;
-        squareIntensiveStudy= null;
+        student = null;
+        squareIntensiveStudy = null;
+        board = null;
     }
 
     @Test
     void execute() {
         student.increaseSkillLevel(5);
-        student.setSquareNumber(6);
+        student.setSquareNumber(5);
+        squareIntensiveStudy.execute(student, 0, board);
 
-        assertEquals(5, student.getSkillLevel());
-        assertNotEquals(6, student.getSkillLevel());
-
-        assertEquals(6,student.getSquareNumber());
-        assertNotEquals(12, student.getSquareNumber());
-
-        squareIntensiveStudy.execute(student, 0, null);
-
-        assertEquals(6, student.getSkillLevel());
-        assertNotEquals(5, student.getSkillLevel());
-
+        assertEquals(8, student.getSkillLevel());
         assertEquals(12,student.getSquareNumber());
-        assertNotEquals(6, student.getSquareNumber());
-
-
     }
 }
