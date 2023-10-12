@@ -25,5 +25,9 @@ public class SquareBDE implements Square{
     public String get_squareName() {
         return LoginMain.getMessageBundle().getString("squarename.BDE");
     }
+
+    public AbstractFactoryStudent getStudent(){
+        return _characterInSquare;
+    }
 }
 

@@ -16,12 +16,16 @@ public class SquareInformaticsIssues implements Square{
             _characterInSquare = s;
         }else {
             _characterInSquare.setInformaticsProblem(false);
-            _characterInSquare = null;
+            s.setInformaticsProblem(true);
+            _characterInSquare = s;
         }
     }
 
     @Override
     public String get_squareName() {
         return LoginMain.getMessageBundle().getString("squarename.ITissue");
+    }
+    public AbstractFactoryStudent getStudent(){
+        return _characterInSquare;
     }
 }

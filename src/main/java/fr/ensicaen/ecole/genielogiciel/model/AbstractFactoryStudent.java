@@ -10,11 +10,16 @@ public abstract class AbstractFactoryStudent {
 
     public void move(int n){
         //If new position exceeds 63, the player goes back
+
         if (_squareNumber + n > 63) {
             _squareNumber = 63 - (_squareNumber + n - 63);
             return;
+        } else if (_squareNumber + n < 0) {
+            _squareNumber = 0;
+        } else {
+            _squareNumber += n;
         }
-        _squareNumber += n;
+
     }
 
     public boolean hasInformaticsProblem() {
