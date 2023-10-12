@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="Added Square BDE, Informatics Problems and Intensives Studies">
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareBDE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareBDE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDUTTeachings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDUTTeachings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDayAfterWEI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDayAfterWEI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDropout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareDropout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareEnd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareEnd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareExam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareExam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareInformaticsIssues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareInformaticsIssues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareIntensiveStudy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareIntensiveStudy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquarePrepaTeachings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquarePrepaTeachings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareToeicFail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareToeicFail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareUniTeachings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/model/SquareUniTeachings.java" afterDir="false" />
+<<<<<<< HEAD
+    <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="Corrected README (1)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/MessageBundle_en_US.properties" afterDir="false" />
+=======
+    <list default="true" id="9071f2b0-1e6f-4535-8e2c-73f5d62cc1b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/fr/ensicaen/ecole/genielogiciel/view/GameView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/ensicaen/ecole/genielogiciel/view/GameView.java" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/view/Board.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/ensicaen/ecole/genielogiciel/view/Board.fxml" afterDir="false" />
+>>>>>>> dev_maxime
+>>>>>>> 96f3e40d767004d0a92a254f060595064888f650
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +87,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev_cécile" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -97,24 +100,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/lu/jeu-oie/jeu-oie-ensicaen&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.40689656&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.notifications&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/seraidarian/Patrons/projet/jeu-oie-ensicaen",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.40689656",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="fr.ensicaen.ecole.genielogiciel.model" />
@@ -233,6 +236,19 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="jeu-oie-ensicaen" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="jeu-oie-ensicaen" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.jeu-oie-ensicaen [run]" />
@@ -255,9 +271,9 @@
       <workItem from="1696343011523" duration="6817000" />
       <workItem from="1696441205425" duration="4753000" />
       <workItem from="1696439948621" duration="300000" />
+<<<<<<< HEAD
       <workItem from="1696592688197" duration="11063000" />
-      <workItem from="1696844902400" duration="13000" />
-      <workItem from="1696837747475" duration="4139000" />
+      <workItem from="1696834448548" duration="5569000" />
     </task>
     <task id="LOCAL-00001" summary="developing model, main game loop">
       <created>1696708710203</created>
@@ -279,6 +295,15 @@
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
       <updated>1696710636647</updated>
+=======
+      <workItem from="1696592688197" duration="11545000" />
+      <workItem from="1696680551828" duration="5393000" />
+      <workItem from="1696770404293" duration="7149000" />
+<<<<<<< HEAD
+      <workItem from="1696835159232" duration="7215000" />
+=======
+      <workItem from="1696835159232" duration="5155000" />
+>>>>>>> dev_maxime
     </task>
     <task id="LOCAL-00004" summary="added many squares and round skips.">
       <created>1696719428279</created>
@@ -321,6 +346,7 @@
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
       <updated>1696780211809</updated>
+>>>>>>> 96f3e40d767004d0a92a254f060595064888f650
     </task>
     <option name="localTasksCounter" value="10" />
     <servers />
@@ -339,7 +365,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev_cécile" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -351,6 +377,7 @@
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="developing model, main game loop" />
     <MESSAGE value="issue with json" />
@@ -360,8 +387,18 @@
     <MESSAGE value="Updated README" />
     <MESSAGE value="Corrected README" />
     <MESSAGE value="Corrected README (1)" />
-    <MESSAGE value="Added Square BDE, Informatics Problems and Intensives Studies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Square BDE, Informatics Problems and Intensives Studies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrected README (1)" />
+=======
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> dev_maxime
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

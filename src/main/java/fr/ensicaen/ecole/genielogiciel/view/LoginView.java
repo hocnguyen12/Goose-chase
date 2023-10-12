@@ -16,7 +16,10 @@ public class LoginView {
     private LoginPresenter _presenter;
     private Stage _stage;
     @FXML
-    private TextField _nickName;
+    private TextField _nickName1;
+
+    @FXML
+    private TextField _nickName2;
     @FXML
     private Label _errorLabel;
 
@@ -50,6 +53,6 @@ public class LoginView {
 
     @FXML
     private void launchGame() {
-        _presenter.launchGame(_nickName.getText());
+        _presenter.launchGame(_nickName1.getText(),_nickName2.getText());
     }
 }
