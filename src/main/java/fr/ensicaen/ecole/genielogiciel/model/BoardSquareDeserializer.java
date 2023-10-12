@@ -15,6 +15,8 @@ public class BoardSquareDeserializer extends JsonDeserializer<Square>{
 
         if ("SquareBasic".equals(type)) {
             return new SquareBasic();
+        } else if ("SquareBDE".equals(type)) {
+            return new SquareBDE();
         } else if ("SquareClass".equals(type)) {
             return new SquareClass();
         } else if ("SquareDayAfterWEI".equals(type)) {
@@ -27,8 +29,14 @@ public class BoardSquareDeserializer extends JsonDeserializer<Square>{
             return new SquareEnd();
         } else if ("SquareExam".equals(type)) {
             return new SquareExam();
+        } else if ("SquareInformaticsIssues".equals(type)) {
+            return new SquareInformaticsIssues();
+        } else if ("SquareIntensiveStudy".equals(type)) {
+            return new SquareIntensiveStudy();
         } else if ("SquareInternshipAbroad".equals(type)) {
             return new SquareEnd();
+        } else if ("SquareKangaroo".equals(type)) {
+            return new SquareKangaroo();
         } else if ("SquareParty".equals(type)) {
             return new SquareParty();
         } else if ("SquarePrepaTeachings".equals(type)) {

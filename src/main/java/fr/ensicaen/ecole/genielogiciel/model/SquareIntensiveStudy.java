@@ -2,16 +2,16 @@ package fr.ensicaen.ecole.genielogiciel.model;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
 
+import java.util.List;
+
 public class SquareIntensiveStudy implements Square{
 
-    public SquareIntensiveStudy() {
-
-    }
+    public SquareIntensiveStudy() {}
 
     @Override
-    public void execute(AbstractFactoryStudent s) {
-        s.increaseSkillLevel(1);
-        s.set_squareNumber(12);
+    public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
+        student.increaseSkillLevel(1);
+        student.set_squareNumber(12);
     }
 
     @Override
@@ -19,4 +19,3 @@ public class SquareIntensiveStudy implements Square{
         return LoginMain.getMessageBundle().getString("squarename.Intensive");
     }
 }
-

@@ -2,18 +2,20 @@ package fr.ensicaen.ecole.genielogiciel.model;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
 
+import java.util.List;
+
 public class SquareInternshipAbroad implements Square{
+
     public SquareInternshipAbroad() {
     }
 
     @Override
-    public void execute(AbstractFactoryStudent s) {
-        s.increaseSkillLevel(2);
+    public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
+        student.increaseSkillLevel(2);
     }
 
     @Override
     public String get_squareName() {
         return LoginMain.getMessageBundle().getString("squarename.abroad");
     }
-
 }

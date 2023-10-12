@@ -17,10 +17,11 @@ public class Game {
         _diceValue1 = 0;
         _diceValue2 = 0;
         _round = 1;
+        _boardLength = 64;
     }
 
     public void start(int playersCount, List<String> playerTypes, String configPath) throws InvalidPlayersCount {
-        //playerTypes = ["Prepa", "Licence", "DUT", "Prepa"]
+        //example : playerTypes = ["Prepa", "Licence", "DUT", "Prepa"]
         if (playersCount < 1 || playersCount > 4) {
             throw new InvalidPlayersCount("Player count must be between 1 and 4");
         }
@@ -57,14 +58,9 @@ public class Game {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        // Accédez aux données de configuration
-        //_boardLength = _config.getSize();
         _board = _config.getSquares();
 
         //@TEST
-        //System.out.println("Size : ");
-        //_config.displaySize();
         System.out.println("Board : ");
         _config.displayboard();
     }
@@ -97,7 +93,7 @@ public class Game {
                     if(_diceValue1 == 5 && _diceValue2 == 4 || _diceValue1 == 4 && _diceValue2 == 5){
                         student.move(53);
                     }
-                    _board.get(student.get_squareNumber()).execute(student);
+                    _board.get(student.get_squareNumber()).execute(student, 0, _board);
                     System.out.println("Square : " + getSquareName(student.get_squareNumber()));
                     positionsList.add(student.get_squareNumber());
                     continue;
@@ -114,7 +110,7 @@ public class Game {
                 System.out.println("dice : " + diceTotal);
 
                 student.move(diceTotal);
-                _board.get(student.get_squareNumber()).execute(student);
+                _board.get(student.get_squareNumber()).execute(student, diceTotal, _board);
                 System.out.println("Square : " + getSquareName(student.get_squareNumber()));
 
                 positionsList.add(student.get_squareNumber());

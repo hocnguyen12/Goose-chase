@@ -2,13 +2,15 @@ package fr.ensicaen.ecole.genielogiciel.model;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
 
+import java.util.List;
+
 public class SquareClass implements Square {
     public SquareClass() {
     }
 
     @Override
-    public void execute(AbstractFactoryStudent s) {
-        s.increaseSkillLevel(1);
+    public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
+        student.increaseSkillLevel(1);
     }
 
     @Override
@@ -16,4 +18,3 @@ public class SquareClass implements Square {
         return LoginMain.getMessageBundle().getString("squarename.class");
     }
 }
-

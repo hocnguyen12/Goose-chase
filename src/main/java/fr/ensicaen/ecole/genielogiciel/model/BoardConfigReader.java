@@ -21,4 +21,3 @@ public class BoardConfigReader {
         return objectMapper.readValue(tempFile.toFile(), BoardConfig.class);
     }
 }
-

@@ -2,22 +2,22 @@ package fr.ensicaen.ecole.genielogiciel.model;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
 
+import java.util.List;
+
 public class SquareBDE implements Square{
     private AbstractFactoryStudent _characterInSquare = null;
 
-    public SquareBDE() {
-
-    }
+    public SquareBDE() {}
 
     @Override
-    public void execute(AbstractFactoryStudent s) {
+    public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
         if(_characterInSquare == null){
-            s.set_BDE(true);
-            _characterInSquare = s;
+            student.set_BDE(true);
+            _characterInSquare = student;
         }else {
-            s.set_BDE(true);
+            student.set_BDE(true);
             _characterInSquare.set_BDE(false);
-            _characterInSquare = s;
+            _characterInSquare = student;
         }
     }
 
@@ -26,4 +26,3 @@ public class SquareBDE implements Square{
         return LoginMain.getMessageBundle().getString("squarename.BDE");
     }
 }
-
