@@ -13,16 +13,20 @@ public class SquareInformaticsIssues implements Square{
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
         if(_characterInSquare == null){
-            student.set_InformaticsProblem(true);
+            student.setInformaticsProblem(true);
             _characterInSquare = student;
         }else {
-            _characterInSquare.set_InformaticsProblem(false);
+            _characterInSquare.setInformaticsProblem(false);
             _characterInSquare = null;
         }
     }
 
     @Override
-    public String get_squareName() {
+    public String getSquareName() {
         return LoginMain.getMessageBundle().getString("squarename.ITissue");
+    }
+
+    public AbstractFactoryStudent getCharacterInSquare() {
+        return _characterInSquare;
     }
 }

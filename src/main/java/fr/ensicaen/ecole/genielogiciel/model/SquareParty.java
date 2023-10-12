@@ -15,7 +15,7 @@ public class SquareParty implements Square{
     }
 
     @Override
-    public String get_squareName() {
+    public String getSquareName() {
         return LoginMain.getMessageBundle().getString("squarename.party");
     }
 }

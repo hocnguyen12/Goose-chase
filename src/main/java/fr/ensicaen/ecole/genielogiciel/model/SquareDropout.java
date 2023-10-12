@@ -10,11 +10,11 @@ public class SquareDropout implements Square{
 
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
-        student.set_squareNumber(0);
+        student.setSquareNumber(0);
     }
 
     @Override
-    public String get_squareName() {
+    public String getSquareName() {
         return LoginMain.getMessageBundle().getString("squarename.dropout");
     }
 }

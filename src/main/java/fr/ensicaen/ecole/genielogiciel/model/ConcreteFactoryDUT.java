@@ -1,7 +1,4 @@
 package fr.ensicaen.ecole.genielogiciel.model;
-
-import java.util.Objects;
-
 public class ConcreteFactoryDUT extends AbstractFactoryStudent{
     private Student _student;
     public ConcreteFactoryDUT(){
@@ -35,13 +32,4 @@ public class ConcreteFactoryDUT extends AbstractFactoryStudent{
     public Student getStudent() {
         return _student;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof ConcreteFactoryDUT that)) return false;
-        return Objects.equals(_student, that._student);
-    }
-
-
 }

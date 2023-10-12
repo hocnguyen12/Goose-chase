@@ -11,12 +11,12 @@ public class SquareIntensiveStudy implements Square{
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
         student.increaseSkillLevel(3);
-        System.out.println("Square N" + student.get_squareNumber() + ": " + board.get(student.get_squareNumber()).get_squareName());
-        student.set_squareNumber(12);
+        System.out.println("Square N" + student.getSquareNumber() + ": " + board.get(student.getSquareNumber()).getSquareName());
+        student.setSquareNumber(12);
     }
 
     @Override
-    public String get_squareName() {
+    public String getSquareName() {
         return LoginMain.getMessageBundle().getString("squarename.Intensive");
     }
 }

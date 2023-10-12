@@ -34,7 +34,7 @@ class SquareUniTeachingsTest {
         assertEquals(4, licence.getSkillLevel());
         assertFalse(5 == licence.getSkillLevel());
         licence.setSquareNumber(5);
-        squareUniTeachings.execute(licence);
+        squareUniTeachings.execute(licence, 0, null);
         assertEquals(5, licence.getSkillLevel());
         assertFalse(4 == licence.getSkillLevel());
         assertEquals(6,licence.getSquareNumber());
@@ -44,7 +44,7 @@ class SquareUniTeachingsTest {
         assertEquals(4, prepa.getSkillLevel());
         assertFalse(5 == prepa.getSkillLevel());
         prepa.setSquareNumber(5);
-        squareUniTeachings.execute(prepa);
+        squareUniTeachings.execute(prepa, 0, null);
         assertEquals(5, prepa.getSkillLevel());
         assertFalse(4 == prepa.getSkillLevel());
         assertEquals(4,prepa.getSquareNumber());
@@ -54,7 +54,7 @@ class SquareUniTeachingsTest {
         assertEquals(4, dut.getSkillLevel());
         assertFalse(5 == dut.getSkillLevel());
         dut.setSquareNumber(5);
-        squareUniTeachings.execute(dut);
+        squareUniTeachings.execute(dut, 0, null);
         assertEquals(5, dut.getSkillLevel());
         assertFalse(4 == dut.getSkillLevel());
         assertEquals(4,dut.getSquareNumber());

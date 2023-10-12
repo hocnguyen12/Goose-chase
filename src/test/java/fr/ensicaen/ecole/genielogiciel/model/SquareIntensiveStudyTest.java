@@ -32,7 +32,7 @@ class SquareIntensiveStudyTest {
         assertEquals(6,student.getSquareNumber());
         assertNotEquals(12, student.getSquareNumber());
 
-        squareIntensiveStudy.execute(student);
+        squareIntensiveStudy.execute(student, 0, null);
 
         assertEquals(6, student.getSkillLevel());
         assertNotEquals(5, student.getSkillLevel());

@@ -29,7 +29,7 @@ class SquarePartyTest {
         assertEquals(6, student.getSkillLevel());
         assertNotEquals(5, student.getSkillLevel());
 
-        square_party.execute(student);
+        square_party.execute(student, 0, null);
 
         assertEquals(5, student.getSkillLevel());
         assertNotEquals(6, student.getSkillLevel());

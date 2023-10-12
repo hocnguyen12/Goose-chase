@@ -12,17 +12,21 @@ public class SquareBDE implements Square{
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
         if(_characterInSquare == null){
-            student.set_BDE(true);
+            student.setBDE(true);
             _characterInSquare = student;
         }else {
-            student.set_BDE(true);
-            _characterInSquare.set_BDE(false);
+            student.setBDE(true);
+            _characterInSquare.setBDE(false);
             _characterInSquare = student;
         }
     }
 
     @Override
-    public String get_squareName() {
+    public String getSquareName() {
         return LoginMain.getMessageBundle().getString("squarename.BDE");
+    }
+
+    public AbstractFactoryStudent getCharacterInSquare() {
+        return _characterInSquare;
     }
 }

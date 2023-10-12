@@ -28,7 +28,7 @@ class SquareInternshipAbroadTest {
         assertEquals(6, student.getSkillLevel());
         assertNotEquals(8, student.getSkillLevel());
 
-        squareInternshipAbroad.execute(student);
+        squareInternshipAbroad.execute(student, 0, null);
 
         assertEquals(8, student.getSkillLevel());
         assertNotEquals(6, student.getSkillLevel());

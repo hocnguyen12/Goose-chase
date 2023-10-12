@@ -24,7 +24,7 @@ class SquareDayAfterWEITest {
     @Test
     void execute() {
         assertFalse(student.nextRoundSkipped());
-        day_after_wei.execute(student);
+        day_after_wei.execute(student, 0, null);
         assertTrue(student.nextRoundSkipped());
         assertFalse(false == student.nextRoundSkipped());
     }

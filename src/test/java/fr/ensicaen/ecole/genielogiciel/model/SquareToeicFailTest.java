@@ -29,7 +29,7 @@ class SquareToeicFailTest {
         assertEquals(14, student.getSquareNumber());
         assertNotEquals(8, student.getSquareNumber());
 
-        squareToeicFail.execute(student);
+        squareToeicFail.execute(student, 0, null);
 
         assertEquals(2,student.getSquareNumber());
         assertNotEquals(14,student.getSquareNumber());

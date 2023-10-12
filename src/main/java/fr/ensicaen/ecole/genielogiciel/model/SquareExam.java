@@ -10,20 +10,20 @@ public class SquareExam implements Square{
 
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
-        if (student.get_skillLevel() < 8) {
-            if (student.get_squareNumber() - (8 - student.get_skillLevel()) < 0) {
+        if (student.getSkillLevel() < 8) {
+            if (student.getSquareNumber() - (8 - student.getSkillLevel()) < 0) {
                 //we don't want negative positions, back to start
-                student.set_squareNumber(0);
+                student.setSquareNumber(0);
             } else {
-                System.out.println("Square N" + student.get_squareNumber() + ": " + board.get(student.get_squareNumber()).get_squareName());
-                student.move(-(8 - student.get_skillLevel()));
-                board.get(student.get_squareNumber()).execute(student, diceTotal, board);
+                System.out.println("Square N" + student.getSquareNumber() + ": " + board.get(student.getSquareNumber()).getSquareName());
+                student.move(-(8 - student.getSkillLevel()));
+                board.get(student.getSquareNumber()).execute(student, diceTotal, board);
             }
         }
     }
 
     @Override
-    public String get_squareName() {
+    public String getSquareName() {
         return LoginMain.getMessageBundle().getString("squarename.exam");
     }
 }

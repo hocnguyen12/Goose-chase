@@ -11,13 +11,13 @@ public class SquareToeicFail implements Square{
 
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
-        System.out.println("Square N" + student.get_squareNumber() + ": " + board.get(student.get_squareNumber()).get_squareName());
+        System.out.println("Square N" + student.getSquareNumber() + ": " + board.get(student.getSquareNumber()).getSquareName());
         student.move(-12);
-        board.get(student.get_squareNumber()).execute(student, diceTotal, board);
+        board.get(student.getSquareNumber()).execute(student, diceTotal, board);
     }
 
     @Override
-    public String get_squareName() {
+    public String getSquareName() {
         return LoginMain.getMessageBundle().getString("squarename.toeic");
     }
 }

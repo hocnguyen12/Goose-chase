@@ -13,7 +13,7 @@ public class SquareStart implements Square {
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board){}
 
     @Override
-    public String get_squareName() {
+    public String getSquareName() {
         return LoginMain.getMessageBundle().getString("squarename.start");
     }
 }

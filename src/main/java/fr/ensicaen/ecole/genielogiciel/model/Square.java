@@ -9,5 +9,5 @@ public interface Square {
 
     void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board);
 
-    String get_squareName();
+    String getSquareName();
 }

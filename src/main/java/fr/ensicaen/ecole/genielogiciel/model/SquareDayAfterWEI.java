@@ -11,11 +11,11 @@ public class SquareDayAfterWEI implements Square{
 
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
-        student.set_skipNextRoundWEI(true);
+        student.setSkipNextRoundWEI(true);
     }
 
     @Override
-    public String get_squareName() {
+    public String getSquareName() {
         return LoginMain.getMessageBundle().getString("squarename.wei");
     }
 }

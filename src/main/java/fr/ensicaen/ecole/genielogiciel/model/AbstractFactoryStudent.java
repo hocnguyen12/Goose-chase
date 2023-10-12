@@ -2,7 +2,6 @@ package fr.ensicaen.ecole.genielogiciel.model;
 
 public abstract class AbstractFactoryStudent {
     private Student _student;
-
     private String _name;
     private boolean _skipNextRoundWEI = false;
     private boolean _InformaticsProblem = false;
@@ -16,45 +15,57 @@ public abstract class AbstractFactoryStudent {
             _squareNumber = 63 - (_squareNumber + n - 63);
             return;
         }
+        if (_squareNumber + n < 0) {
+            _squareNumber = 0;
+            return;
+        }
         _squareNumber += n;
     }
 
-    public String get_name() {
+    public String getName() {
         return _name;
     }
-    public void set_name(String _name) {
+    public void setName(String _name) {
         this._name = _name;
     }
 
-    public boolean has_InformaticsProblem() {
+    public boolean hasInformaticsProblem() {
         return _InformaticsProblem;
     }
-    public void set_InformaticsProblem(boolean _InformaticsProblem) {
+    public void setInformaticsProblem(boolean _InformaticsProblem) {
         this._InformaticsProblem = _InformaticsProblem;
     }
     // SquareBDE
-    public boolean is_BDE() {
+    public boolean isBDE() {
         return _BDE;
     }
-    public void set_BDE(boolean _BDE) {
+    public void setBDE(boolean _BDE) {
         this._BDE = _BDE;
     }
     // Square number
-    public int get_squareNumber() {
+    public int getSquareNumber() {
         return _squareNumber;
     }
-    public void set_squareNumber(int _squareNumber) {
-        this._squareNumber = _squareNumber;
+    public void setSquareNumber(int squareNumber) {
+        if (squareNumber < 0) {
+            _squareNumber = 0;
+            return;
+        }
+        _squareNumber = squareNumber;
     }
     // Skill Level
-    public int get_skillLevel() {
+    public int getSkillLevel() {
         return _skillLevel;
     }
     public void increaseSkillLevel(int value) {
-        this._skillLevel += value;
+        if (_skillLevel + value < 0) {
+            _skillLevel = 0;
+            return;
+        }
+        _skillLevel += value;
     }
     // SquareWEI (skips next round)
-    public void set_skipNextRoundWEI(boolean b) {
+    public void setSkipNextRoundWEI(boolean b) {
         _skipNextRoundWEI = b;
     }
     public boolean nextRoundSkipped() {
@@ -65,5 +76,5 @@ public abstract class AbstractFactoryStudent {
     public abstract Diligent createDiligent();
     public abstract Brilliant createBrilliant();
 
-    public abstract Student get_student();
+    public abstract Student getStudent();
 }

@@ -25,10 +25,10 @@ class SquareExamTest {
     void execute() {
         student.increaseSkillLevel(10);
         student.setSquareNumber(10);
-        exam.execute(student);
+        exam.execute(student, 0, null);
         assertEquals(10, student.getSquareNumber());
         student.increaseSkillLevel(-4);
-        exam.execute(student);
+        exam.execute(student, 0, null);
         assertEquals(8, student.getSquareNumber());
         assertFalse(6 == student.getSquareNumber());
 
