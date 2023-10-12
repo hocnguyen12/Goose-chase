@@ -17,8 +17,8 @@ public class SquareDUTTeachings implements Square{
         } else {
             student.move(-1);
         }
+        System.out.println("Square N" + student.get_squareNumber() + ": " + board.get(student.get_squareNumber()).get_squareName());
         board.get(student.get_squareNumber()).execute(student, diceTotal, board);
-        System.out.println("Square : " + board.get(student.get_squareNumber()).get_squareName());
     }
 
     @Override

@@ -2,6 +2,8 @@ package fr.ensicaen.ecole.genielogiciel.model;
 
 public abstract class AbstractFactoryStudent {
     private Student _student;
+
+    private String _name;
     private boolean _skipNextRoundWEI = false;
     private boolean _InformaticsProblem = false;
     private boolean _BDE = false;
@@ -15,6 +17,13 @@ public abstract class AbstractFactoryStudent {
             return;
         }
         _squareNumber += n;
+    }
+
+    public String get_name() {
+        return _name;
+    }
+    public void set_name(String _name) {
+        this._name = _name;
     }
 
     public boolean has_InformaticsProblem() {

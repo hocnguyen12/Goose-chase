@@ -12,13 +12,13 @@ public class SquarePrepaTeachings implements Square{
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
         student.increaseSkillLevel(1);
-        if (student instanceof ConcreteFactoryLicence) {
+        if (student instanceof ConcreteFactoryPrepa) {
             student.move(1);
         } else {
             student.move(- 1);
         }
+        System.out.println("Square N" + student.get_squareNumber() + ": " + board.get(student.get_squareNumber()).get_squareName());
         board.get(student.get_squareNumber()).execute(student, diceTotal, board);
-        System.out.println("Square : " + board.get(student.get_squareNumber()).get_squareName());
     }
 
     @Override

@@ -11,9 +11,9 @@ public class SquareToeicFail implements Square{
 
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
+        System.out.println("Square N" + student.get_squareNumber() + ": " + board.get(student.get_squareNumber()).get_squareName());
         student.move(-12);
         board.get(student.get_squareNumber()).execute(student, diceTotal, board);
-        System.out.println("Square : " + board.get(student.get_squareNumber()).get_squareName());
     }
 
     @Override

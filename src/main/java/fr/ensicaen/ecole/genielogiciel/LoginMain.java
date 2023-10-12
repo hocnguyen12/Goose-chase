@@ -32,21 +32,22 @@ public final class LoginMain extends Application {
         //Run example
 
         Game g = new Game();
+
+        int playerCount = 4;
         List<String> l = new ArrayList<>();
         l.add("Prepa");
         l.add("DUT");
         l.add("Licence");
         l.add("Prepa");
+
         String path = "fr/ensicaen/ecole/genielogiciel/board_config_1.json";
-        g.start(2, l, path);
+        g.start(playerCount, l, path);
 
         List<Integer> positions;
 
-        System.out.println("ROUND : " + g.get_round());
         positions = g.executeRound();
         System.out.println(positions);
         while (positions != null) {
-            System.out.println("ROUND : " + g.get_round());
             positions = g.executeRound();
             System.out.println(positions);
         }

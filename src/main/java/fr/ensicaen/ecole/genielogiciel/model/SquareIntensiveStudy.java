@@ -10,7 +10,8 @@ public class SquareIntensiveStudy implements Square{
 
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
-        student.increaseSkillLevel(1);
+        student.increaseSkillLevel(3);
+        System.out.println("Square N" + student.get_squareNumber() + ": " + board.get(student.get_squareNumber()).get_squareName());
         student.set_squareNumber(12);
     }
 
