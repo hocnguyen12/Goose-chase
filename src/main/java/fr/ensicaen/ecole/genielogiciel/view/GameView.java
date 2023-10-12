@@ -120,10 +120,10 @@ public final class GameView {
         Popup popup = new Popup();
         Text text = new Text(LoginMain.getMessageBundle().getString("victory.text"));
         Pane pane = new Pane();
-        pane.getChildren().add(popup);
+        pane.getChildren().add(popup.getOwnerNode());
         text.setFont(new Font("Arial",20));
         popup.getContent().add(text);
-        placeNode(grid_anchor,popup,9,5);
+        placeNode(grid_anchor, popup.getOwnerNode(),9,5);
         btn_singlePlayer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
