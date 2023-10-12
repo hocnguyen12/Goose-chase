@@ -22,8 +22,18 @@ class AbstractFactoryStudentTest {
         student.move(2);
         assertEquals(2, student.getSquareNumber());
         assertFalse(student.getSquareNumber() == 4);
+
         student.move(5);
         assertEquals(7, student.getSquareNumber());
+
+        student.move(70);
+        assertEquals(49, student.getSquareNumber());
+
+        student.move(-100);
+        assertEquals(0, student.getSquareNumber());
+
+        assertFalse(student.getSquareNumber() == 49);
+
     }
 
     @Test
