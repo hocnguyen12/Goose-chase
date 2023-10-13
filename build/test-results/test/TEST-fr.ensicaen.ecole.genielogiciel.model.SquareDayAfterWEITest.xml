@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fr.ensicaen.ecole.genielogiciel.model.SquareDayAfterWEITest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-13T13:53:53" hostname="LINUXe201pc02" time="0.006">
-  <properties/>
-  <testcase name="execute()" classname="fr.ensicaen.ecole.genielogiciel.model.SquareDayAfterWEITest" time="0.006"/>
-  <system-out><![CDATA[new Diligent
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

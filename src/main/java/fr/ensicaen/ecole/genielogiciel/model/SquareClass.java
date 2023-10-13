@@ -15,6 +15,6 @@ public class SquareClass implements Square {
 
     @Override
     public String getSquareName() {
-        return LoginMain.getMessageBundle().getString("squarename.class");
+        return LoginMain.getMessageBundle().getString("squarename.course");
     }
 }

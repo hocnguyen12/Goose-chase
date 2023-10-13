@@ -92,27 +92,32 @@ public class Game {
             System.out.println("#informatics");
             student.addRoundPositions(student.getSquareNumber());
         } else if (_round == 1) {
-                if (_diceValue1 == 6 && _diceValue2 == 3 || _diceValue1 == 3 && _diceValue2 == 6) {
-                    student.move(26);
-                }
-                if (_diceValue1 == 5 && _diceValue2 == 4 || _diceValue1 == 4 && _diceValue2 == 5) {
-                    student.move(53);
-                } else {
-                    int diceTotal = 0;
-                    if (student.getStudent() instanceof Dilettante) {
-                        diceTotal = (_diceValue1 + _diceValue2) / 2;
-                    } else if (student.getStudent() instanceof Diligent) {
-                        diceTotal = _diceValue1 + _diceValue2;
-                    } else if (student.getStudent() instanceof Brilliant) {
-                        diceTotal = (_diceValue1 + _diceValue2) * 2;
-                    }
-                    System.out.println("dice : " + diceTotal);
-                    student.move(diceTotal);
-                }
+            if (_diceValue1 == 6 && _diceValue2 == 3 || _diceValue1 == 3 && _diceValue2 == 6) {
+                student.move(26);
                 System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
                 student.addRoundPositions(student.getSquareNumber());
-                _board.get(student.getSquareNumber()).execute(student, 0, _board);
+                _board.get(student.getSquareNumber()).execute(student, 26, _board);
+            } else if (_diceValue1 == 5 && _diceValue2 == 4 || _diceValue1 == 4 && _diceValue2 == 5) {
+                student.move(53);
+                System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
+                student.addRoundPositions(student.getSquareNumber());
+                _board.get(student.getSquareNumber()).execute(student, 53, _board);
             } else {
+                int diceTotal = 0;
+                if (student.getStudent() instanceof Dilettante) {
+                    diceTotal = (_diceValue1 + _diceValue2) / 2;
+                } else if (student.getStudent() instanceof Diligent) {
+                    diceTotal = _diceValue1 + _diceValue2;
+                } else if (student.getStudent() instanceof Brilliant) {
+                    diceTotal = (_diceValue1 + _diceValue2) * 2;
+                }
+                System.out.println("dice : " + diceTotal);
+                student.move(diceTotal);
+                System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
+                student.addRoundPositions(student.getSquareNumber());
+                _board.get(student.getSquareNumber()).execute(student, diceTotal, _board);
+            }
+        } else {
             int diceTotal = 0;
             if (student.getStudent() instanceof Dilettante) {
                 diceTotal = (_diceValue1 + _diceValue2) / 2;
@@ -135,80 +140,6 @@ public class Game {
         }
         return student.getRoundPositions();
     }
-
-    /*
-    public List<Integer> executeRound() {
-        if (_round > 100) {
-            System.out.println("BUG PARTIE INFINIE");
-            return null;
-        }
-
-        System.out.println("\n*** ROUND : " + _round + "***");
-        List<Integer> positionsList = new ArrayList<>();
-
-        for (AbstractFactoryStudent student : _players) {
-            if (gameIsFinished()) {
-                return null;
-            }
-            System.out.println("Au tour de : " + student.getName() + " (skill :" + student.getSkillLevel() + ")");
-            if (student.nextRoundSkipped()) {
-                System.out.println("#Round skipped");
-                student.setSkipNextRoundWEI(false);
-                positionsList.add(student.getSquareNumber());
-                continue;
-            }
-            if (student.isBDE()) {
-                System.out.println("#bde");
-                positionsList.add(student.getSquareNumber());
-                continue;
-            }
-            if (student.hasInformaticsProblem()) {
-                System.out.println("#informatics");
-                positionsList.add(student.getSquareNumber());
-                continue;
-            }
-            _diceValue1 = rollDice();
-            _diceValue2 = rollDice();
-            if (_round == 1) {
-                if (_diceValue1 == 6 && _diceValue2 == 3 || _diceValue1 == 3 && _diceValue2 == 6) {
-                    student.move(26);
-                }
-                if (_diceValue1 == 5 && _diceValue2 == 4 || _diceValue1 == 4 && _diceValue2 == 5) {
-                    student.move(53);
-                } else {
-                    int diceTotal = 0;
-                    if (student.getStudent() instanceof Dilettante) {
-                        diceTotal = (_diceValue1 + _diceValue2) / 2;
-                    } else if (student.getStudent() instanceof Diligent) {
-                        diceTotal = _diceValue1 + _diceValue2;
-                    } else if (student.getStudent() instanceof Brilliant) {
-                        diceTotal = (_diceValue1 + _diceValue2) * 2;
-                    }
-                    System.out.println("dice : " + diceTotal);
-                    student.move(diceTotal);
-                }
-                System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
-                _board.get(student.getSquareNumber()).execute(student, 0, _board);
-                positionsList.add(student.getSquareNumber());
-                continue;
-            }
-            int diceTotal = 0;
-            if (student.getStudent() instanceof Dilettante) {
-                diceTotal = (_diceValue1 + _diceValue2) / 2;
-            } else if (student.getStudent() instanceof Diligent) {
-                diceTotal = _diceValue1 + _diceValue2;
-            } else if (student.getStudent() instanceof Brilliant) {
-                diceTotal = (_diceValue1 + _diceValue2) * 2;
-            }
-            System.out.println("dice : " + diceTotal);
-            student.move(diceTotal);
-            System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
-            _board.get(student.getSquareNumber()).execute(student, diceTotal, _board);
-            positionsList.add(student.getSquareNumber());
-        }
-        _round++;
-        return positionsList;
-    }*/
 
     int rollDice() {
         return 1 + (int)(Math.random() * 6);

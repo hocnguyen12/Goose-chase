@@ -34,7 +34,7 @@ public class BoardSquareDeserializer extends JsonDeserializer<Square>{
         } else if ("SquareIntensiveStudy".equals(type)) {
             return new SquareIntensiveStudy();
         } else if ("SquareInternshipAbroad".equals(type)) {
-            return new SquareEnd();
+            return new SquareInternshipAbroad();
         } else if ("SquareKangaroo".equals(type)) {
             return new SquareKangaroo();
         } else if ("SquareParty".equals(type)) {
