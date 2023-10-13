@@ -45,6 +45,8 @@ Le projet a la structure suivante :
         │   ├── java
         │   │      ├── fr.ensicaen.genielogiciel.json/*.java
         │   │      ├── fr.ensicaen.genielogiciel.model/*.java
+        │   │      |          └── fr.ensicaen.genielogiciel.model.character/*.java
+        │   │      |          └── fr.ensicaen.genielogiciel.model.square/*.java
         │   │      ├── fr.ensicaen.genielogiciel.presenter/*.java
         │   │      └── fr.ensicaen.genielogiciel.view/*.java
         │   │
@@ -54,7 +56,7 @@ Le projet a la structure suivante :
         │          ├── fr.ensicaen.genielogiciel.board_config_1.json
         │          ├── fr.ensicaen.genielogiciel.board_config_2.json
         │          └── fr.ensicaen.genielogiciel/MessageBundle.properties.properties
-        ├── test
+        └── test
             ├── java
             │      └── fr.ensicaen.genielogiciel.model/*.java
             └── resources
