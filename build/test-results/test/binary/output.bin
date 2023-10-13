@@ -1,5 +1,5 @@
 new Brilliant
-new Diligent
+new Brilliant
 new Brilliant
 Creation d'un joueur
 new Licence
@@ -12,21 +12,21 @@
 new Brilliant
 Creation d'un joueur
 new Prepa
-new Diligent
+new Dilettante
 Creation d'un joueur
 	new DUT
-new Brilliant
+new Dilettante
 Creation d'un joueur
 new Licence
-new Diligent
+new Dilettante
 Creation d'un joueur
 new Prepa
 new Brilliant
 TOUT LE MONDE EST BLOQUE
 TOUT LE MONDE EST BLOQUE
 TOUT LE MONDE EST BLOQUE
+	new Diligent
 	new Dilettante
-	new Brilliant
 
 new Brilliant
 new Brilliant
@@ -37,9 +37,9 @@
 Square N6: Vide
 new Brilliant
 new Brilliant
-new Brilliant
+new Dilettante
 Square N5: Cours de DUT
-new Brilliant
+new Dilettante
 new Brilliant
 new Brilliant
 "Square N5: Révisions intensives
@@ -47,10 +47,10 @@
 new Brilliant
 Square N0: Vide
 Square N36: Vide
-new Brilliant
-new Dilettante
+new Dilettante
 new Brilliant
-new Diligent
+new Brilliant
+new Brilliant
 Square N4: Vide
 Square N6: Vide
 Square N4: Vide
@@ -59,7 +59,7 @@
 ! Square N5: Echec du TOEIC
 #"new Brilliant
 #"new Brilliant
-#"new Brilliant
+#"new Diligent
 #"Square N6: Vide
 #"Square N4: Vide
 #"Square N4: Vide
