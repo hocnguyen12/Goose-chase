@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fr.ensicaen.ecole.genielogiciel.model.SquareDropoutTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-13T21:36:22" hostname="DESKTOP-5FPHM5D" time="0.001">
-  <properties/>
-  <testcase name="execute()" classname="fr.ensicaen.ecole.genielogiciel.model.SquareDropoutTest" time="0.001"/>
-  <system-out><![CDATA[new Brilliant
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
