@@ -70,17 +70,29 @@ public class Game {
         _config.displayboard();
     }
 
-    public List<Integer> executePlayer() {
+    public List<Integer> throwDice() {
+        _diceValue1 = rollDice();
+        _diceValue2 = rollDice();
+        List<Integer> diceValues = new ArrayList<>();
+
+        diceValues.add(_diceValue1);
+        diceValues.add(_diceValue2);
+
+        return diceValues;
+    }
+
+    public List<Integer> executePlayer(ArrayList<Integer> diceValues) {
         System.out.println("\n*** ROUND : " + _round + "***");
         if (gameIsFinished()) {
             return null;
         }
 
+        _diceValue1 = diceValues.get(0);
+        _diceValue2 = diceValues.get(1);
         AbstractFactoryStudent student = _players.get(_currentPlayer);
         student.resetRoundPositions();
         System.out.println("Au tour de : " + student.getName() + " (skill :" + student.getSkillLevel() + ")");
-        _diceValue1 = rollDice();
-        _diceValue2 = rollDice();
+
         if (student.nextRoundSkipped()) {
             System.out.println("#Round skipped");
             student.setSkipNextRoundWEI(false);
@@ -170,7 +182,15 @@ public class Game {
         return _board.get(n).getSquareName();
     }
 
-    public int get_round() {
+    public int getRound() {
         return _round;
+    }
+
+    public int getDiceValue1() {
+        return _diceValue1;
+    }
+
+    public int getDiceValue2() {
+        return _diceValue2;
     }
 }
