@@ -37,13 +37,13 @@ class SquareBDETest {
 
         assertFalse(student_prepa.isBDE());
         assertTrue(student_licence.isBDE());
-        assertFalse(student_prepa.equals(squareBDE.getCharacterInSquare()));
-        assertTrue(student_licence.equals(squareBDE.getCharacterInSquare()));
+        assertNotEquals(student_prepa, squareBDE.getCharacterInSquare());
+        assertEquals(student_licence, squareBDE.getCharacterInSquare());
 
         squareBDE.execute(student_prepa, 0, null);
 
-        assertTrue(student_prepa.equals(squareBDE.getCharacterInSquare()));
-        assertFalse(student_licence.equals(squareBDE.getCharacterInSquare()));
+        assertEquals(student_prepa, squareBDE.getCharacterInSquare());
+        assertNotEquals(student_licence, squareBDE.getCharacterInSquare());
         assertTrue(student_prepa.isBDE());
         assertFalse(student_licence.isBDE());
 

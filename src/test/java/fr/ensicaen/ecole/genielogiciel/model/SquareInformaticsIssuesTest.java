@@ -35,11 +35,11 @@ class SquareInformaticsIssuesTest {
         squareInformaticsIssues.execute(student_licence, 0, null);
 
         assertTrue(student_licence.hasInformaticsProblem());
-        assertTrue(student_licence.equals(squareInformaticsIssues.getCharacterInSquare()));
+        assertEquals(student_licence, squareInformaticsIssues.getCharacterInSquare());
 
         squareInformaticsIssues.execute(student_prepa, 0, null);
 
-        assertEquals(null, squareInformaticsIssues.getCharacterInSquare());
+        assertNull(squareInformaticsIssues.getCharacterInSquare());
         assertFalse(student_prepa.hasInformaticsProblem());
         assertFalse(student_licence.hasInformaticsProblem());
     }

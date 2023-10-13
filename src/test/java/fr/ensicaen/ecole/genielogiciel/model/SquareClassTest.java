@@ -8,26 +8,28 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SquareDayAfterWEITest {
-    Square day_after_wei;
+class SquareClassTest {
+    Square regularClass;
     AbstractFactoryStudent student;
     @BeforeEach
     void setUp() {
-        day_after_wei= new SquareDayAfterWEI();
-        student= new ConcreteFactoryLicence();
+        regularClass = new SquareClass();
+        student = new ConcreteFactoryLicence();
     }
 
     @AfterEach
     void tearDown() {
-        day_after_wei= null;
+        regularClass= null;
         student= null;
     }
 
     @Test
     void execute() {
-        assertFalse(student.nextRoundSkipped());
-        day_after_wei.execute(student, 0, null);
-        assertTrue(student.nextRoundSkipped());
-        assertNotEquals(false, student.nextRoundSkipped());
+        regularClass.execute(student, 0, null);
+        assertEquals(1, student.getSkillLevel());
+
+        student.increaseSkillLevel(100);
+        regularClass.execute(student, 0, null);
+        assertEquals(102, student.getSkillLevel());
     }
 }

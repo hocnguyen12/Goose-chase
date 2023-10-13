@@ -11,43 +11,35 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SquareExamTest {
+class SquareKangarooTest {
+    Square kangaroo;
     AbstractFactoryStudent student;
-    SquareExam exam;
     List<Square> board;
-
     @BeforeEach
     void setUp() {
-        student= new ConcreteFactoryLicence();
-        exam= new SquareExam();
+        kangaroo = new SquareKangaroo();
+        student = new ConcreteFactoryLicence();
         board = new ArrayList<>();
-        for (int i = 0; i < 64; i++) {
+        for (int i = 0; i < 63; i++) {
             board.add(new SquareBasic());
         }
-        board.add(5, new SquareDUTTeachings());
+        board.add(18, kangaroo);
     }
 
     @AfterEach
     void tearDown() {
-        student= null;
-        exam= null;
+        kangaroo = null;
+        student = null;
         board = null;
     }
 
     @Test
     void execute() {
-        student.increaseSkillLevel(10);
-        student.setSquareNumber(5);
-        exam.execute(student, 0, board);
-        assertEquals(5, student.getSquareNumber());
-
-        student.increaseSkillLevel(-4); // 6
-        assertEquals(6, student.getSkillLevel());
-        exam.execute(student, 0, board);
-        assertEquals(3, student.getSquareNumber());
-
-        student.increaseSkillLevel(-4);
-        exam.execute(student, 0, board);
+        kangaroo.execute(student, 0, board);
         assertEquals(0, student.getSquareNumber());
+
+        student.move(18);
+        kangaroo.execute(student, 18, board);
+        assertEquals(36, student.getSquareNumber());
     }
 }

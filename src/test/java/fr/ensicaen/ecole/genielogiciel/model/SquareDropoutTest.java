@@ -29,6 +29,6 @@ class SquareDropoutTest {
         assertEquals(5, student.getSquareNumber());
         dropout.execute(student, 0, null);
         assertEquals(0, student.getSquareNumber());
-        assertFalse(5 == student.getSquareNumber());
+        assertNotEquals(5, student.getSquareNumber());
     }
 }
