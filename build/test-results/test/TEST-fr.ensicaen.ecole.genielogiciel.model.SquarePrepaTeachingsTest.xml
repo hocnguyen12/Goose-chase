@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="fr.ensicaen.ecole.genielogiciel.model.SquarePrepaTeachingsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-13T13:11:31" hostname="LINUXe201pc02" time="0.001">
+  <properties/>
+  <testcase name="execute()" classname="fr.ensicaen.ecole.genielogiciel.model.SquarePrepaTeachingsTest" time="0.001"/>
+  <system-out><![CDATA[new Brilliant
+new Brilliant
+new Diligent
+Square N4: Vide
+Square N6: Vide
+Square N4: Vide
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
