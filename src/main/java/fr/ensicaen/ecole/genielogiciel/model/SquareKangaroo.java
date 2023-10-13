@@ -12,6 +12,7 @@ public class SquareKangaroo implements Square{
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
         student.move(diceTotal);
         System.out.println("Square N" + student.getSquareNumber() + ": " + board.get(student.getSquareNumber()).getSquareName());
+        student.addRoundPositions(student.getSquareNumber());
         board.get(student.getSquareNumber()).execute(student, diceTotal, board);
     }
 

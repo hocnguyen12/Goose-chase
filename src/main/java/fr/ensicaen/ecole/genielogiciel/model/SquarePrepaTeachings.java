@@ -18,6 +18,7 @@ public class SquarePrepaTeachings implements Square{
             student.move(- 1);
         }
         System.out.println("Square N" + student.getSquareNumber() + ": " + board.get(student.getSquareNumber()).getSquareName());
+        student.addRoundPositions(student.getSquareNumber());
         board.get(student.getSquareNumber()).execute(student, diceTotal, board);
     }
 

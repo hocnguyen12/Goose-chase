@@ -14,9 +14,11 @@ public class SquareExam implements Square{
             if (student.getSquareNumber() - (8 - student.getSkillLevel()) < 0) {
                 //we don't want negative positions, back to start
                 student.setSquareNumber(0);
+                student.addRoundPositions(student.getSquareNumber());
             } else {
                 System.out.println("Square N" + student.getSquareNumber() + ": " + board.get(student.getSquareNumber()).getSquareName());
                 student.move(-(8 - student.getSkillLevel()));
+                student.addRoundPositions(student.getSquareNumber());
                 board.get(student.getSquareNumber()).execute(student, diceTotal, board);
             }
         }

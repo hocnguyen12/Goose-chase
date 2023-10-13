@@ -11,6 +11,7 @@ public class SquareDropout implements Square{
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
         student.setSquareNumber(0);
+        student.addRoundPositions(student.getSquareNumber());
     }
 
     @Override

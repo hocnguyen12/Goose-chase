@@ -1,5 +1,8 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class AbstractFactoryStudent {
     private Student _student;
     private String _name;
@@ -8,6 +11,19 @@ public abstract class AbstractFactoryStudent {
     private boolean _BDE = false;
     private int _skillLevel = 0;
     private int _squareNumber = 0;
+
+    private List<Integer> _roundPositions = new ArrayList<>();
+
+
+    public List<Integer> getRoundPositions() {
+        return _roundPositions;
+    }
+    public void addRoundPositions(int squareNumber) {
+        _roundPositions.add(squareNumber);
+    }
+    public void resetRoundPositions() {
+        _roundPositions.clear();
+    }
 
     public void move(int n){
         //If new position exceeds 63, the player goes back
@@ -28,7 +44,7 @@ public abstract class AbstractFactoryStudent {
     public void setName(String _name) {
         this._name = _name;
     }
-
+    //
     public boolean hasInformaticsProblem() {
         return _InformaticsProblem;
     }

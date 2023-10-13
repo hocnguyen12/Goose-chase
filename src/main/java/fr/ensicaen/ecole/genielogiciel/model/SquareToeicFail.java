@@ -13,6 +13,7 @@ public class SquareToeicFail implements Square{
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
         System.out.println("Square N" + student.getSquareNumber() + ": " + board.get(student.getSquareNumber()).getSquareName());
         student.move(-12);
+        student.addRoundPositions(student.getSquareNumber());
         board.get(student.getSquareNumber()).execute(student, diceTotal, board);
     }
 
