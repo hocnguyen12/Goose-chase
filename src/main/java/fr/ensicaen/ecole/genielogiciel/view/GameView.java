@@ -1,19 +1,14 @@
 package fr.ensicaen.ecole.genielogiciel.view;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
-import fr.ensicaen.ecole.genielogiciel.model.Model;
 import fr.ensicaen.ecole.genielogiciel.presenter.GamePresenter;
 
-import javafx.animation.PathTransition;
-import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.HPos;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,9 +22,7 @@ import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Popup;
-import javafx.stage.PopupWindow;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.*;
@@ -48,6 +41,14 @@ public final class GameView {
     private String nickName1;
 
     private String nickName2;
+
+    private Color[] colorList = new Color[]{Color.RED, Color.PURPLE, Color.WHITE, Color.TURQUOISE, Color.PINK, Color.BROWN, Color.ORANGE, Color.WHITE,
+            Color.PURPLE, Color.PINK, Color.WHITE, Color.TURQUOISE, Color.WHITE, Color.YELLOW, Color.BROWN, Color.PINK,Color.WHITE, Color.WHITE, Color.WHITE,
+            Color.WHITE, Color.YELLOW, Color.PINK, Color.WHITE, Color.WHITE,Color.WHITE, Color.WHITE, Color.LIGHTBLUE, Color.WHITE, Color.WHITE,
+            Color.GREEN, Color.WHITE,Color.WHITE, Color.PINK, Color.WHITE, Color.GREY, Color.WHITE, Color.WHITE, Color.WHITE, Color.BLACK,Color.WHITE,
+            Color.LIGHTBLUE, Color.WHITE, Color.WHITE, Color.WHITE, Color.GREY, Color.WHITE, Color.WHITE,Color.YELLOW,
+            Color.LIGHTGREEN, Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE, Color.DARKGREEN, Color.WHITE,Color.LIGHTBLUE,
+            Color.WHITE, Color.WHITE, Color.MEDIUMVIOLETRED, Color.WHITE, Color.WHITE, Color.BLACK, Color.WHITE, Color.TEAL};
 
     private static final int MAX_LENGTH = 8;
     private static final int MAX_HEIGHT = 8;
@@ -119,11 +120,8 @@ public final class GameView {
         Button btn_singlePlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         Popup popup = new Popup();
         Text text = new Text(LoginMain.getMessageBundle().getString("victory.text"));
-        Pane pane = new Pane();
-        pane.getChildren().add(popup.getOwnerNode());
         text.setFont(new Font("Arial",20));
         popup.getContent().add(text);
-        placeNode(grid_anchor, popup.getOwnerNode(),9,5);
         btn_singlePlayer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -140,19 +138,16 @@ public final class GameView {
             }
         });
         Text player = new Text();
+        player.setText(nickName1);
         grid_anchor.getChildren().add(player);
         grid_anchor.setRowIndex(player,0);
+        grid_anchor.setColumnIndex(player,10);
         Button btn_multiPlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-
-                grid_anchor.setColumnIndex(player,10);
                 if (isPlayer1){
+                    index1 = _gamePresenter.executePlayer();
                     player.setText(nickName1);
-                    if (index1 == 63){
-                        return;
-                    }
-                    index1++;
                     stack_array.get(index1).getChildren().add(pawn1);
                     if (index1 == 63){
                         if (!popup.isShowing()){
@@ -223,7 +218,7 @@ public final class GameView {
         for (int i = 0;i < MAX_LENGTH;i++){
             for (int j = 0;j < MAX_HEIGHT;j++){
                 Rectangle rect = new Rectangle(80,80);
-                rect.setFill(Color.WHITE);
+                rect.setFill(colorList[array[i][j]]);
                 rect.setStroke(Color.BLACK);
                 System.out.println("i j :"+i+" "+j);
                 Text text = new Text(Integer.toString(array[i][j]));
