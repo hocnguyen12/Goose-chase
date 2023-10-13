@@ -1,10 +1,13 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryDUT;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryLicence;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryPrepa;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

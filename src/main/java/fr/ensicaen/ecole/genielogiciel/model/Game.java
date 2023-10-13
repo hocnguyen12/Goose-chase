@@ -1,5 +1,9 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.model.character.*;
+import fr.ensicaen.ecole.genielogiciel.json.BoardConfig;
+import fr.ensicaen.ecole.genielogiciel.json.BoardConfigReader;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

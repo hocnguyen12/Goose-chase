@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-10-13T15:57:36" hostname="LINUXe201pc02" time="0.049">
+<testsuite name="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2023-10-13T21:02:53" hostname="DESKTOP-5FPHM5D" time="0.038">
   <properties/>
-  <testcase name="get_student()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.034"/>
-  <testcase name="get_squareNumber()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.001"/>
+  <testcase name="get_student()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.022"/>
+  <testcase name="get_squareNumber()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.002"/>
   <testcase name="setSkipNextRoundWEI()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.001"/>
   <testcase name="move()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.001"/>
   <testcase name="increaseSkillLevel()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.001"/>
-  <testcase name="nextRoundSkipped()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.001"/>
+  <testcase name="nextRoundSkipped()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.0"/>
   <testcase name="getSkillLevel()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.001"/>
   <testcase name="set_squareNumber()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.001"/>
-  <testcase name="has_InformaticsProblem()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.0"/>
+  <testcase name="has_InformaticsProblem()" classname="fr.ensicaen.ecole.genielogiciel.model.AbstractFactoryStudentTest" time="0.001"/>
   <system-out><![CDATA[new Brilliant
+new Brilliant
+new Dilettante
 new Diligent
-new Brilliant
-new Brilliant
 new Diligent
-new Brilliant
-new Brilliant
+new Diligent
+new Diligent
 new Brilliant
 new Brilliant
 ]]></system-out>

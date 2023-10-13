@@ -1,6 +1,8 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
+import fr.ensicaen.ecole.genielogiciel.json.BoardSquareDeserializer;
 
 import java.util.List;
 

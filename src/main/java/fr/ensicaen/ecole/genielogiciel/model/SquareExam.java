@@ -1,6 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
+import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
 
 import java.util.List;
 
