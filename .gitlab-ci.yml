@@ -1,5 +1,5 @@
 # Continuous integration for Gradle and JVM applications
-image: openjdk16
+image: gradle:jdk16
 
 variables:
   # Using a fresh runtime for each build to isolate each runtime from any previous builds.
