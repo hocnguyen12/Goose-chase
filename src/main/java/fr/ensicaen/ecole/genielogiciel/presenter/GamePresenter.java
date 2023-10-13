@@ -2,6 +2,7 @@ package fr.ensicaen.ecole.genielogiciel.presenter;
 
 import fr.ensicaen.ecole.genielogiciel.model.Game;
 import fr.ensicaen.ecole.genielogiciel.model.InvalidPlayersCount;
+import fr.ensicaen.ecole.genielogiciel.model.InvalidTypeListSize;
 import fr.ensicaen.ecole.genielogiciel.model.Model;
 import fr.ensicaen.ecole.genielogiciel.view.GameView;
 import java.util.ArrayList;
@@ -48,8 +49,11 @@ public final class GamePresenter {
         try {
             //Initialize game with correct parameters
             String path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
-            _game.start(playerCount, playersTypes, path);
+            _game.start(playerCount, playersTypes);
+            _game.configureBoard(path);
         } catch (InvalidPlayersCount e) {
+            throw new RuntimeException(e);
+        } catch (InvalidTypeListSize e) {
             throw new RuntimeException(e);
         }
 

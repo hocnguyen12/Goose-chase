@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fr.ensicaen.ecole.genielogiciel.model.SquareInformaticsIssuesTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-13T15:57:36" hostname="LINUXe201pc02" time="0.005">
-  <properties/>
-  <testcase name="execute()" classname="fr.ensicaen.ecole.genielogiciel.model.SquareInformaticsIssuesTest" time="0.005"/>
-  <system-out><![CDATA[new Dilettante
-new Diligent
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

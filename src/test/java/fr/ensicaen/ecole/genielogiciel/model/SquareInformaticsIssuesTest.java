@@ -1,5 +1,9 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryLicence;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryPrepa;
+import fr.ensicaen.ecole.genielogiciel.model.square.SquareInformaticsIssues;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,11 +36,11 @@ class SquareInformaticsIssuesTest {
         squareInformaticsIssues.execute(student_licence, 0, null);
 
         assertTrue(student_licence.hasInformaticsProblem());
-        assertTrue(student_licence.equals(squareInformaticsIssues.getCharacterInSquare()));
+        assertEquals(student_licence, squareInformaticsIssues.getCharacterInSquare());
 
         squareInformaticsIssues.execute(student_prepa, 0, null);
 
-        assertEquals(null, squareInformaticsIssues.getCharacterInSquare());
+        assertNull(squareInformaticsIssues.getCharacterInSquare());
         assertFalse(student_prepa.hasInformaticsProblem());
         assertFalse(student_licence.hasInformaticsProblem());
     }

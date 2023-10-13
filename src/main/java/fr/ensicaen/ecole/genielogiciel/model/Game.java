@@ -1,5 +1,10 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.model.character.*;
+import fr.ensicaen.ecole.genielogiciel.json.BoardConfig;
+import fr.ensicaen.ecole.genielogiciel.json.BoardConfigReader;
+import fr.ensicaen.ecole.genielogiciel.model.square.Square;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,12 +24,26 @@ public class Game {
         _currentPlayer = 0;
     }
 
-    public void start(int playersCount, List<String> playerTypes, String configPath) throws InvalidPlayersCount {
+    // for test only
+    public List<AbstractFactoryStudent> getPlayers() {
+        return _players;
+    }
+
+    public void clean() {
+        _players.clear();
+        _round = 1;
+        _currentPlayer = 0;
+        _board = null;
+    }
+
+    public void start(int playersCount, List<String> playerTypes) throws InvalidPlayersCount, InvalidTypeListSize {
         //example : playerTypes = ["Prepa", "Licence", "DUT", "Prepa"]
         if (playersCount < 1 || playersCount > 4) {
             throw new InvalidPlayersCount("Player count must be between 1 and 4");
         }
-        configureBoard(configPath);
+        if (playerTypes.size() != playersCount) {
+            throw new InvalidTypeListSize("Player Types List must be same size as player count");
+        }
         //Players creation
         for (int i = 0; i < playersCount; i++) {
             System.out.println("Creation d'un joueur");

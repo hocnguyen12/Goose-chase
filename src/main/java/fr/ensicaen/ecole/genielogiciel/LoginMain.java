@@ -37,7 +37,8 @@ public final class LoginMain extends Application {
         l.add("DUT");
 
         String path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
-        g.start(playerCount, l, path);
+        g.start(playerCount, l);
+        g.configureBoard(path);
 
         List<Integer> positionsList = new ArrayList<>();
 

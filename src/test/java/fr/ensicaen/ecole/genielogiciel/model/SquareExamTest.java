@@ -1,5 +1,11 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryLicence;
+import fr.ensicaen.ecole.genielogiciel.model.square.Square;
+import fr.ensicaen.ecole.genielogiciel.model.square.SquareBasic;
+import fr.ensicaen.ecole.genielogiciel.model.square.SquareDUTTeachings;
+import fr.ensicaen.ecole.genielogiciel.model.square.SquareExam;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,9 +53,5 @@ class SquareExamTest {
         student.increaseSkillLevel(-4);
         exam.execute(student, 0, board);
         assertEquals(0, student.getSquareNumber());
-    }
-
-    @Test
-    void get_squareName() {
     }
 }

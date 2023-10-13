@@ -1,5 +1,9 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryLicence;
+import fr.ensicaen.ecole.genielogiciel.model.square.Square;
+import fr.ensicaen.ecole.genielogiciel.model.square.SquareDayAfterWEI;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,6 +30,6 @@ class SquareDayAfterWEITest {
         assertFalse(student.nextRoundSkipped());
         day_after_wei.execute(student, 0, null);
         assertTrue(student.nextRoundSkipped());
-        assertFalse(false == student.nextRoundSkipped());
+        assertNotEquals(false, student.nextRoundSkipped());
     }
 }
