@@ -1,13 +1,13 @@
-package fr.ensicaen.ecole.genielogiciel.model;
+package fr.ensicaen.ecole.genielogiciel.model.square;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
 import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
 
 import java.util.List;
 
-public class SquareEnd implements Square {
+public class SquareStart implements Square {
 
-    public SquareEnd() {
+    public SquareStart() {
     }
 
     @Override
@@ -15,6 +15,6 @@ public class SquareEnd implements Square {
 
     @Override
     public String getSquareName() {
-        return LoginMain.getMessageBundle().getString("squarename.end");
+        return LoginMain.getMessageBundle().getString("squarename.start");
     }
 }

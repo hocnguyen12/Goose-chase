@@ -1,4 +1,4 @@
-package fr.ensicaen.ecole.genielogiciel.model;
+package fr.ensicaen.ecole.genielogiciel.model.square;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;

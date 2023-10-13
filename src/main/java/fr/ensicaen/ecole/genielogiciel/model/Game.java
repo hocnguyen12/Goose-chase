@@ -3,6 +3,7 @@ package fr.ensicaen.ecole.genielogiciel.model;
 import fr.ensicaen.ecole.genielogiciel.model.character.*;
 import fr.ensicaen.ecole.genielogiciel.json.BoardConfig;
 import fr.ensicaen.ecole.genielogiciel.json.BoardConfigReader;
+import fr.ensicaen.ecole.genielogiciel.model.square.Square;
 
 import java.io.IOException;
 import java.util.ArrayList;

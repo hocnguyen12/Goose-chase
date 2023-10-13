@@ -1,30 +1,30 @@
-package fr.ensicaen.ecole.genielogiciel.model;
+package fr.ensicaen.ecole.genielogiciel.model.square;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
 import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
 
 import java.util.List;
 
-public class SquareBDE implements Square{
+public class SquareInformaticsIssues implements Square{
+
     private AbstractFactoryStudent _characterInSquare = null;
 
-    public SquareBDE() {}
+    public SquareInformaticsIssues() {}
 
     @Override
     public void execute(AbstractFactoryStudent student, int diceTotal, List<Square> board) {
         if(_characterInSquare == null){
-            student.setBDE(true);
+            student.setInformaticsProblem(true);
             _characterInSquare = student;
         }else {
-            student.setBDE(true);
-            _characterInSquare.setBDE(false);
-            _characterInSquare = student;
+            _characterInSquare.setInformaticsProblem(false);
+            _characterInSquare = null;
         }
     }
 
     @Override
     public String getSquareName() {
-        return LoginMain.getMessageBundle().getString("squarename.BDE");
+        return LoginMain.getMessageBundle().getString("squarename.ITissue");
     }
 
     public AbstractFactoryStudent getCharacterInSquare() {

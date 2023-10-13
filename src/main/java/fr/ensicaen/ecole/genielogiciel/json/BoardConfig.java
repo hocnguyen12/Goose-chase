@@ -2,7 +2,7 @@ package fr.ensicaen.ecole.genielogiciel.json;
 
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import fr.ensicaen.ecole.genielogiciel.model.Square;
+import fr.ensicaen.ecole.genielogiciel.model.square.Square;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BoardConfig {
