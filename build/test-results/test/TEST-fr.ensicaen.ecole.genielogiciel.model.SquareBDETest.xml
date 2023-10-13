@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fr.ensicaen.ecole.genielogiciel.model.SquareBDETest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-13T15:35:19" hostname="LINUXe201pc02" time="0.002">
+<testsuite name="fr.ensicaen.ecole.genielogiciel.model.SquareBDETest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-10-13T15:57:36" hostname="LINUXe201pc02" time="0.001">
   <properties/>
-  <testcase name="execute()" classname="fr.ensicaen.ecole.genielogiciel.model.SquareBDETest" time="0.002"/>
+  <testcase name="execute()" classname="fr.ensicaen.ecole.genielogiciel.model.SquareBDETest" time="0.001"/>
   <system-out><![CDATA[new Brilliant
-new Brilliant
+new Diligent
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

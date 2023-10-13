@@ -8,17 +8,14 @@ public class Game {
     private final List<AbstractFactoryStudent> _players = new ArrayList<>();
     private int _currentPlayer;
     private List<Square> _board;
-    private int _boardLength;
     private int _diceValue1;
     private int _diceValue2;
     private int _round;
-    private BoardConfig _config;
 
     public Game() {
         _diceValue1 = 0;
         _diceValue2 = 0;
         _round = 1;
-        _boardLength = 64;
         _currentPlayer = 0;
     }
 
@@ -58,6 +55,7 @@ public class Game {
         System.out.println("Configuring board from json file...");
         BoardConfigReader boardConfigReader = new BoardConfigReader();
 
+        BoardConfig _config;
         try {
             _config = boardConfigReader.readBoardConfig(path);
         } catch (IOException e) {
@@ -103,7 +101,7 @@ public class Game {
         } else if (student.hasInformaticsProblem()) {
             System.out.println("#informatics");
             student.addRoundPositions(student.getSquareNumber());
-        } else if (_round == 1) {
+        } else if (student.getSquareNumber() == 0) {
             if (_diceValue1 == 6 && _diceValue2 == 3 || _diceValue1 == 3 && _diceValue2 == 6) {
                 student.move(26);
                 System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
@@ -176,13 +174,5 @@ public class Game {
 
     public int getRound() {
         return _round;
-    }
-
-    public int getDiceValue1() {
-        return _diceValue1;
-    }
-
-    public int getDiceValue2() {
-        return _diceValue2;
     }
 }
