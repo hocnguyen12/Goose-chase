@@ -73,9 +73,6 @@ public final class GamePresenter {
         return _game.throwDice();
     }
 
-    // Notre modele ne gere pas encore les bonus, c'est donc la présentation qui s'en charge
-    // QUE pour le MVP 1 pour montrer au client une première gestion des bonus
-    // Sinon nextroundregarde la valeur du dé calculée dans le modèle et fait avancer la vue autant de fois que necessaire
     public List<Integer> executePlayer(ArrayList<Integer> diceValues) {
         List<Integer> positionsList = new ArrayList<>();
         //positionsList = _game.executeRound();
