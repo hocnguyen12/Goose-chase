@@ -40,7 +40,7 @@ public final class LoginMain extends Application {
         //l.add("Licence");
         //l.add("Prepa");
 
-        String path = "fr/ensicaen/ecole/genielogiciel/board_config_1.json";
+        String path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
         g.start(playerCount, l, path);
 
         List<Integer> positions = new ArrayList<>();
