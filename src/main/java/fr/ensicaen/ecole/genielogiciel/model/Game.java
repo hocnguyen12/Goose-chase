@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    private final List<AbstractFactoryStudent> _players= new ArrayList<>();
+    private final List<AbstractFactoryStudent> _players = new ArrayList<>();
+    private int _currentPlayer;
     private List<Square> _board;
     private int _boardLength;
     private int _diceValue1;
@@ -18,6 +19,7 @@ public class Game {
         _diceValue2 = 0;
         _round = 1;
         _boardLength = 64;
+        _currentPlayer = 0;
     }
 
     public void start(int playersCount, List<String> playerTypes, String configPath) throws InvalidPlayersCount {
@@ -68,6 +70,74 @@ public class Game {
         _config.displayboard();
     }
 
+    public List<Integer> executePlayer() {
+        System.out.println("\n*** ROUND : " + _round + "***");
+        if (gameIsFinished()) {
+            return null;
+        }
+
+        List<Integer> positionsList = new ArrayList<>();
+        AbstractFactoryStudent student = _players.get(_currentPlayer);
+        System.out.println("Au tour de : " + student.getName() + " (skill :" + student.getSkillLevel() + ")");
+        if (student.nextRoundSkipped()) {
+            System.out.println("#Round skipped");
+            student.setSkipNextRoundWEI(false);
+            positionsList.add(student.getSquareNumber());
+        } else if (student.isBDE()) {
+            System.out.println("#bde");
+            positionsList.add(student.getSquareNumber());
+        } else if (student.hasInformaticsProblem()) {
+            System.out.println("#informatics");
+            positionsList.add(student.getSquareNumber());
+        } else {
+            _diceValue1 = rollDice();
+            _diceValue2 = rollDice();
+            if (_round == 1) {
+                if (_diceValue1 == 6 && _diceValue2 == 3 || _diceValue1 == 3 && _diceValue2 == 6) {
+                    student.move(26);
+                }
+                if (_diceValue1 == 5 && _diceValue2 == 4 || _diceValue1 == 4 && _diceValue2 == 5) {
+                    student.move(53);
+                } else {
+                    int diceTotal = 0;
+                    if (student.getStudent() instanceof Dilettante) {
+                        diceTotal = (_diceValue1 + _diceValue2) / 2;
+                    } else if (student.getStudent() instanceof Diligent) {
+                        diceTotal = _diceValue1 + _diceValue2;
+                    } else if (student.getStudent() instanceof Brilliant) {
+                        diceTotal = (_diceValue1 + _diceValue2) * 2;
+                    }
+                    System.out.println("dice : " + diceTotal);
+                    student.move(diceTotal);
+                }
+                System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
+                _board.get(student.getSquareNumber()).execute(student, 0, _board);
+                positionsList.add(student.getSquareNumber());
+            }
+            int diceTotal = 0;
+            if (student.getStudent() instanceof Dilettante) {
+                diceTotal = (_diceValue1 + _diceValue2) / 2;
+            } else if (student.getStudent() instanceof Diligent) {
+                diceTotal = _diceValue1 + _diceValue2;
+            } else if (student.getStudent() instanceof Brilliant) {
+                diceTotal = (_diceValue1 + _diceValue2) * 2;
+            }
+            System.out.println("dice : " + diceTotal);
+            student.move(diceTotal);
+            System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
+            _board.get(student.getSquareNumber()).execute(student, diceTotal, _board);
+            positionsList.add(student.getSquareNumber());
+        }
+        if (_currentPlayer == _players.size() - 1) {
+            _currentPlayer = 0;
+            _round++;
+        } else {
+            _currentPlayer++;
+        }
+        return positionsList;
+    }
+
+    /*
     public List<Integer> executeRound() {
         if (_round > 100) {
             System.out.println("BUG PARTIE INFINIE");
@@ -139,7 +209,7 @@ public class Game {
         }
         _round++;
         return positionsList;
-    }
+    }*/
 
     int rollDice() {
         return 1 + (int)(Math.random() * 6);

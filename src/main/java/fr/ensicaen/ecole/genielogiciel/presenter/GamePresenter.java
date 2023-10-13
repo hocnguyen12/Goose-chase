@@ -74,7 +74,7 @@ public final class GamePresenter {
     // Sinon nextroundregarde la valeur du dé calculée dans le modèle et fait avancer la vue autant de fois que necessaire
     public void nextRound() {
         List<Integer> positionsList = new ArrayList<>();
-        positionsList = _game.executeRound();
+        //positionsList = _game.executeRound();
 
         for (int i : positionsList){
             //display pawns at their new square
