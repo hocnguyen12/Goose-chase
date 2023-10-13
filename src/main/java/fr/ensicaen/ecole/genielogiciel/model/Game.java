@@ -94,9 +94,15 @@ public class Game {
         } else if (_round == 1) {
                 if (_diceValue1 == 6 && _diceValue2 == 3 || _diceValue1 == 3 && _diceValue2 == 6) {
                     student.move(26);
+                    System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
+                    student.addRoundPositions(student.getSquareNumber());
+                    _board.get(student.getSquareNumber()).execute(student, 26, _board);
                 }
                 if (_diceValue1 == 5 && _diceValue2 == 4 || _diceValue1 == 4 && _diceValue2 == 5) {
                     student.move(53);
+                    System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
+                    student.addRoundPositions(student.getSquareNumber());
+                    _board.get(student.getSquareNumber()).execute(student, 53, _board);
                 } else {
                     int diceTotal = 0;
                     if (student.getStudent() instanceof Dilettante) {
@@ -108,10 +114,10 @@ public class Game {
                     }
                     System.out.println("dice : " + diceTotal);
                     student.move(diceTotal);
+                    System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
+                    student.addRoundPositions(student.getSquareNumber());
+                    _board.get(student.getSquareNumber()).execute(student, diceTotal, _board);
                 }
-                System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
-                student.addRoundPositions(student.getSquareNumber());
-                _board.get(student.getSquareNumber()).execute(student, 0, _board);
             } else {
             int diceTotal = 0;
             if (student.getStudent() instanceof Dilettante) {
