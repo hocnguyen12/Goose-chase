@@ -1,6 +1,7 @@
 package fr.ensicaen.ecole.genielogiciel.view;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
+import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
 import fr.ensicaen.ecole.genielogiciel.presenter.GamePresenter;
 
 import javafx.application.Platform;
@@ -262,4 +263,7 @@ public final class GameView {
             _gamePresenter.runGameLoop();
         }
     }
+
+
 }
+
