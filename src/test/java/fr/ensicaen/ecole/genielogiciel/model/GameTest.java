@@ -25,6 +25,7 @@ class GameTest {
         List<String> l = new ArrayList<>();
         l.add("Licence");
         l.add("Prepa");
+
         try {
             game.start(2, l);
         } catch (InvalidPlayersCount e) {
@@ -97,5 +98,26 @@ class GameTest {
         //prepa.setBDE(false);
         (game.getPlayers().get(1)).setBDE(false);
         assertFalse(game.gameIsFinished());
+    }
+
+    @Test
+    void computeWages(){
+        List<String> l2 = new ArrayList<>();
+        l2.add("Prepa");
+        l2.add("Licence");
+        Game game = new Game();
+        try {
+            game.start(2,l2);
+        } catch (InvalidPlayersCount e) {
+            throw new RuntimeException(e);
+        } catch (InvalidTypeListSize e) {
+            throw new RuntimeException(e);
+        }
+        for (int i = 0; i < l2.size(); i++) {
+            game.getPlayers().get(i).increaseSkillLevel((i + 1) * 8);
+        }
+        List<String> salaire2 = game.computeWages();
+        assertEquals("32083 €", salaire2.get(0));
+        assertEquals("44917 €", salaire2.get(1));
     }
 }

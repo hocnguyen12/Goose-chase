@@ -29,12 +29,15 @@ public final class LoginMain extends Application {
         view.show();*/
 
         //Run example
+
         Game g = new Game();
 
-        int playerCount = 2;
+        int playerCount = 4;
         List<String> l = new ArrayList<>();
         l.add("Prepa");
         l.add("DUT");
+        l.add("Licence");
+        l.add("Prepa");
 
         String path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
         g.start(playerCount, l);
@@ -42,18 +45,25 @@ public final class LoginMain extends Application {
 
         List<Integer> positionsList = new ArrayList<>();
 
+
         List<Integer> positions = new ArrayList<>();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < playerCount; i++) {
             List<Integer> diceValues = g.throwDice();
             positions = g.executePlayer((ArrayList<Integer>) diceValues);
             System.out.println(positions);
         }
         while (positions != null) {
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < playerCount; i++) {
                 List<Integer> diceValues = g.throwDice();
                 positions = g.executePlayer((ArrayList<Integer>) diceValues);
                 System.out.println(positions);
             }
+        }
+
+        g.getWageFromWeb();
+        ArrayList<String> salaryList = g.computeWages();
+        for (int i = 0; i < salaryList.size(); i++) {
+            System.out.println(salaryList.get(i));
         }
     }
 }
