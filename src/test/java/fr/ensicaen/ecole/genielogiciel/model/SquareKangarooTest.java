@@ -1,10 +1,10 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
 import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
-import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryPrepa;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryLicence;
 import fr.ensicaen.ecole.genielogiciel.model.square.Square;
 import fr.ensicaen.ecole.genielogiciel.model.square.SquareBasic;
-import fr.ensicaen.ecole.genielogiciel.model.square.SquareIntensiveStudy;
+import fr.ensicaen.ecole.genielogiciel.model.square.SquareKangaroo;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,36 +14,35 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SquareIntensiveStudyTest {
+class SquareKangarooTest {
+    Square kangaroo;
     AbstractFactoryStudent student;
-    SquareIntensiveStudy squareIntensiveStudy;
     List<Square> board;
-
     @BeforeEach
     void setUp() {
-        student= new ConcreteFactoryPrepa();
-        squareIntensiveStudy= new SquareIntensiveStudy();
+        kangaroo = new SquareKangaroo();
+        student = new ConcreteFactoryLicence();
         board = new ArrayList<>();
         for (int i = 0; i < 63; i++) {
             board.add(new SquareBasic());
         }
-        board.add(5, squareIntensiveStudy);
+        board.add(18, kangaroo);
     }
 
     @AfterEach
     void tearDown() {
+        kangaroo = null;
         student = null;
-        squareIntensiveStudy = null;
         board = null;
     }
 
     @Test
     void execute() {
-        student.increaseSkillLevel(5);
-        student.setSquareNumber(5);
-        squareIntensiveStudy.execute(student, 0, board);
+        kangaroo.execute(student, 0, board);
+        assertEquals(0, student.getSquareNumber());
 
-        assertEquals(8, student.getSkillLevel());
-        assertEquals(12,student.getSquareNumber());
+        student.move(18);
+        kangaroo.execute(student, 18, board);
+        assertEquals(36, student.getSquareNumber());
     }
 }

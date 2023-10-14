@@ -24,10 +24,11 @@ Le projet est géré par le moteur de production 'gradle'.
 La configuration du plateau et la répartition des cases se fait à partir d'un fichier JSON présent à l'emplacement src/resources/fr.ensicaen.ecole.genielogiciel (Important : toujours mettre "size" à 64).
 
 **Version actuelle :** 
-- Grille de 64 case sur laquelle se déplace un personnage en spirale
-- 4 joueurs max
+- Grille de 64 case sur laquelle se déplace les personnages en spirale
+- 2 joueurs max
 - Choix d'un parcours (prépa, DUT ou licence)
 - Attribution aléatoire d'un trait de charactère (dilletant, brilliant ou assidu)
+- 16 cases à effets
 
 ## Organisation du projet
 
@@ -42,18 +43,22 @@ Le projet a la structure suivante :
     └── src
         ├── main
         │   ├── java
-        │   │      ├── fr.ensicaen.genielogiciel.mvp/*.java
-        │   │      ├── fr.ensicaen.genielogiciel.mvp.model/*.java
-        │   │      ├── fr.ensicaen.genielogiciel.mvp.presenter/*.java
-        │   │      └── fr.ensicaen.genielogiciel.mvp.view/*.java
+        │   │      ├── fr.ensicaen.genielogiciel.json/*.java
+        │   │      ├── fr.ensicaen.genielogiciel.model/*.java
+        │   │      |          └── fr.ensicaen.genielogiciel.model.character/*.java
+        │   │      |          └── fr.ensicaen.genielogiciel.model.square/*.java
+        │   │      ├── fr.ensicaen.genielogiciel.presenter/*.java
+        │   │      └── fr.ensicaen.genielogiciel.view/*.java
         │   │
         │   └── resources
-        │          ├── fr.ensicaen.genielogiciel.mvp/view/*.fxml
-        │          ├── fr.ensicaen.genielogiciel.mvp/view/*.css
-        │          └── fr.ensicaen.genielogiciel.mvp/MessageBundle.properties.properties
-        ├── test
+        │          ├── fr.ensicaen.genielogiciel.view/*.fxml
+        │          ├── fr.ensicaen.genielogiciel.view/*.css
+        │          ├── fr.ensicaen.genielogiciel.board_config_1.json
+        │          ├── fr.ensicaen.genielogiciel.board_config_2.json
+        │          └── fr.ensicaen.genielogiciel/MessageBundle.properties.properties
+        └── test
             ├── java
-            │      └── fr.ensicaen.genielogiciel.mvp/*.java
+            │      └── fr.ensicaen.genielogiciel.model/*.java
             └── resources
 
 ## VIEW
@@ -61,14 +66,14 @@ todo :
 
 - [x] Pion se déplacant en spirale
 - [x] Grille de 64 cases
-- [ ] Modifier écran de login
+- [x] Modifier écran de login
 - [ ] demander la langue (fr, en)
-- [ ] prendre en compte le nombre de joueur
+- [x] prendre en compte le nombre de joueur
 - [ ] pour chaque joueur qu'on veut créer, demander le nom et hard skill (prepa, DUT, licence)
 
-- [ ] creer n pions de couleurs différentes (entre 1 et 4)
+- [x] creer n pions de couleurs différentes (entre 1 et 4)
 
-- [ ] créer une fonction 'à part' qui déplace les pions (appelée par le presenter)
+- [x] créer une fonction 'à part' qui déplace les pions (appelée par le presenter)
 
 - [ ] créer des zones de texte modifiable par des methodes: 
 - Zone de statistiques : fonction qui affiche nom, niveau de competence , et case actuelle
@@ -84,5 +89,5 @@ todo :
 todo :
 
 - [x] créer les personnages avec hard-skill choisi et soft-skill aléatoire
-- [ ] Ajouter les cases restantes 
+- [x] Ajouter les cases restantes testées
 - [x] Lire la configuration du plateau à partir d'un fichier JSON

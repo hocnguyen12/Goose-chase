@@ -2,6 +2,7 @@ package fr.ensicaen.ecole.genielogiciel.presenter;
 
 import fr.ensicaen.ecole.genielogiciel.model.Game;
 import fr.ensicaen.ecole.genielogiciel.model.InvalidPlayersCount;
+import fr.ensicaen.ecole.genielogiciel.model.InvalidTypeListSize;
 import fr.ensicaen.ecole.genielogiciel.model.Model;
 import fr.ensicaen.ecole.genielogiciel.view.GameView;
 import java.util.ArrayList;
@@ -39,17 +40,20 @@ public final class GamePresenter {
         List<String> playersTypes= new ArrayList<>();
         playersTypes.add("Prepa");
         playersTypes.add("DUT");
-        playersTypes.add("Licence");
-        playersTypes.add("Prepa");
+        //playersTypes.add("Licence");
+        //playersTypes.add("Prepa");
 
         // Get player Count from view
-        int playerCount = 4;
+        int playerCount = 2;
 
         try {
             //Initialize game with correct parameters
-            String path = "fr/ensicaen/ecole/genielogiciel/board_config_1.json";
-            _game.start(playerCount, playersTypes, path);
+            String path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
+            _game.start(playerCount, playersTypes);
+            _game.configureBoard(path);
         } catch (InvalidPlayersCount e) {
+            throw new RuntimeException(e);
+        } catch (InvalidTypeListSize e) {
             throw new RuntimeException(e);
         }
 
@@ -69,41 +73,17 @@ public final class GamePresenter {
         //_view.toto();
     }
 
-    // Notre modele ne gere pas encore les bonus, c'est donc la présentation qui s'en charge
-    // QUE pour le MVP 1 pour montrer au client une première gestion des bonus
-    // Sinon nextroundregarde la valeur du dé calculée dans le modèle et fait avancer la vue autant de fois que necessaire
-    public void nextRound() {
+    public List<Integer> throwDice() {
+        return _game.throwDice();
+    }
+
+    public List<Integer> executePlayer(ArrayList<Integer> diceValues) {
         List<Integer> positionsList = new ArrayList<>();
         //positionsList = _game.executeRound();
 
-        for (int i : positionsList){
-            //display pawns at their new square
+        positionsList = _game.executePlayer(diceValues);
+        int round = _game.getRound();
 
-            if (_lang.equals("en")) {
-                _game.getSquareName(i);
-            }
-        }
-        /*
-        int previous_position = _game.get_playerPosition();
-        System.out.println("PREVIOUS " + previous_position);
-        int flag = _game.executeRound();
-        int diceValue = _game.get_diceValue();
-        displayDiceValue(diceValue);
-        if (_game.get_playerPosition() == 4){
-            System.out.println("Case bonus : +1");
-            _game.caseBonus();
-            //_view.moveForward();
-        }
-        if (flag == -1) {
-            System.out.println("arrivée dépassée, il faut avancer de " + (_game.get_boardLength() - previous_position - 1));
-            for (int j = 0; j < (_game.get_boardLength() - previous_position - 1); j++) {
-                //_view.moveForward();
-            }
-            return;
-        } else {
-            for (int i = 0; i < diceValue; i++) {
-                //_view.moveForward();
-            }
-        }*/
+        return positionsList;
     }
 }

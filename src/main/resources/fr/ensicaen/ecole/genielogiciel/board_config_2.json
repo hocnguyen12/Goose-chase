@@ -18,14 +18,14 @@
     {"type": "SquareParty"},
     {"type": "SquareUniTeachings"},
 
-    {"type": "SquarePrepaTeachings"},
     {"type": "SquareClass"},
+    {"type": "SquarePrepaTeachings"},
     {"type": "SquareKangaroo"},
     {"type": "SquareDayAfterWEI"},
     {"type": "SquareClass"},
     {"type": "SquareDUTTeachings"},
-    {"type": "SquareUniTeachings"},
     {"type": "SquareParty"},
+    {"type": "SquareUniTeachings"},
 
     {"type": "SquareClass"},
     {"type": "SquarePrepaTeachings"},

@@ -2,7 +2,7 @@ plugins {
     id 'application'
     id "org.openjfx.javafxplugin" version "0.0.14"
     id 'java'
-
+    id 'jacoco'
 }
 
 version '0.1'
@@ -30,7 +30,6 @@ dependencies {
     implementation(
             [files("lib")]
     )
-    implementation 'junit:junit:4.13.1'
     implementation 'junit:junit:4.13.1'
     implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
@@ -60,3 +59,15 @@ test {
     useJUnitPlatform()
 }
 
+jacoco {
+    toolVersion = "0.8.8"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = false
+        csv.required = false
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}

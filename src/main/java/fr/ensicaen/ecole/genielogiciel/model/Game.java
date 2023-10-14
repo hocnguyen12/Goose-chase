@@ -1,5 +1,10 @@
 package fr.ensicaen.ecole.genielogiciel.model;
 
+import fr.ensicaen.ecole.genielogiciel.model.character.*;
+import fr.ensicaen.ecole.genielogiciel.json.BoardConfig;
+import fr.ensicaen.ecole.genielogiciel.json.BoardConfigReader;
+import fr.ensicaen.ecole.genielogiciel.model.square.Square;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,26 +13,37 @@ public class Game {
     private final List<AbstractFactoryStudent> _players = new ArrayList<>();
     private int _currentPlayer;
     private List<Square> _board;
-    private int _boardLength;
     private int _diceValue1;
     private int _diceValue2;
     private int _round;
-    private BoardConfig _config;
 
     public Game() {
         _diceValue1 = 0;
         _diceValue2 = 0;
         _round = 1;
-        _boardLength = 64;
         _currentPlayer = 0;
     }
 
-    public void start(int playersCount, List<String> playerTypes, String configPath) throws InvalidPlayersCount {
+    // for test only
+    public List<AbstractFactoryStudent> getPlayers() {
+        return _players;
+    }
+
+    public void clean() {
+        _players.clear();
+        _round = 1;
+        _currentPlayer = 0;
+        _board = null;
+    }
+
+    public void start(int playersCount, List<String> playerTypes) throws InvalidPlayersCount, InvalidTypeListSize {
         //example : playerTypes = ["Prepa", "Licence", "DUT", "Prepa"]
         if (playersCount < 1 || playersCount > 4) {
             throw new InvalidPlayersCount("Player count must be between 1 and 4");
         }
-        configureBoard(configPath);
+        if (playerTypes.size() != playersCount) {
+            throw new InvalidTypeListSize("Player Types List must be same size as player count");
+        }
         //Players creation
         for (int i = 0; i < playersCount; i++) {
             System.out.println("Creation d'un joueur");
@@ -58,6 +74,7 @@ public class Game {
         System.out.println("Configuring board from json file...");
         BoardConfigReader boardConfigReader = new BoardConfigReader();
 
+        BoardConfig _config;
         try {
             _config = boardConfigReader.readBoardConfig(path);
         } catch (IOException e) {
@@ -70,17 +87,29 @@ public class Game {
         _config.displayboard();
     }
 
-    public List<Integer> executePlayer() {
+    public List<Integer> throwDice() {
+        _diceValue1 = rollDice();
+        _diceValue2 = rollDice();
+        List<Integer> diceValues = new ArrayList<>();
+
+        diceValues.add(_diceValue1);
+        diceValues.add(_diceValue2);
+
+        return diceValues;
+    }
+
+    public List<Integer> executePlayer(ArrayList<Integer> diceValues) {
         System.out.println("\n*** ROUND : " + _round + "***");
         if (gameIsFinished()) {
             return null;
         }
 
+        _diceValue1 = diceValues.get(0);
+        _diceValue2 = diceValues.get(1);
         AbstractFactoryStudent student = _players.get(_currentPlayer);
         student.resetRoundPositions();
         System.out.println("Au tour de : " + student.getName() + " (skill :" + student.getSkillLevel() + ")");
-        _diceValue1 = rollDice();
-        _diceValue2 = rollDice();
+
         if (student.nextRoundSkipped()) {
             System.out.println("#Round skipped");
             student.setSkipNextRoundWEI(false);
@@ -91,46 +120,22 @@ public class Game {
         } else if (student.hasInformaticsProblem()) {
             System.out.println("#informatics");
             student.addRoundPositions(student.getSquareNumber());
-        } else if (_round == 1) {
+        } else if (student.getSquareNumber() == 0) {
             if (_diceValue1 == 6 && _diceValue2 == 3 || _diceValue1 == 3 && _diceValue2 == 6) {
                 student.move(26);
                 System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
                 student.addRoundPositions(student.getSquareNumber());
-                _board.get(student.getSquareNumber()).execute(student, 26, _board);
+                _board.get(student.getSquareNumber()).execute(student, 0, _board);
             } else if (_diceValue1 == 5 && _diceValue2 == 4 || _diceValue1 == 4 && _diceValue2 == 5) {
                 student.move(53);
                 System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
                 student.addRoundPositions(student.getSquareNumber());
-                _board.get(student.getSquareNumber()).execute(student, 53, _board);
+                _board.get(student.getSquareNumber()).execute(student, 0, _board);
             } else {
-                int diceTotal = 0;
-                if (student.getStudent() instanceof Dilettante) {
-                    diceTotal = (_diceValue1 + _diceValue2) / 2;
-                } else if (student.getStudent() instanceof Diligent) {
-                    diceTotal = _diceValue1 + _diceValue2;
-                } else if (student.getStudent() instanceof Brilliant) {
-                    diceTotal = (_diceValue1 + _diceValue2) * 2;
-                }
-                System.out.println("dice : " + diceTotal);
-                student.move(diceTotal);
-                System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
-                student.addRoundPositions(student.getSquareNumber());
-                _board.get(student.getSquareNumber()).execute(student, diceTotal, _board);
+                computeDiceTotalAndExecuteSquare(student);
             }
         } else {
-            int diceTotal = 0;
-            if (student.getStudent() instanceof Dilettante) {
-                diceTotal = (_diceValue1 + _diceValue2) / 2;
-            } else if (student.getStudent() instanceof Diligent) {
-                diceTotal = _diceValue1 + _diceValue2;
-            } else if (student.getStudent() instanceof Brilliant) {
-                diceTotal = (_diceValue1 + _diceValue2) * 2;
-            }
-            System.out.println("dice : " + diceTotal);
-            student.move(diceTotal);
-            System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
-            student.addRoundPositions(student.getSquareNumber());
-            _board.get(student.getSquareNumber()).execute(student, diceTotal, _board);
+            computeDiceTotalAndExecuteSquare(student);
         }
         if (_currentPlayer == _players.size() - 1) {
             _currentPlayer = 0;
@@ -139,6 +144,22 @@ public class Game {
             _currentPlayer++;
         }
         return student.getRoundPositions();
+    }
+
+    private void computeDiceTotalAndExecuteSquare(AbstractFactoryStudent student) {
+        int diceTotal = 0;
+        if (student.getStudent() instanceof Dilettante) {
+            diceTotal = (_diceValue1 + _diceValue2) / 2;
+        } else if (student.getStudent() instanceof Diligent) {
+            diceTotal = _diceValue1 + _diceValue2;
+        } else if (student.getStudent() instanceof Brilliant) {
+            diceTotal = (_diceValue1 + _diceValue2) * 2;
+        }
+        System.out.println("dice : " + diceTotal);
+        student.move(diceTotal);
+        System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
+        student.addRoundPositions(student.getSquareNumber());
+        _board.get(student.getSquareNumber()).execute(student, diceTotal, _board);
     }
 
     int rollDice() {
@@ -170,7 +191,7 @@ public class Game {
         return _board.get(n).getSquareName();
     }
 
-    public int get_round() {
+    public int getRound() {
         return _round;
     }
 }
