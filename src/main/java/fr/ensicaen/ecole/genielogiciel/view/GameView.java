@@ -146,7 +146,7 @@ public final class GameView {
         btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
                 if (isPlayer1){
-                    index1 = _gamePresenter.executePlayer();
+                //    index1 = _gamePresenter.executePlayer();
                     player.setText(nickName1);
                     stack_array.get(index1).getChildren().add(pawn1);
                     if (index1 == 63){

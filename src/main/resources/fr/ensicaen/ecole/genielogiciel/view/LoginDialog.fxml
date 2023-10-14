@@ -8,6 +8,9 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <GridPane styleClass="dialog" stylesheets="@LoginDialog.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.ensicaen.ecole.genielogiciel.view.LoginView">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -19,11 +22,19 @@
       <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="NEVER" />
    </rowConstraints>
    <children>
-        <Label alignment="CENTER" prefHeight="16.0" prefWidth="160.0" styleClass="text" text="%login1.message.text" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <Label alignment="CENTER" prefHeight="16.0" prefWidth="160.0" styleClass="text" text="%login2.message.text" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+        <Label fx:id="_player1" alignment="CENTER" prefHeight="16.0" prefWidth="160.0" styleClass="text" text="%login1.message.text" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Label fx:id="_player2" alignment="CENTER" prefHeight="16.0" prefWidth="160.0" styleClass="text" text="%login2.message.text" GridPane.columnIndex="2" GridPane.rowIndex="0" />
         <TextField fx:id="_nickName1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <TextField fx:id="_nickName2" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-       <Button defaultButton="true" onAction="#launchGame" prefWidth="200.0" text="%launch.button.text" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+       <Button fx:id="_launchGame" defaultButton="true" onAction="#launchGame" prefWidth="200.0" text="%launch.button.text" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+       <ComboBox layoutX="14.0" layoutY="14.0" fx:id="combo_language" promptText="%language.button.text">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="Anglais"/>
+                   <String fx:value="Français"/>
+               </FXCollections>
+           </items>
+       </ComboBox>
        <Label fx:id="_errorLabel" textFill="#ef0000" GridPane.columnIndex="2" GridPane.columnSpan="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
    </children>
    <padding>
