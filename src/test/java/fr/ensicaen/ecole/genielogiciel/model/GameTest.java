@@ -22,17 +22,7 @@ class GameTest {
     void setUp() {
         game = new Game();
         players = new ArrayList<>();
-        List<String> l = new ArrayList<>();
-        l.add("Licence");
-        l.add("Prepa");
 
-        try {
-            game.start(2, l);
-        } catch (InvalidPlayersCount e) {
-            throw new RuntimeException(e);
-        } catch (InvalidTypeListSize e) {
-            throw new RuntimeException(e);
-        }
     }
 
     @AfterEach
@@ -56,7 +46,6 @@ class GameTest {
             game.start(4, l);
         });
 
-        game.clean();
         l.clear();
         l.add("Licence");
         l.add("Prepa");
@@ -75,6 +64,18 @@ class GameTest {
 
     @Test
     void gameIsFinished() {
+        List<String> l = new ArrayList<>();
+        l.add("Licence");
+        l.add("Prepa");
+
+        try {
+            game.start(2, l);
+        } catch (InvalidPlayersCount e) {
+            throw new RuntimeException(e);
+        } catch (InvalidTypeListSize e) {
+            throw new RuntimeException(e);
+        }
+
         assertFalse(game.gameIsFinished());
         //licence.setSquareNumber(63);
         (game.getPlayers().get(0)).setSquareNumber(63);
