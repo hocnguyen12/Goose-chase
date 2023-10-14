@@ -4,11 +4,20 @@ import fr.ensicaen.ecole.genielogiciel.model.Game;
 import fr.ensicaen.ecole.genielogiciel.model.InvalidPlayersCount;
 import fr.ensicaen.ecole.genielogiciel.model.InvalidTypeListSize;
 import fr.ensicaen.ecole.genielogiciel.model.Model;
+import fr.ensicaen.ecole.genielogiciel.model.character.AbstractFactoryStudent;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryDUT;
+import fr.ensicaen.ecole.genielogiciel.model.character.ConcreteFactoryPrepa;
 import fr.ensicaen.ecole.genielogiciel.view.GameView;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 public final class GamePresenter {
     private final Model _model;
+
+    private AbstractFactoryStudent _player1;
+
+    private AbstractFactoryStudent _player2;
     private Game _game;
     private String _lang = "en";
     private GameView _view;
@@ -36,6 +45,8 @@ public final class GamePresenter {
         System.out.println("Et c'est parti...");
         _game = new Game();
 
+        _player1 = new ConcreteFactoryPrepa();
+        _player2 = new ConcreteFactoryDUT();
         //Fill according to view infos
         List<String> playersTypes= new ArrayList<>();
         playersTypes.add("Prepa");
@@ -73,17 +84,16 @@ public final class GamePresenter {
         //_view.toto();
     }
 
-    public List<Integer> throwDice() {
+    public ArrayList<Integer> throwDice() {
         return _game.throwDice();
     }
 
     public List<Integer> executePlayer(ArrayList<Integer> diceValues) {
-        List<Integer> positionsList = new ArrayList<>();
-        //positionsList = _game.executeRound();
-
-        positionsList = _game.executePlayer(diceValues);
+        List<Integer> positionsList = _game.executePlayer(diceValues);
         int round = _game.getRound();
 
         return positionsList;
     }
+    public AbstractFactoryStudent getPlayer1(){return _player1;}
+    public AbstractFactoryStudent getPlayer2(){return _player2;}
 }

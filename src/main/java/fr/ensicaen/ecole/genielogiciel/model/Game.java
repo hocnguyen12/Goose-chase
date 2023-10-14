@@ -87,10 +87,10 @@ public class Game {
         _config.displayboard();
     }
 
-    public List<Integer> throwDice() {
+    public ArrayList<Integer> throwDice() {
         _diceValue1 = rollDice();
         _diceValue2 = rollDice();
-        List<Integer> diceValues = new ArrayList<>();
+        ArrayList<Integer> diceValues = new ArrayList<>();
 
         diceValues.add(_diceValue1);
         diceValues.add(_diceValue2);
