@@ -57,7 +57,6 @@ public class LoginView {
             @Override
             public void changed(ObservableValue selected, String old_language, String new_Language) {
                 language = new_Language;
-                System.out.println(language);
                 loader.setResources(LoginMain.getMessageBundle());
                 _player1.setText(LoginMain.getMessageBundle().getString("login1.message.text"));
                 _player2.setText(LoginMain.getMessageBundle().getString("login2.message.text"));
