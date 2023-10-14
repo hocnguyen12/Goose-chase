@@ -21,7 +21,7 @@ Modèle-Vue-Présentation.
 
 Le projet est géré par le moteur de production 'gradle'.
 
-La configuration du plateau et la répartition des cases se fait à partir d'un fichier JSON présent à l'emplacement src/resources/fr.ensicaen.ecole.genielogiciel (Important : toujours mettre "size" à 64).
+La configuration du plateau et la répartition des cases se fait à partir d'un fichier JSON présent à l'emplacement src/resources/fr.ensicaen.ecole.genielogiciel.
 
 **Version actuelle :** 
 - Grille de 64 case sur laquelle se déplace les personnages en spirale
