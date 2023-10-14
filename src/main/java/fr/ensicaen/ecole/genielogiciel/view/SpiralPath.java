@@ -37,6 +37,4 @@ public class SpiralPath {
         array[currentRow][currentCol+dep] = value;
         return array;
     }
-
-
 }

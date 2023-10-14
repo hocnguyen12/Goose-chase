@@ -5,23 +5,31 @@ import fr.ensicaen.ecole.genielogiciel.json.BoardConfig;
 import fr.ensicaen.ecole.genielogiciel.json.BoardConfigReader;
 import fr.ensicaen.ecole.genielogiciel.model.square.Square;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game {
+public class    Game {
     private final List<AbstractFactoryStudent> _players = new ArrayList<>();
     private int _currentPlayer;
     private List<Square> _board;
     private int _diceValue1;
     private int _diceValue2;
     private int _round;
+    private int _averageSalary;
 
     public Game() {
         _diceValue1 = 0;
         _diceValue2 = 0;
         _round = 1;
         _currentPlayer = 0;
+        getWageFromWeb();
     }
 
     // for test only
@@ -185,6 +193,42 @@ public class Game {
             return true;
         }
         return false;
+    }
+
+    public void getWageFromWeb() {
+        try {
+            String url = "https://www.ensicaen.fr/formation/insertion-professionnelle/";
+            Document document = Jsoup.connect(url).get();
+            Elements h4Elements = document.select("h4");
+
+            // Vérifiez s'il y a au moins deux éléments h4
+            if (h4Elements.size() >= 2) {
+                // Récupérez le deuxième élément h4 (indice 1, car l'indice commence à 0)
+                Element secondH4 = h4Elements.get(1);
+
+                String salary = secondH4.text().replace(" ", "").replace("€", "");
+                _averageSalary = Integer.parseInt(salary);
+            } else {
+                _averageSalary = 38500;
+            }
+        } catch (Exception e) {
+            _averageSalary = 38500;
+        }
+    }
+
+    public ArrayList<String> computeWages() {
+        float averageSkill = (float) _players.stream()
+                .mapToInt(AbstractFactoryStudent::getSkillLevel)
+                .average()
+                .orElse(0.0);
+
+        ArrayList<String> salaryList = new ArrayList<>();
+        for (AbstractFactoryStudent player : _players) {
+            float coeff = (float) (0.5 * (player.getSkillLevel() - averageSkill) / averageSkill);
+            salaryList.add(Math.round(_averageSalary + coeff * _averageSalary) + " €");
+        }
+
+        return salaryList;
     }
 
     public String getSquareName(int n) {
