@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class    Game {
+public class Game {
     private final List<AbstractFactoryStudent> _players = new ArrayList<>();
     private int _currentPlayer;
     private List<Square> _board;
@@ -39,6 +39,7 @@ public class    Game {
 
     public void clean() {
         _players.clear();
+        _board.clear();
         _round = 1;
         _currentPlayer = 0;
         _board = null;
@@ -95,10 +96,10 @@ public class    Game {
         _config.displayboard();
     }
 
-    public List<Integer> throwDice() {
+    public ArrayList<Integer> throwDice() {
         _diceValue1 = rollDice();
         _diceValue2 = rollDice();
-        List<Integer> diceValues = new ArrayList<>();
+        ArrayList<Integer> diceValues = new ArrayList<>();
 
         diceValues.add(_diceValue1);
         diceValues.add(_diceValue2);
@@ -106,7 +107,7 @@ public class    Game {
         return diceValues;
     }
 
-    public List<Integer> executePlayer(ArrayList<Integer> diceValues) {
+    public ArrayList<Integer> executePlayer(ArrayList<Integer> diceValues) {
         System.out.println("\n*** ROUND : " + _round + "***");
         if (gameIsFinished()) {
             return null;

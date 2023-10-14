@@ -1,7 +1,6 @@
 package fr.ensicaen.ecole.genielogiciel.model.character;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public abstract class AbstractFactoryStudent {
     private Student _student;
@@ -12,10 +11,10 @@ public abstract class AbstractFactoryStudent {
     private int _skillLevel = 0;
     private int _squareNumber = 0;
 
-    private List<Integer> _roundPositions = new ArrayList<>();
+    private ArrayList<Integer> _roundPositions = new ArrayList<>();
 
 
-    public List<Integer> getRoundPositions() {
+    public ArrayList<Integer> getRoundPositions() {
         return _roundPositions;
     }
     public void addRoundPositions(int squareNumber) {

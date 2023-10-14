@@ -1,19 +1,14 @@
 package fr.ensicaen.ecole.genielogiciel.view;
 
 import fr.ensicaen.ecole.genielogiciel.LoginMain;
-import fr.ensicaen.ecole.genielogiciel.model.Model;
 import fr.ensicaen.ecole.genielogiciel.presenter.GamePresenter;
 
-import javafx.animation.PathTransition;
-import javafx.animation.PauseTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.HPos;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,9 +22,7 @@ import javafx.scene.shape.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Popup;
-import javafx.stage.PopupWindow;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.*;
@@ -45,17 +38,21 @@ public final class GameView {
     private TilePane container ;
     @FXML
     private GridPane grid_anchor;
-    private String nickName1;
+    private String _player1;
 
-    private String nickName2;
+    private String _player2;
+
+    private Color[] colorList = new Color[]{Color.TOMATO, Color.WHITE, Color.PURPLE, Color.WHITE, Color.PINK, Color.ORANGE, Color.BROWN, Color.TURQUOISE,
+            Color.WHITE, Color.YELLOW, Color.WHITE, Color.PURPLE, Color.WHITE, Color.GREY, Color.PINK, Color.ORANGE,
+            Color.WHITE, Color.TURQUOISE, Color.YELLOW, Color.DARKGREEN, Color.WHITE, Color.PURPLE, Color.PINK, Color.ORANGE,
+            Color.WHITE, Color.TURQUOISE, Color.WHITE, Color.YELLOW, Color.WHITE, Color.PINK, Color.WHITE,Color.LIGHTGREEN,
+            Color.GREY, Color.WHITE, Color.PURPLE, Color.WHITE, Color.YELLOW, Color.GOLD, Color.GOLD,Color.GOLD,
+            Color.PINK, Color.WHITE, Color.LIGHTBLUE, Color.WHITE, Color.WHITE, Color.YELLOW, Color.WHITE,Color.TURQUOISE,
+            Color.GREY, Color.WHITE, Color.ORANGE, Color.WHITE, Color.MAGENTA, Color.WHITE, Color.YELLOW,Color.WHITE,
+            Color.TURQUOISE, Color.WHITE, Color.BLACK, Color.PURPLE, Color.WHITE, Color.ORANGE, Color.WHITE, Color.TEAL};
 
     private static final int MAX_LENGTH = 8;
     private static final int MAX_HEIGHT = 8;
-
-    private int index1 = 0;
-
-    private int index2 = 0;
-
     private boolean isPlayer1 = true;
 
     @FXML
@@ -63,6 +60,10 @@ public final class GameView {
 
     @FXML
     private Button _lancer;
+
+    private ArrayList<Integer> dice;
+
+    private List<Integer> positions;
 
     public static GameView createView(String nickName1) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -93,8 +94,8 @@ public final class GameView {
     }
     public void setPresenter( GamePresenter gamePresenter ) {
         _gamePresenter = gamePresenter;
-        this.nickName1 = _gamePresenter.getNickname1();
-        this.nickName2 = _gamePresenter.getNickname2();
+        this._player1 = _gamePresenter.getNickname1();
+        this._player2 = _gamePresenter.getNickname2();
         Button btn_restart = new Button(LoginMain.getMessageBundle().getString("restart.button.text"));
         btn_restart.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -119,52 +120,59 @@ public final class GameView {
         Button btn_singlePlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         Popup popup = new Popup();
         Text text = new Text(LoginMain.getMessageBundle().getString("victory.text"));
-        Pane pane = new Pane();
-        pane.getChildren().add(popup.getOwnerNode());
         text.setFont(new Font("Arial",20));
         popup.getContent().add(text);
-        placeNode(grid_anchor, popup.getOwnerNode(),9,5);
+
+        Text dice_result = new Text();
+        grid_anchor.getChildren().add(dice_result);
+        grid_anchor.setRowIndex(dice_result,5);
+        grid_anchor.setColumnIndex(dice_result,10);
+        Text text_positions = new Text();
+        grid_anchor.getChildren().add(text_positions);
+        grid_anchor.setRowIndex(text_positions,6);
+        grid_anchor.setColumnIndex(text_positions,10);
         btn_singlePlayer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if (index1 == 63){
-                    return;
-                }
-                index1++;
-                stack_array.get(index1).getChildren().add(pawn1);
-                if (index1 == 63){
-                    if (!popup.isShowing()){
-                        popup.show(_stage);
-                    }
-                }
-            }
-        });
-        Text player = new Text();
-        grid_anchor.getChildren().add(player);
-        grid_anchor.setRowIndex(player,0);
-        Button btn_multiPlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
-        btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
+                dice = _gamePresenter.throwDice();
+                dice_result.setText(dice.toString());
+                positions = _gamePresenter.executePlayer(dice);
+                text_positions.setText(positions.toString());
+                for (int i = 0; i < positions.size();i++){
+                    stack_array.get(positions.get(i)).getChildren().add(pawn1);
 
-                grid_anchor.setColumnIndex(player,10);
-                if (isPlayer1){
-                    player.setText(nickName1);
-                    if (index1 == 63){
-                        return;
-                    }
-                    index1++;
-                    stack_array.get(index1).getChildren().add(pawn1);
-                    if (index1 == 63){
+                    if (i == positions.size() - 1 && positions.get(i).equals(63)){
                         if (!popup.isShowing()){
                             popup.show(_stage);
                         }
                     }
+                }
+
+            }
+        });
+        Text player = new Text();
+        player.setText(_player1);
+        grid_anchor.getChildren().add(player);
+        grid_anchor.setRowIndex(player,0);
+        grid_anchor.setColumnIndex(player,10);
+        Button btn_multiPlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
+        btn_multiPlayer.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                if (isPlayer1){
+                //    index1 = _gamePresenter.executePlayer();
+                    player.setText(_player1);
+                    //stack_array.get(index1).getChildren().add(pawn1);
+                    /*if (index1 == 63){
+                        if (!popup.isShowing()){
+                            popup.show(_stage);
+                        }
+                    }*/
                     isPlayer1 = false;
                     return;
                 }
                 else {
-                    player.setText(nickName2);
-                    if (index2 == 63){
+                    player.setText(_player2);
+                    /*if (index2 == 63){
                         return;
                     }
                     index2++;
@@ -173,38 +181,37 @@ public final class GameView {
                         if (!popup.isShowing()){
                             popup.show(_stage);
                         }
-                    }
+                    }*/
                     isPlayer1 = true;
                     return;
                 }
             }
         });
-
-        Text player_name1 = new Text(LoginMain.getMessageBundle().getString("player1.text") + this.nickName1);
+        Text dice_throw = new Text(LoginMain.getMessageBundle().getString("dice.result.text"));
+        grid_anchor.getChildren().add(dice_throw);
+        grid_anchor.setRowIndex(dice_throw,5);
+        grid_anchor.setColumnIndex(dice_throw,9);
+        Text player_name1 = new Text(LoginMain.getMessageBundle().getString("player1.text") + _player1);
         player_name1.setFill(Color.GREEN);
         grid_anchor.getChildren().add(player_name1);
         grid_anchor.setRowIndex(player_name1,1);
         grid_anchor.setColumnIndex(player_name1,9);
 
-        if (!isNull(this.nickName2)){
-            Text player_name2 = new Text(LoginMain.getMessageBundle().getString("player2.text") + this.nickName2);
+        if (!isNull(_player2)){
+            Text player_name2 = new Text(LoginMain.getMessageBundle().getString("player2.text") + _player2);
             player_name2.setFill(Color.RED);
             grid_anchor.getChildren().add(player_name2);
             grid_anchor.setRowIndex(player_name2,2);
             grid_anchor.setColumnIndex(player_name2,9);
-
-        }
-        if (isNull(nickName2)){
-            grid_anchor.getChildren().add(btn_singlePlayer);
-            grid_anchor.setRowIndex(btn_singlePlayer,8);
-            grid_anchor.setColumnIndex(btn_singlePlayer,2);
+            grid_anchor.getChildren().add(btn_multiPlayer);
+            grid_anchor.setRowIndex(btn_multiPlayer,8);
+            grid_anchor.setColumnIndex(btn_multiPlayer,2);
 
         }
         else {
-            grid_anchor.getChildren().add(btn_multiPlayer);
-            grid_anchor.setRowIndex(btn_multiPlayer,8);
-            grid_anchor.setColumnIndex(btn_multiPlayer,1);
-
+            grid_anchor.getChildren().add(btn_singlePlayer);
+            grid_anchor.setRowIndex(btn_singlePlayer,8);
+            grid_anchor.setColumnIndex(btn_singlePlayer,2);
         }
     }
 
@@ -223,7 +230,7 @@ public final class GameView {
         for (int i = 0;i < MAX_LENGTH;i++){
             for (int j = 0;j < MAX_HEIGHT;j++){
                 Rectangle rect = new Rectangle(80,80);
-                rect.setFill(Color.WHITE);
+                rect.setFill(colorList[array[i][j]]);
                 rect.setStroke(Color.BLACK);
                 System.out.println("i j :"+i+" "+j);
                 Text text = new Text(Integer.toString(array[i][j]));
@@ -231,7 +238,7 @@ public final class GameView {
                 stack.getChildren().addAll(rect,text);
                 if (i==0 && j == 0) {
                     stack.getChildren().add(pawn1);
-                    if (!isNull(nickName2)){
+                    if (!isNull(_player2)){
                         stack.getChildren().add(pawn2);
                     }
                 }
@@ -255,6 +262,4 @@ public final class GameView {
             _gamePresenter.runGameLoop();
         }
     }
-
-
 }
