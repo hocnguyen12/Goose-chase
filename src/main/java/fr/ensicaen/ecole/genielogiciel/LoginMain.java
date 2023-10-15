@@ -45,7 +45,7 @@ public final class LoginMain extends Application {
 
         Game g = new Game();
 
-        int playerCount = 2;
+        /*int playerCount = 2;
         List<String> l = new ArrayList<>();
         l.add("Prepa");
         l.add("DUT");
@@ -72,6 +72,6 @@ public final class LoginMain extends Application {
         ArrayList<String> salaryList = g.computeWages();
         for (String s : salaryList) {
             System.out.println(s);
-        }
+        }*/
     }
 }

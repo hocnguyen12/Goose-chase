@@ -91,6 +91,10 @@ public final class GamePresenter {
     public AbstractFactoryStudent getPlayer1(){return _player1;}
     public AbstractFactoryStudent getPlayer2(){return _player2;}
 
+    public int getSkillLevel1() { return _player1.getSkillLevel();}
+
+    public int getSkillLevel2() {return _player2.getSkillLevel();}
+
     public ArrayList<String> endGameandGetWages() {
         _game.clean();
         return _game.computeWages();
