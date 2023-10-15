@@ -17,7 +17,7 @@ before_script:
 stages:
   - build
   - test
-  - excutable
+  - executable
 
 build:
   tags :
