@@ -93,6 +93,7 @@ public final class GamePresenter {
     public ArrayList<Integer> executePlayer(ArrayList<Integer> diceValues) {
         ArrayList<Integer> positionsList = _game.executePlayer(diceValues);
         int round = _game.getRound();
+        System.out.println(positionsList);
 
         return positionsList;
     }

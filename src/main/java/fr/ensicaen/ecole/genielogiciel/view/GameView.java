@@ -190,14 +190,17 @@ public final class GameView {
                 dice_result.setText(dice.toString());
                 positions = _gamePresenter.executePlayer(dice);
                 squareNames = _gamePresenter.getSquareNames((ArrayList<Integer>) positions);
-                squareName.setText(squareNames.get(squareNames.size()-1));
+                squareName.setText(squareNames.toString());
                 skilllevel1 = _gamePresenter.getSkillLevel1();
                 text_skilllevel1.setText(Integer.toString(skilllevel1));
                 skilllevel2 = _gamePresenter.getSkillLevel2();
                 text_skilllevel2.setText(Integer.toString(skilllevel2));
                 if (isPlayer1){
                     for (int i = 0; i < positions.size();i++) {
-                        stack_array.get(positions.get(i)).getChildren().add(pawn1);
+                        Pane currentCell = stack_array.get(positions.get(i)); // Supposons que vous utilisez un Pane
+                        if (!currentCell.getChildren().contains(pawn1)) {
+                            currentCell.getChildren().add(pawn1);
+                        }
 
                         if (i == positions.size() - 1 && positions.get(i).equals(63)) {
                             if (!popup.isShowing()) {
@@ -212,11 +215,13 @@ public final class GameView {
                     player.setText(_player1);
                     isPlayer1 = false;
                     return;
-                }
-                else{
+                } else{
                         player.setText(_player2);
                         for (int i = 0; i < positions.size(); i++) {
-                            stack_array.get(positions.get(i)).getChildren().add(pawn2);
+                            Pane currentCell = stack_array.get(positions.get(i)); // Supposons que vous utilisez un Pane
+                            if (!currentCell.getChildren().contains(pawn2)) {
+                                currentCell.getChildren().add(pawn2);
+                            }
 
                             if (i == positions.size() - 1 && positions.get(i).equals(63)) {
                                 if (!popup.isShowing()) {
