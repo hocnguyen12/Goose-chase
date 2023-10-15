@@ -17,6 +17,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class LoginView {
     private LoginPresenter _presenter;
@@ -44,8 +45,14 @@ public class LoginView {
 
     @FXML
     private ComboBox<String> combo_board;
+    @FXML
+    private ComboBox<String> combo_hardskill1;
+    @FXML
+    private ComboBox<String> combo_hardskill2;
     static String _path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
     static String language = "Français";
+    static String _hardskill1 = "Prepa";
+    static String _hardskill2 = "Prepa";
 
     public static String getLanguage(){ return language;}
 
@@ -76,7 +83,6 @@ public class LoginView {
         combo_board.setItems(boardOptions);
         combo_board.setEditable(true);
         final String[] selectedBoardFile = {null}; // Variable final pour stocker le nom du fichier sélectionné
-
         combo_board.valueProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> selected, String old_board, String new_board) {
@@ -85,6 +91,28 @@ public class LoginView {
                 } else if ("Configuration aléatoire".equals(new_board)) {
                     _path = "fr/ensicaen/ecole/genielogiciel/board_config_1.json";
                 }
+            }
+        });
+
+
+        ObservableList<String> hardskillOption = FXCollections.observableArrayList(
+                "Prepa",
+                "DUT", "Licence"
+        );
+        combo_hardskill1.setItems(hardskillOption);
+        combo_hardskill1.setEditable(true);
+        combo_hardskill1.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String old_hardskill, String new_hardskill) {
+                _hardskill1 = new_hardskill;
+            }
+        });
+        combo_hardskill2.setItems(hardskillOption);
+        combo_hardskill2.setEditable(true);
+        combo_hardskill2.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String old_hardskill, String new_hardskill) {
+                _hardskill2 = new_hardskill;
             }
         });
     }
@@ -116,6 +144,10 @@ public class LoginView {
 
     @FXML
     private void launchGame() {
-        _presenter.launchGame(_nickName1.getText(),_nickName2.getText(), _path);
+        ArrayList<String> _hardskill = new ArrayList<>();
+        _hardskill.add(_hardskill1);
+        _hardskill.add(_hardskill2);
+
+        _presenter.launchGame(_nickName1.getText(),_nickName2.getText(), _path, _hardskill);
     }
 }

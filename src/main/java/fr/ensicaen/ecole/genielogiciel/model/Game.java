@@ -23,6 +23,7 @@ public class Game {
     private int _diceValue2;
     private int _round;
     private int _averageSalary;
+    private int _diceTotal;
 
     public Game() {
         _diceValue1 = 0;
@@ -156,19 +157,18 @@ public class Game {
     }
 
     private void computeDiceTotalAndExecuteSquare(AbstractFactoryStudent student) {
-        int diceTotal = 0;
         if (student.getStudent() instanceof Dilettante) {
-            diceTotal = (_diceValue1 + _diceValue2) / 2;
+            _diceTotal = (_diceValue1 + _diceValue2) / 2;
         } else if (student.getStudent() instanceof Diligent) {
-            diceTotal = _diceValue1 + _diceValue2;
+            _diceTotal = _diceValue1 + _diceValue2;
         } else if (student.getStudent() instanceof Brilliant) {
-            diceTotal = (_diceValue1 + _diceValue2) * 2;
+            _diceTotal = (_diceValue1 + _diceValue2) * 2;
         }
-        System.out.println("dice : " + diceTotal);
-        student.move(diceTotal);
+        System.out.println("dice : " + _diceTotal);
+        student.move(_diceTotal);
         System.out.println("Square : N" + student.getSquareNumber() + " : " + getSquareName(student.getSquareNumber()));
         student.addRoundPositions(student.getSquareNumber());
-        _board.get(student.getSquareNumber()).execute(student, diceTotal, _board);
+        _board.get(student.getSquareNumber()).execute(student, _diceTotal, _board);
     }
 
     int rollDice() {
@@ -238,5 +238,9 @@ public class Game {
 
     public int getRound() {
         return _round;
+    }
+
+    public int getDiceTotal() {
+        return _diceTotal;
     }
 }

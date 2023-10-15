@@ -75,6 +75,7 @@ public final class GameView {
     private Button _lancer;
 
     private ArrayList<Integer> dice;
+    private int diceTotal;
 
     private ArrayList<String> squareNames;
 
@@ -83,7 +84,11 @@ public final class GameView {
     private int skilllevel1;
     private int skilllevel2;
 
-    public static GameView createView(String nickName1, String path) throws IOException {
+    private static ArrayList<String> _hardskill;
+    private ArrayList<String> _softSkills;
+
+    public static GameView createView(String nickName1, String path, ArrayList<String> hardskill) throws IOException {
+        _hardskill = hardskill;
         _path = path;
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(GameView.class.getResource("Board.fxml"));
@@ -98,7 +103,8 @@ public final class GameView {
         return view;
     }
 
-    public static GameView createView(String nickName1,String nickName2, String path) throws IOException {
+    public static GameView createView(String nickName1,String nickName2, String path, ArrayList<String> hardskill) throws IOException {
+        _hardskill = hardskill;
         _path = path;
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(GameView.class.getResource("Board.fxml"));
@@ -138,6 +144,7 @@ public final class GameView {
         Text whosturn = new Text(LoginMain.getMessageBundle().getString("whosturn.text"));
         placeNode(grid_anchor,whosturn,0,9);
         Popup popup = new Popup();
+
         Text dice_result = new Text();
         grid_anchor.getChildren().add(dice_result);
         grid_anchor.setRowIndex(dice_result,5);
@@ -170,8 +177,10 @@ public final class GameView {
             @Override
             public void handle(ActionEvent event) {
                 dice = _gamePresenter.throwDice();
-                dice_result.setText(dice.toString());
+
                 positions = _gamePresenter.executePlayer(dice);
+                diceTotal = _gamePresenter.getDiceTotal();
+                dice_result.setText(dice.toString() + " Total : " + diceTotal);
                 squareNames = _gamePresenter.getSquareNames((ArrayList<Integer>) positions);
                 squareName.setText(squareNames.toString());
                 skilllevel1 = _gamePresenter.getSkillLevel1();
@@ -201,8 +210,10 @@ public final class GameView {
             @Override
             public void handle(ActionEvent event) {
                 dice = _gamePresenter.throwDice();
-                dice_result.setText(dice.toString());
+
                 positions = _gamePresenter.executePlayer(dice);
+                diceTotal = _gamePresenter.getDiceTotal();
+                dice_result.setText(dice.toString() + " Total : " + diceTotal);
                 squareNames = _gamePresenter.getSquareNames((ArrayList<Integer>) positions);
                 squareName.setText(squareNames.toString());
                 skilllevel1 = _gamePresenter.getSkillLevel1();
@@ -260,14 +271,14 @@ public final class GameView {
         grid_anchor.getChildren().add(skill_level);
         grid_anchor.setRowIndex(skill_level,2);
         grid_anchor.setColumnIndex(skill_level,9);
-        Text player_name1 = new Text(LoginMain.getMessageBundle().getString("player1.text") + _player1);
+        Text player_name1 = new Text(LoginMain.getMessageBundle().getString("player1.text") + _player1 + " [" + _hardskill.get(0) + "]");
         player_name1.setFill(Color.GREEN);
         grid_anchor.getChildren().add(player_name1);
         grid_anchor.setRowIndex(player_name1,1);
         grid_anchor.setColumnIndex(player_name1,9);
 
         if (!isNull(_player2)){
-            Text player_name2 = new Text(LoginMain.getMessageBundle().getString("player2.text") + _player2);
+            Text player_name2 = new Text(LoginMain.getMessageBundle().getString("player2.text") + _player2 + " [" + _hardskill.get(1) + "]");
             player_name2.setFill(Color.RED);
             grid_anchor.getChildren().add(player_name2);
             grid_anchor.setRowIndex(player_name2,3);

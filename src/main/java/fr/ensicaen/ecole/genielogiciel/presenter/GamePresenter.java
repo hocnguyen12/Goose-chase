@@ -21,12 +21,16 @@ public final class GamePresenter {
     private GameView _view;
     private boolean _end = false;
 
-    public GamePresenter( String nickName, String path) {
+    private ArrayList<String> _hardskill;
+
+    public GamePresenter( String nickName, String path, ArrayList<String> hardskill) {
+        _hardskill = hardskill;
         _model = new Model();
         _model.setNickname1(nickName);
         _path = path;
     }
-    public GamePresenter( String nickName1, String nickName2, String path) {
+    public GamePresenter( String nickName1, String nickName2, String path, ArrayList<String> hardskill) {
+        _hardskill = hardskill;
         _model = new Model();
         _model.setNickname1(nickName1);
         _model.setNickname2(nickName2);
@@ -55,7 +59,7 @@ public final class GamePresenter {
 
         try {
             //Initialize game with correct parameters
-            _game.start(playerCount, playersTypes);
+            _game.start(playerCount, _hardskill);
             _game.configureBoard(_path);
         } catch (InvalidPlayersCount | InvalidTypeListSize e) {
             throw new RuntimeException(e);
@@ -108,5 +112,9 @@ public final class GamePresenter {
 
     public ArrayList<String> endGameandGetWages() {
         return _game.computeWages();
+    }
+
+    public int getDiceTotal() {
+        return _game.getDiceTotal();
     }
 }
