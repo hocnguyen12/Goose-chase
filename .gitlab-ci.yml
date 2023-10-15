@@ -17,6 +17,7 @@ before_script:
 stages:
   - build
   - test
+  - excutable
 
 build:
   tags :
@@ -37,3 +38,12 @@ unit_test:
   script:
     - ./gradlew -Pci --console=plain test jacocoTestReport
     - cat build/jacocoHtml/index.html | grep -o 'Total[^%]*%' | sed 's/<.*>/ /; s/Total/Coverage Total:/'
+
+executable:
+  tags :
+    - gitlab-runner-ensicaen
+  stage: jar
+  script:
+    - ./gradlew jar
+  only:
+    - master
