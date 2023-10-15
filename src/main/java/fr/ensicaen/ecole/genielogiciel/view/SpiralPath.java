@@ -11,7 +11,6 @@ import java.util.List;
 
 public class SpiralPath {
 
-
     public static int[][] computeSpiralPath(int gridsize){
         int currentRow = 0;
         int currentCol = -1;
@@ -33,7 +32,6 @@ public class SpiralPath {
             }
             dep = -dep;
         }
-
         array[currentRow][currentCol+dep] = value;
         return array;
     }

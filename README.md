@@ -13,6 +13,21 @@ Jeu Oie Ensicaen
 
 **Developpeurs :** Maxime Jingeaux, Ely Seraidarian, Winnie Kamtchueng-Fodjo-Kouam, Cécile Lu, Paul Nguyen, Kevin Herman
 
+## Execution du jeu
+
+Dans le dossier du projet :
+
+(Linux)
+```bash
+./gradlew clean jar
+java -jar build/libs/jeu-oie-ensicaen-0.0.2.jar
+```
+(Windows)
+```bash
+./gradlew clean jar
+java -jar .\build\libs\jeu-oie-ensicaen-0.0.2.jar
+```
+
 ## Description du projet
 
 Ce projet contient un exemple d'une application graphique écrite en Java avec
@@ -24,11 +39,14 @@ Le projet est géré par le moteur de production 'gradle'.
 La configuration du plateau et la répartition des cases se fait à partir d'un fichier JSON présent à l'emplacement src/resources/fr.ensicaen.ecole.genielogiciel.
 
 **Version actuelle :** 
+- Choix d'une langue : français ou anglais
 - Grille de 64 case sur laquelle se déplace les personnages en spirale
 - 2 joueurs max
 - Choix d'un parcours (prépa, DUT ou licence)
 - Attribution aléatoire d'un trait de charactère (dilletant, brilliant ou assidu)
 - 16 cases à effets
+- 2 plateaux disponibles : Configuration de base (représentant le plus fidèlement possible le parcours d'un élève de l'ENSICAEN) et configuration aléatoire (avec un placement des cases plus imprévisible)
+- Calcul du salaire des joueurs en fin de partir
 
 La documentation du projet dont le rapport et la présentation sont dans le dossier /other.
 
@@ -63,7 +81,8 @@ Le projet a la structure suivante :
             │      └── fr.ensicaen.genielogiciel.model/*.java
             └── resources
 
-## VIEW
+## TACHES A EFFECTUER
+### VIEW
 todo : 
 
 - [x] Pion se déplacant en spirale
@@ -82,12 +101,11 @@ todo :
 - afficher le nom du joueur qui doit lancer les dés et lui demander d'appuyer sur le bouton
 - zone qui affiche la valeurs des dés
 
-## PRESENTER
+### PRESENTER
 todo :
-
 *necessite les fonctions de VIEW.*
 
-## MODEL 
+### MODEL 
 todo :
 
 - [x] créer les personnages avec hard-skill choisi et soft-skill aléatoire

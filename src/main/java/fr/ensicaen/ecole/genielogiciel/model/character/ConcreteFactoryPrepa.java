@@ -1,4 +1,5 @@
 package fr.ensicaen.ecole.genielogiciel.model.character;
+
 public class ConcreteFactoryPrepa extends AbstractFactoryStudent{
     private Student _student;
     public ConcreteFactoryPrepa(){

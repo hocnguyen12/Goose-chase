@@ -31,7 +31,6 @@ import java.util.*;
 
 import static java.util.Objects.isNull;
 
-
 public final class GameView {
     private GamePresenter _gamePresenter;
     private Stage _stage;
@@ -76,14 +75,10 @@ public final class GameView {
 
     private ArrayList<Integer> dice;
     private int diceTotal;
-
     private ArrayList<String> squareNames;
-
     private List<Integer> positions;
-
     private int skilllevel1;
     private int skilllevel2;
-
     private static ArrayList<String> _hardskill = new ArrayList<>(Arrays.asList("Prepa", "Prepa"));
     private ArrayList<String> _softSkills;
 
@@ -350,7 +345,4 @@ public final class GameView {
             _gamePresenter.runGameLoop();
         }
     }
-
-
 }
-

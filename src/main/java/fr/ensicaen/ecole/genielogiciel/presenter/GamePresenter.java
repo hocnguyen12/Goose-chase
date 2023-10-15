@@ -11,16 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 public final class GamePresenter {
     private final Model _model;
-
     private AbstractFactoryStudent _player1;
-
     private AbstractFactoryStudent _player2;
     private Game _game;
     private String _lang = "en";
     private String _path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
     private GameView _view;
     private boolean _end = false;
-
     private ArrayList<String> _hardskill;
 
     public GamePresenter( String nickName, String path, ArrayList<String> hardskill) {

@@ -21,13 +21,10 @@ import java.util.ArrayList;
 
 public class LoginView {
     private LoginPresenter _presenter;
-
     private static FXMLLoader loader;
     private Stage _stage;
-
     @FXML
     private Label _player1;
-
     @FXML
     private Label _player2;
     @FXML
@@ -37,12 +34,10 @@ public class LoginView {
     private TextField _nickName2;
     @FXML
     private Label _errorLabel;
-
     @FXML
     private Button _launchGame;
     @FXML
     private ComboBox<String> combo_language;
-
     @FXML
     private ComboBox<String> combo_board;
     @FXML
@@ -93,7 +88,6 @@ public class LoginView {
                 }
             }
         });
-
 
         ObservableList<String> hardskillOption = FXCollections.observableArrayList(
                 "Prepa",
