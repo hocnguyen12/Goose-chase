@@ -64,6 +64,8 @@ public final class GameView {
 
     private ArrayList<Integer> dice;
 
+    private ArrayList<String> squareNames;
+
     private List<Integer> positions;
 
     private int skilllevel1;
@@ -122,9 +124,6 @@ public final class GameView {
         Text whosturn = new Text(LoginMain.getMessageBundle().getString("whosturn.text"));
         placeNode(grid_anchor,whosturn,0,9);
         Popup popup = new Popup();
-        Text text = new Text(LoginMain.getMessageBundle().getString("victory.text"));
-        text.setFont(new Font("Arial",20));
-        popup.getContent().add(text);
         Text dice_result = new Text();
         grid_anchor.getChildren().add(dice_result);
         grid_anchor.setRowIndex(dice_result,5);
@@ -147,6 +146,11 @@ public final class GameView {
         grid_anchor.setRowIndex(player,0);
         grid_anchor.setColumnIndex(player,10);
 
+        Text squareName = new Text();
+        grid_anchor.getChildren().add(squareName);
+        grid_anchor.setRowIndex(squareName,6);
+        grid_anchor.setColumnIndex(squareName,9);
+
         Button btn_singlePlayer = new Button(LoginMain.getMessageBundle().getString("dice.button.text"));
         btn_singlePlayer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -154,6 +158,8 @@ public final class GameView {
                 dice = _gamePresenter.throwDice();
                 dice_result.setText(dice.toString());
                 positions = _gamePresenter.executePlayer(dice);
+                squareNames = _gamePresenter.getSquareNames((ArrayList<Integer>) positions);
+                squareName.setText(squareNames.toString());
                 skilllevel1 = _gamePresenter.getSkillLevel1();
                 text_skilllevel1.setText(Integer.toString(skilllevel1));
 
@@ -164,9 +170,10 @@ public final class GameView {
                     if (i == positions.size() - 1 && positions.get(i).equals(63)) {
                         if (!popup.isShowing()) {
                             Text wage = new Text();
-                            wage.setText(_gamePresenter.endGameandGetWages().get(0));
-                            text.setText(text.getText().concat(wage.getText()));
-                            popup.show(_stage);
+                            wage.setText(LoginMain.getMessageBundle().getString("victory.text").concat(_gamePresenter.endGameandGetWages().get(0)));
+                            wage.setFont(new Font("Arial",20));
+                            popup.getContent().add(wage);
+                            popup.show(_stage,800,150);
                         }
                     }
                 }
@@ -182,6 +189,8 @@ public final class GameView {
                 dice = _gamePresenter.throwDice();
                 dice_result.setText(dice.toString());
                 positions = _gamePresenter.executePlayer(dice);
+                squareNames = _gamePresenter.getSquareNames((ArrayList<Integer>) positions);
+                squareName.setText(squareNames.get(squareNames.size()-1));
                 skilllevel1 = _gamePresenter.getSkillLevel1();
                 text_skilllevel1.setText(Integer.toString(skilllevel1));
                 skilllevel2 = _gamePresenter.getSkillLevel2();
@@ -192,7 +201,11 @@ public final class GameView {
 
                         if (i == positions.size() - 1 && positions.get(i).equals(63)) {
                             if (!popup.isShowing()) {
-                                popup.show(_stage);
+                                Text wage = new Text();
+                                wage.setText(LoginMain.getMessageBundle().getString("victory.text").concat(_gamePresenter.endGameandGetWages().get(0)));
+                                wage.setFont(new Font("Arial",20));
+                                popup.getContent().add(wage);
+                                popup.show(_stage,800,150);
                             }
                         }
                     }
@@ -207,7 +220,11 @@ public final class GameView {
 
                             if (i == positions.size() - 1 && positions.get(i).equals(63)) {
                                 if (!popup.isShowing()) {
-                                    popup.show(_stage);
+                                    Text wage = new Text();
+                                    wage.setText(LoginMain.getMessageBundle().getString("victory.text").concat(_gamePresenter.endGameandGetWages().get(1)));
+                                    wage.setFont(new Font("Arial",20));
+                                    popup.getContent().add(wage);
+                                    popup.show(_stage,800,150);
                                 }
                             }
                         }

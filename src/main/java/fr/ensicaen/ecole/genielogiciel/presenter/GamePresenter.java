@@ -82,6 +82,14 @@ public final class GamePresenter {
         return _game.throwDice();
     }
 
+    public ArrayList<String> getSquareNames(ArrayList<Integer> positions) {
+        ArrayList<String> squareNames = new ArrayList<>();
+        for (Integer i : positions) {
+            squareNames.add(_game.getSquareName(i));
+        }
+        return squareNames;
+    }
+
     public ArrayList<Integer> executePlayer(ArrayList<Integer> diceValues) {
         ArrayList<Integer> positionsList = _game.executePlayer(diceValues);
         int round = _game.getRound();
@@ -96,7 +104,6 @@ public final class GamePresenter {
     public int getSkillLevel2() {return _player2.getSkillLevel();}
 
     public ArrayList<String> endGameandGetWages() {
-        _game.clean();
         return _game.computeWages();
     }
 }
