@@ -26,8 +26,17 @@
         <Label fx:id="_player2" alignment="CENTER" prefHeight="16.0" prefWidth="160.0" styleClass="text" text="%login2.message.text" GridPane.columnIndex="2" GridPane.rowIndex="0" />
         <TextField fx:id="_nickName1" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
         <TextField fx:id="_nickName2" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-       <Button fx:id="_launchGame" defaultButton="true" onAction="#launchGame" prefWidth="200.0" text="%launch.button.text" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-       <ComboBox layoutX="14.0" layoutY="14.0" fx:id="combo_language" promptText="%language.button.text">
+
+       <ComboBox fx:id="combo_board" GridPane.columnIndex="1" GridPane.rowIndex="4" promptText="%board.button.text">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="Plateau de base"/>
+                   <String fx:value="Plateau aléatoire"/>
+               </FXCollections>
+           </items>
+       </ComboBox>
+
+       <ComboBox fx:id="combo_language" GridPane.columnIndex="2" GridPane.rowIndex="4" promptText="%language.button.text">
            <items>
                <FXCollections fx:factory="observableArrayList">
                    <String fx:value="Anglais"/>
@@ -35,6 +44,10 @@
                </FXCollections>
            </items>
        </ComboBox>
+
+       <Button fx:id="_launchGame" defaultButton="true" onAction="#launchGame" prefWidth="200.0" text="%launch.button.text" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
+
+
        <Label fx:id="_errorLabel" textFill="#ef0000" GridPane.columnIndex="2" GridPane.columnSpan="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
    </children>
    <padding>

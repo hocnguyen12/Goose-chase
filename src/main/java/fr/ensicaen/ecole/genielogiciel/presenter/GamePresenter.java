@@ -17,17 +17,20 @@ public final class GamePresenter {
     private AbstractFactoryStudent _player2;
     private Game _game;
     private String _lang = "en";
+    private String _path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
     private GameView _view;
     private boolean _end = false;
 
-    public GamePresenter( String nickName ) {
+    public GamePresenter( String nickName, String path) {
         _model = new Model();
         _model.setNickname1(nickName);
+        _path = path;
     }
-    public GamePresenter( String nickName1, String nickName2 ) {
+    public GamePresenter( String nickName1, String nickName2, String path) {
         _model = new Model();
         _model.setNickname1(nickName1);
         _model.setNickname2(nickName2);
+        _path = path;
     }
     public String getNickname1() {return _model.getNickname1();}
     public String getNickname2() {return _model.getNickname2();}
@@ -52,9 +55,8 @@ public final class GamePresenter {
 
         try {
             //Initialize game with correct parameters
-            String path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
             _game.start(playerCount, playersTypes);
-            _game.configureBoard(path);
+            _game.configureBoard(_path);
         } catch (InvalidPlayersCount | InvalidTypeListSize e) {
             throw new RuntimeException(e);
         }

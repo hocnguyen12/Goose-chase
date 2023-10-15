@@ -41,6 +41,10 @@ public class LoginView {
     private Button _launchGame;
     @FXML
     private ComboBox<String> combo_language;
+
+    @FXML
+    private ComboBox<String> combo_board;
+    static String _path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
     static String language = "Français";
 
     public static String getLanguage(){ return language;}
@@ -63,6 +67,25 @@ public class LoginView {
                 _launchGame.setText(LoginMain.getMessageBundle().getString("launch.button.text"));
             }
 
+        });
+
+        ObservableList<String> boardOptions = FXCollections.observableArrayList(
+                "Configuration de base",
+                "Configuration aléatoire"
+        );
+        combo_board.setItems(boardOptions);
+        combo_board.setEditable(true);
+        final String[] selectedBoardFile = {null}; // Variable final pour stocker le nom du fichier sélectionné
+
+        combo_board.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> selected, String old_board, String new_board) {
+                if ("Configuration de base".equals(new_board)) {
+                    _path = "fr/ensicaen/ecole/genielogiciel/board_config_2.json";
+                } else if ("Configuration aléatoire".equals(new_board)) {
+                    _path = "fr/ensicaen/ecole/genielogiciel/board_config_1.json";
+                }
+            }
         });
     }
 
@@ -93,6 +116,6 @@ public class LoginView {
 
     @FXML
     private void launchGame() {
-        _presenter.launchGame(_nickName1.getText(),_nickName2.getText());
+        _presenter.launchGame(_nickName1.getText(),_nickName2.getText(), _path);
     }
 }

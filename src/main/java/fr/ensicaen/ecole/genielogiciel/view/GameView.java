@@ -42,8 +42,10 @@ public final class GameView {
     private String _player1;
 
     private String _player2;
+    private static String _path;
 
-    private Color[] colorList = new Color[]{Color.TOMATO, Color.WHITE, Color.PURPLE, Color.WHITE, Color.PINK, Color.ORANGE, Color.BROWN, Color.TURQUOISE,
+    private Color[] colorList_basicBoard = new Color[]{
+            Color.TOMATO, Color.WHITE, Color.PURPLE, Color.WHITE, Color.PINK, Color.ORANGE, Color.BROWN, Color.TURQUOISE,
             Color.WHITE, Color.YELLOW, Color.WHITE, Color.PURPLE, Color.BROWN, Color.GREY, Color.PINK, Color.ORANGE,
             Color.WHITE, Color.TURQUOISE, Color.YELLOW, Color.DARKGREEN, Color.WHITE, Color.PURPLE, Color.PINK, Color.ORANGE,
             Color.WHITE, Color.TURQUOISE, Color.WHITE, Color.YELLOW, Color.WHITE, Color.PINK, Color.WHITE,Color.LIGHTGREEN,
@@ -52,6 +54,16 @@ public final class GameView {
             Color.GREY, Color.WHITE, Color.ORANGE, Color.WHITE, Color.MAGENTA, Color.WHITE, Color.YELLOW,Color.WHITE,
             Color.TURQUOISE, Color.WHITE, Color.BLACK, Color.PURPLE, Color.WHITE, Color.ORANGE, Color.WHITE, Color.TEAL};
 
+    private Color[] colorList_randomboard = new Color[]{
+            Color.TOMATO, Color.PURPLE, Color.WHITE, Color.TURQUOISE, Color.PINK, Color.BROWN, Color.ORANGE, Color.WHITE,
+            Color.PURPLE, Color.PINK, Color.WHITE, Color.TURQUOISE, Color.WHITE, Color.YELLOW, Color.ORANGE, Color.PINK,
+            Color.WHITE, Color.WHITE, Color.WHITE, Color.WHITE, Color.YELLOW, Color.PINK, Color.WHITE, Color.WHITE,
+            Color.WHITE, Color.LIGHTBLUE, Color.WHITE, Color.WHITE, Color.WHITE, Color.GOLD, Color.WHITE, Color.WHITE,
+            Color.PINK, Color.WHITE, Color.GREY, Color.WHITE, Color.WHITE, Color.WHITE, Color.BLACK, Color.WHITE,
+            Color.LIGHTBLUE, Color.WHITE, Color.WHITE, Color.WHITE, Color.GREY, Color.WHITE, Color.WHITE, Color.YELLOW,
+            Color.LIGHTGREEN, Color.WHITE, Color.WHITE, Color.WHITE, Color.DARKGREEN, Color.WHITE, Color.WHITE, Color.LIGHTBLUE,
+            Color.WHITE, Color.WHITE, Color.MAGENTA, Color.WHITE, Color.WHITE, Color.BLACK, Color.WHITE, Color.TEAL
+    };
     private static final int MAX_LENGTH = 8;
     private static final int MAX_HEIGHT = 8;
     private boolean isPlayer1 = true;
@@ -71,7 +83,8 @@ public final class GameView {
     private int skilllevel1;
     private int skilllevel2;
 
-    public static GameView createView(String nickName1) throws IOException {
+    public static GameView createView(String nickName1, String path) throws IOException {
+        _path = path;
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(GameView.class.getResource("Board.fxml"));
         Parent root = fxmlLoader.load();
@@ -85,7 +98,8 @@ public final class GameView {
         return view;
     }
 
-    public static GameView createView(String nickName1,String nickName2) throws IOException {
+    public static GameView createView(String nickName1,String nickName2, String path) throws IOException {
+        _path = path;
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(GameView.class.getResource("Board.fxml"));
         Parent root = fxmlLoader.load();
@@ -289,7 +303,11 @@ public final class GameView {
         for (int i = 0;i < MAX_LENGTH;i++){
             for (int j = 0;j < MAX_HEIGHT;j++){
                 Rectangle rect = new Rectangle(80,80);
-                rect.setFill(colorList[array[i][j]]);
+                if (_path.equals("fr/ensicaen/ecole/genielogiciel/board_config_1.json")) {
+                    rect.setFill(colorList_randomboard[array[i][j]]);
+                } else {
+                    rect.setFill(colorList_basicBoard[array[i][j]]);
+                }
                 rect.setStroke(Color.BLACK);
                 System.out.println("i j :"+i+" "+j);
                 Text text = new Text(Integer.toString(array[i][j]));
