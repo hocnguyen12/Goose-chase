@@ -67,15 +67,15 @@ todo :
 - [x] Pion se déplacant en spirale
 - [x] Grille de 64 cases
 - [x] Modifier écran de login
-- [ ] demander la langue (fr, en)
+- [x] demander la langue (fr, en)
 - [x] prendre en compte le nombre de joueur
-- [ ] pour chaque joueur qu'on veut créer, demander le nom et hard skill (prepa, DUT, licence)
+- [x] pour chaque joueur qu'on veut créer, demander le nom et hard skill (prepa, DUT, licence)
 
 - [x] creer n pions de couleurs différentes (entre 1 et 4)
 
 - [x] créer une fonction 'à part' qui déplace les pions (appelée par le presenter)
 
-- [ ] créer des zones de texte modifiable par des methodes: 
+- [x] créer des zones de texte modifiable par des methodes: 
 - Zone de statistiques : fonction qui affiche nom, niveau de competence , et case actuelle
 - afficher le nom du joueur qui doit lancer les dés et lui demander d'appuyer sur le bouton
 - zone qui affiche la valeurs des dés
