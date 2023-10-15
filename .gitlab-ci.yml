@@ -42,7 +42,7 @@ unit_test:
 executable:
   tags :
     - gitlab-runner-ensicaen
-  stage: jar
+  stage: deploy
   script:
     - ./gradlew jar
   only:
