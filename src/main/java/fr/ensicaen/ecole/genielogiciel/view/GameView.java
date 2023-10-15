@@ -84,7 +84,7 @@ public final class GameView {
     private int skilllevel1;
     private int skilllevel2;
 
-    private static ArrayList<String> _hardskill;
+    private static ArrayList<String> _hardskill = new ArrayList<>(Arrays.asList("Prepa", "Prepa"));
     private ArrayList<String> _softSkills;
 
     public static GameView createView(String nickName1, String path, ArrayList<String> hardskill) throws IOException {

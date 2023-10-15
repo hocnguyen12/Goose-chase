@@ -144,10 +144,9 @@ public class LoginView {
 
     @FXML
     private void launchGame() {
-        ArrayList<String> _hardskill = new ArrayList<>();
-        _hardskill.add(_hardskill1);
-        _hardskill.add(_hardskill2);
-
-        _presenter.launchGame(_nickName1.getText(),_nickName2.getText(), _path, _hardskill);
+        ArrayList<String> hardskill = new ArrayList<>();
+        hardskill.add(_hardskill1);
+        hardskill.add(_hardskill2);
+        _presenter.launchGame(_nickName1.getText(),_nickName2.getText(), _path, hardskill);
     }
 }
