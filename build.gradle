@@ -10,7 +10,12 @@ version '0.1'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 application {
-    mainClass = 'fr.ensicaen.ecole.genielogiciel.LoginMain'
+    mainClassName = 'fr.ensicaen.ecole.genielogiciel.LoginMain'
+}
+
+tasks.withType(JavaCompile) {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
 }
 
 repositories {
@@ -28,7 +33,7 @@ javafx {
 
 dependencies {
     implementation(
-            [files("lib")]
+            implementation fileTree(dir: 'lib', include: ['*.jar'])
     )
     implementation 'junit:junit:4.13.1'
     implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
@@ -71,5 +76,18 @@ jacocoTestReport {
         xml.required = false
         csv.required = false
         html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
+}
+
+jar {
+    duplicatesStrategy = 'exclude'
+    exclude 'META-INF/*.SF'
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }

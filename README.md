@@ -30,6 +30,8 @@ La configuration du plateau et la répartition des cases se fait à partir d'un 
 - Attribution aléatoire d'un trait de charactère (dilletant, brilliant ou assidu)
 - 16 cases à effets
 
+La documentation du projet dont le rapport et la présentation sont dans le dossier /other.
+
 ## Organisation du projet
 
 Le projet a la structure suivante :
