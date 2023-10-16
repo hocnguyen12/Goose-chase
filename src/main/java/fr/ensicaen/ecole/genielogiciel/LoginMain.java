@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 public final class LoginMain extends Application {
 
 
-    public static void main( String[] args ) {
+    public void appStart( String[] args ) {
         launch(args);
     }
     public static ResourceBundle getMessageBundle() {

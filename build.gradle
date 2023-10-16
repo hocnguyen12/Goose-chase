@@ -10,13 +10,9 @@ version '0.0.2'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 application {
-    mainClassName = 'fr.ensicaen.ecole.genielogiciel.LoginMain'
+    mainClassName = 'fr.ensicaen.ecole.genielogiciel.MainApp'
 }
 
-tasks.withType(JavaCompile) {
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
-}
 
 repositories {
     mavenCentral()
@@ -40,6 +36,9 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
     implementation 'org.jetbrains:annotations:23.0.0'
     implementation 'org.jsoup:jsoup:1.14.3'
+
+    implementation group: 'org.openjfx', name: 'javafx-controls', version: '16'
+    implementation group: 'org.openjfx', name: 'javafx-fxml', version: '16'
 
     testImplementation(
             ['org.hamcrest:hamcrest:2.2'],
