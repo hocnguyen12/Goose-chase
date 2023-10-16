@@ -23,8 +23,8 @@ Dans le dossier du projet :
 java -jar build/libs/jeu-oie-ensicaen-0.0.2.jar
 ```
 (Windows)
-```bash
-./gradlew clean jar
+```powershell
+.\gradlew clean jar
 java -jar .\build\libs\jeu-oie-ensicaen-0.0.2.jar
 ```
 
