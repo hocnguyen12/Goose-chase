@@ -1,59 +1,56 @@
 [<img src="https://www.ensicaen.fr/wp-content/uploads/2017/02/LogoEnsicaen.gif" width="256" >](https://www.ensicaen.fr)
 
-Jeu Oie Ensicaen
+Ensicaen Goose Chase Game
 ================
+**Lab supervisor :** Anthony Roger
 
-**Professeur Encadrant :** Anthony Roger
+**Project Lead :** Cécile LU
 
-**Cheffe de projet :** Cécile LU
+**Architect :** Kevin Herman
 
-**Architecte :** Kevin Herman
+**Release Manager:** Paul NGUYEN
 
-**Release Manager :** Paul NGUYEN
+**Software Developpers :** Maxime Jingeaux, Ely Seraidarian, Winnie Kamtchueng-Fodjo-Kouam, Cécile Lu, Paul Nguyen, Kevin Herman
 
-**Developpeurs :** Maxime Jingeaux, Ely Seraidarian, Winnie Kamtchueng-Fodjo-Kouam, Cécile Lu, Paul Nguyen, Kevin Herman
+## Running the game
 
-## Execution du jeu
+In the project file :
 
-Dans le dossier du projet :
-
-(Linux)
+Linux: 
 ```bash
 ./gradlew clean jar
 java -jar build/libs/jeu-oie-ensicaen-0.0.2.jar
 ```
-(Windows)
+Windows:
 ```powershell
 .\gradlew clean jar
 java -jar .\build\libs\jeu-oie-ensicaen-0.0.2.jar
 ```
 
-## Description du projet
+## Project description
+This project contains an example of a graphics application written in Java using the JavaFX graphics library. 
+It is based on the Model-View-Presentation architecture pattern.
 
-Ce projet contient un exemple d'une application graphique écrite en Java avec
-la bibliothèque graphique JavaFX. Elle est basée sur le patron d'architecture
-Modèle-Vue-Présentation.
+The project is managed by the 'gradle' production engine.
 
-Le projet est géré par le moteur de production 'gradle'.
+The configuration of the board and the distribution of squares is based on a JSON file at src/resources/fr.ensicaen.ecole.genielogiciel.
 
-La configuration du plateau et la répartition des cases se fait à partir d'un fichier JSON présent à l'emplacement src/resources/fr.ensicaen.ecole.genielogiciel.
+**Current version:** 
+- Choice of language: French or English
+- 64-square grid on which characters move in spirals
+- 2 players max
+- Choice of education background course (prépa, DUT or licence)
+- Random assignment of a character trait (dilletant, brilliant or assiduous)
+- 16 effect boxes
+- 2 boards available: basic configuration (representing as closely as possible the career path of an ENSICAEN student) and random configuration (with more unpredictable box placement).
+- Calculation of players' salaries at the end of the game.
 
-**Version actuelle :** 
-- Choix d'une langue : français ou anglais
-- Grille de 64 case sur laquelle se déplace les personnages en spirale
-- 2 joueurs max
-- Choix d'un parcours (prépa, DUT ou licence)
-- Attribution aléatoire d'un trait de charactère (dilletant, brilliant ou assidu)
-- 16 cases à effets
-- 2 plateaux disponibles : Configuration de base (représentant le plus fidèlement possible le parcours d'un élève de l'ENSICAEN) et configuration aléatoire (avec un placement des cases plus imprévisible)
-- Calcul du salaire des joueurs en fin de partir
+The project documentation, including report and presentation (in french), is included in the ```/other``` folder.
 
-La documentation du projet dont le rapport et la présentation sont dans le dossier /other.
+## Project Organization
 
-## Organisation du projet
-
-Le projet a la structure suivante :
-
+The project has the following structure:
+```
     .
     │
     ├── build.gradle, settings.gradle, gradle.properties
@@ -80,34 +77,34 @@ Le projet a la structure suivante :
             ├── java
             │      └── fr.ensicaen.genielogiciel.model/*.java
             └── resources
+```
 
-## TACHES A EFFECTUER
+## TASKS TO PERFORM
 ### VIEW
-todo : 
 
-- [x] Pion se déplacant en spirale
-- [x] Grille de 64 cases
-- [x] Modifier écran de login
-- [x] demander la langue (fr, en)
-- [x] prendre en compte le nombre de joueur
-- [x] pour chaque joueur qu'on veut créer, demander le nom et hard skill (prepa, DUT, licence)
+- [x] Pawn moving in a spiral
+- [x] Grid of 64 squares
+- [x] Modify login screen
+- [x] request language (fr, en)
+- [x] take into account number of players
+- [x] for each player you want to create, ask for name and hard skill (prepa, DUT, licence)
 
-- [x] creer n pions de couleurs différentes (entre 1 et 4)
+- [x] create n pieces of different colors (between 1 and 4)
 
-- [x] créer une fonction 'à part' qui déplace les pions (appelée par le presenter)
+- [x] create a 'separate' function that moves the pieces (called by the presenter)
 
-- [x] créer des zones de texte modifiable par des methodes: 
-- Zone de statistiques : fonction qui affiche nom, niveau de competence , et case actuelle
-- afficher le nom du joueur qui doit lancer les dés et lui demander d'appuyer sur le bouton
-- zone qui affiche la valeurs des dés
+- [x] create text zones that can be modified by methods: 
+- Statistics zone: function to display name, skill level and current square
+- display the name of the player who is to roll the dice and ask him/her to press the button
+- zone displays dice values
 
-### PRESENTER
+### PRESENT
 todo :
-*necessite les fonctions de VIEW.*
+*requires VIEW functions.
 
 ### MODEL 
 todo :
 
-- [x] créer les personnages avec hard-skill choisi et soft-skill aléatoire
-- [x] Ajouter les cases restantes testées
-- [x] Lire la configuration du plateau à partir d'un fichier JSON
+- [x] create characters with chosen hard-skill and random soft-skill
+- [x] Add remaining tested squares
+- [x] Read set configuration from JSON file
